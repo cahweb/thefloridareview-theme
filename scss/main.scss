@@ -43,49 +43,49 @@ sass/
 # base
 --------------------------------------------------------------*/
 
-@import "base/normalize"
+@import "base/normalize";
 
 /*--------------------------------------------------------------
 # components
 --------------------------------------------------------------*/
 
-@import "components/buttons"
-@import "components/carousel"
-@import "components/cover"
-@import "components/dropdown"
-@import "components/navigations"
+@import "components/buttons";
+@import "components/carousel";
+@import "components/cover";
+@import "components/dropdown";
+@import "components/navigation";
 
 /*--------------------------------------------------------------
 # helpers
 --------------------------------------------------------------*/
 
-@import "helpers/variables"
-@import "helpers/functions"
-@import "helpers/minxins"
-@import "helpers/helpers"
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/helpers";
 
 /*--------------------------------------------------------------
 # layout
 --------------------------------------------------------------*/
 
-@import "layout/grid"
-@import "layout/header"
-@import "layout/footer"
-@import "layout/sidebar"
-@import "layout/forms"
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/forms";
 
 /*--------------------------------------------------------------
 # pages
 --------------------------------------------------------------*/
 
-@import "pages/front-page"
+@import "pages/front-page";
 
 /*--------------------------------------------------------------
 # themes
 --------------------------------------------------------------*/
 
-@import "themes/theme"
-@import "themes/admin"
+@import "themes/theme";
+@import "themes/admin";
 
 /*--------------------------------------------------------------
 # vendors

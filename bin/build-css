@@ -1,1 +1,1 @@
-node-sass --include-path scss scss/style.scss style.css
+node-sass --include-path scss scss/main.scss style.css
