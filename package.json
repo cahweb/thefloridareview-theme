@@ -1,5 +1,5 @@
 {
-  "name": "cah-medieval",
+  "name": "cah-starter",
   "version": "0.1.0",
   "description": "Wordpress starter theme for the UCF College of Arts and Humanities web development team",
   "main": "index.php",
@@ -12,5 +12,14 @@
   "devDependencies": {
     "node-sass": "^4.3.0",
     "nodemon": "^1.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cahweb/starter-theme.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cahweb/starter-theme/issues"
+  },
+  "homepage": "https://github.com/cahweb/starter-theme#readme"
 }
