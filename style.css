@@ -435,6 +435,11 @@ p {
   .hidden-sm {
     display: block; } }
 
+.site-header .site-branding {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center fixed; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
