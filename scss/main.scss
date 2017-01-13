@@ -1,0 +1,92 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+sass/ 
+| 
+|– base/ 
+|   |– _normalize.scss       # Reset/normalize 
+| 
+|– components/ 
+|   |– _buttons.scss     # Buttons 
+|   |– _carousel.scss    # Carousel 
+|   |– _cover.scss       # Cover 
+|   |– _dropdown.scss    # Dropdown 
+|   |– _navigation.scss  # Navigation 
+| 
+|– helpers/ 
+|   |– _variables.scss   # Sass Variables 
+|   |– _functions.scss   # Sass Functions 
+|   |– _mixins.scss      # Sass Mixins 
+|   |– _helpers.scss     # Class & placeholders helpers 
+| 
+|– layout/ 
+|   |– _grid.scss        # Grid system 
+|   |– _header.scss      # Header 
+|   |– _footer.scss      # Footer 
+|   |– _sidebar.scss     # Sidebar 
+|   |– _forms.scss       # Forms 
+| 
+|– pages/ 
+|   |– _front-page.scss	 # Front-Page specific styles
+| 
+|– themes/ 
+|   |– _theme.scss       # Default theme 
+|   |– _admin.scss       # Admin theme 
+| 
+|– vendors/
+| 
+| 
+`– main.scss             # primary Sass file
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# base
+--------------------------------------------------------------*/
+
+@import "base/normalize"
+
+/*--------------------------------------------------------------
+# components
+--------------------------------------------------------------*/
+
+@import "components/buttons"
+@import "components/carousel"
+@import "components/cover"
+@import "components/dropdown"
+@import "components/navigations"
+
+/*--------------------------------------------------------------
+# helpers
+--------------------------------------------------------------*/
+
+@import "helpers/variables"
+@import "helpers/functions"
+@import "helpers/minxins"
+@import "helpers/helpers"
+
+/*--------------------------------------------------------------
+# layout
+--------------------------------------------------------------*/
+
+@import "layout/grid"
+@import "layout/header"
+@import "layout/footer"
+@import "layout/sidebar"
+@import "layout/forms"
+
+/*--------------------------------------------------------------
+# pages
+--------------------------------------------------------------*/
+
+@import "pages/front-page"
+
+/*--------------------------------------------------------------
+# themes
+--------------------------------------------------------------*/
+
+@import "themes/theme"
+@import "themes/admin"
+
+/*--------------------------------------------------------------
+# vendors
+--------------------------------------------------------------*/
