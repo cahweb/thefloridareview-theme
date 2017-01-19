@@ -14,14 +14,11 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="container">
+		<section class="row">
 
-		
-		
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</section>
+	</div>
 
 <?php
 get_footer();

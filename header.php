@@ -26,24 +26,19 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site container">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'cah-starter' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-
+		<?php // Logo is overlayed on top of the image/slider ?>
+		<img class="site-logo" src="<?php echo get_stylesheet_directory_uri() . '/public/images/logo.png'; ?>">
 		<?php 
 			// Get image on frontpage post to use as the full width hero image
-			$image_id = get_post_thumbnail_id();
-			$image_url_array = wp_get_attachment_image_src($image_id, 'imagenail-size', true);
-			$image_url = $thumb_url_array[0];
+			// Only if this is the homepage though
+			// Uses MetaSlider to display the image(s). 
+			// Get MetaSlider or figure something else out.
+			if (is_front_page()) {
+    			echo do_shortcode("[metaslider id=14]"); 
+    		}
 		?>
-
-		<!-- Branding -->
-		<div class="site-branding" style="background: url("<?php $image_url; ?>");">
-			
-			
-
-
-		</div><!-- .site-branding -->
 
 		<!-- Navigation -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
