@@ -46,6 +46,15 @@ sass/
 @import "base/normalize";
 
 /*--------------------------------------------------------------
+# helpers
+--------------------------------------------------------------*/
+
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/helpers";
+
+/*--------------------------------------------------------------
 # components
 --------------------------------------------------------------*/
 
@@ -54,15 +63,6 @@ sass/
 @import "components/cover";
 @import "components/dropdown";
 @import "components/navigation";
-
-/*--------------------------------------------------------------
-# helpers
---------------------------------------------------------------*/
-
-@import "helpers/variables";
-@import "helpers/functions";
-@import "helpers/mixins";
-@import "helpers/helpers";
 
 /*--------------------------------------------------------------
 # layout
