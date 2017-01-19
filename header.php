@@ -26,25 +26,8 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site container">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'cah-starter' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-
-		<?php 
-			// Get image on frontpage post to use as the full width hero image
-			$image_id = get_post_thumbnail_id();
-			$image_url_array = wp_get_attachment_image_src($image_id, 'imagenail-size', true);
-			$image_url = $thumb_url_array[0];
-		?>
-
-		<!-- Branding -->
-		<div class="site-branding" style="background: url("<?php $image_url; ?>");">
-			
-			
-
-
-		</div><!-- .site-branding -->
-
 		<!-- Navigation -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'cah-starter' ); ?></button>
