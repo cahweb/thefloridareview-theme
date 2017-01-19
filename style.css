@@ -216,11 +216,68 @@ th {
   padding: 0; }
 
 /*--------------------------------------------------------------
-# components
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
 # helpers
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# components
+--------------------------------------------------------------*/
+.menu-toggle {
+  background: none;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  margin: 0 auto; }
+
+.menu-toggle:focus + div #primary-menu {
+  display: block; }
+
+#site-navigation {
+  padding: 5px 0;
+  margin: 10px 0; }
+
+.menu-toggle {
+  display: block; }
+
+.menu {
+  display: none;
+  list-style: none;
+  padding: 25px 0;
+  margin: 0; }
+  .menu li a {
+    display: block;
+    width: 25%;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 300; }
+  .menu li a:hover {
+    text-decoration: underline; }
+
+.menu:hover {
+  display: block; }
+
+@media only screen and (min-width: 33.75em) {
+  .menu-toggle {
+    display: none; }
+  .menu {
+    display: block;
+    text-align: left;
+    padding: 10px 25px; }
+    .menu li {
+      display: inline;
+      padding: 0 15px; }
+      .menu li a {
+        display: inline;
+        text-align: left; } }
+
+@media only screen and (max-width: 52em) {
+  .menu {
+    text-align: center; }
+    .menu li {
+      line-height: 35px; } }
+
 /*--------------------------------------------------------------
 # layout
 --------------------------------------------------------------*/
@@ -359,7 +416,7 @@ p {
 .col-12-sm {
   width: 96%; }
 
-@media only screen and (min-width: 45em) {
+@media only screen and (min-width: 52em) {
   .col-1 {
     width: 4.33333%; }
   .col-2 {
@@ -387,6 +444,31 @@ p {
   .hidden-sm {
     display: block; } }
 
+header {
+  position: relative;
+  top: 0;
+  left: 0; }
+  header .hero-slider {
+    margin: 10px 0 !important;
+    position: relative;
+    z-index: 0; }
+  header .site-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 40px auto;
+    z-index: 1;
+    max-width: 200px; }
+  @media only screen and (min-width: 33.75em) {
+    header .site-logo {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      margin: 0;
+      max-width: 300px; } }
+
 /*--------------------------------------------------------------
 # pages
 --------------------------------------------------------------*/
@@ -398,19 +480,10 @@ p {
   color: #333447;
   line-height: 1.5; }
 
-header {
-  position: relative;
-  top: 0;
-  left: 0; }
-  header .hero-slider {
-    position: relative;
-    z-index: 0; }
-  header .site-logo {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    z-index: 1;
-    max-width: 300px; }
+#site-navigation {
+  background-color: #043B5A; }
+  #site-navigation .menu li a {
+    color: #fff; }
 
 /*--------------------------------------------------------------
 # vendors

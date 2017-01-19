@@ -1,0 +1,15 @@
+// Buttons
+
+// Menu toggle button
+.menu-toggle {
+	background: none;
+	color: $white;
+	border: none;
+	text-transform: uppercase;
+	margin: 0 auto;
+}
+
+// Wordpress menus suck
+.menu-toggle:focus + div #primary-menu {
+	display: block;
+}

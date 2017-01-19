@@ -1,0 +1,79 @@
+// Navigation
+
+// Mobile first
+#site-navigation {
+	padding: 5px 0;
+	margin: 10px 0;
+}
+
+// Show menu toggle button on small screens
+.menu-toggle {
+	display: block;
+}	
+
+// Don't display menu items on small screens
+.menu {
+	display: none;
+	list-style: none;
+	padding: 25px 0;
+	margin: 0;
+
+	li a {
+		display: block;
+		width: 25%;
+	    margin: 0 auto;
+	    padding: 10px 0;
+	    text-align: center;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: 300;
+	}
+
+	li a:hover {
+		text-decoration: underline;
+	}
+}
+
+.menu:hover {
+	display: block;
+}
+
+// Desktop navigation
+@media only screen and (min-width: $breakpoint-small) {
+
+	// Hide menu toggle button on bigger screens
+	.menu-toggle {
+		display: none;
+	}
+
+	// Show menu Items on bigger screens
+	.menu {
+			display: block;
+			text-align: left;
+			padding: 10px 25px;
+
+
+			li {
+				display: inline;
+				padding: 0 15px;
+
+				a {
+					display: inline;
+					text-align: left;
+				}
+			}
+		}
+}
+
+// Medium display rules		
+@media only screen and (max-width: $breakpoint-med) {
+
+	.menu {
+		text-align: center;	
+
+		// To separate two rows of menu on med screens
+		li {
+			line-height: 35px;
+		}
+	}
+}
