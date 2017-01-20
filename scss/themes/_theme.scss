@@ -23,6 +23,14 @@
 }
 
 // Typography
+h1,
+h2,
+h3,
+h4, {
+  font-family: $font-family-alt;
+  font-weight: $font-weight-heavy;
+}
+
 h1 {
   font-size: 2.5rem;
 }
@@ -48,9 +56,10 @@ h6 {
 }
 
 p {
-  font-size: 1.125rem;
-  font-weight: 200;
+  font-size: 1rem;
+  font-weight: $font-weight-light;
   line-height: 1.8;
+  letter-spacing: -0.2px;
 }
 
 .font-light {

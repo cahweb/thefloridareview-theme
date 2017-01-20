@@ -453,7 +453,7 @@ footer {
   display: none; }
 
 * {
-  font-family: "Lato", Helvetica, sans-serif;
+  font-family: "Proza Libre", Helvetica, sans-serif;
   color: #333447;
   line-height: 1.5; }
 
@@ -461,6 +461,13 @@ footer {
   background-color: #043B5A; }
   #site-navigation .menu li a {
     color: #fff; }
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700; }
 
 h1 {
   font-size: 2.5rem; }
@@ -481,9 +488,10 @@ h6 {
   font-size: 0.875rem; }
 
 p {
-  font-size: 1.125rem;
-  font-weight: 200;
-  line-height: 1.8; }
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: -0.2px; }
 
 .font-light {
   font-weight: 300; }
