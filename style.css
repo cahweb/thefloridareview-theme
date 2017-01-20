@@ -313,11 +313,11 @@ body {
   margin-right: auto; }
   @media only screen and (min-width: 33.75em) {
     .container {
-      width: 80%; } }
+      width: 90%; } }
   @media only screen and (min-width: 60em) {
     .container {
-      width: 75%;
-      max-width: 60rem; } }
+      width: 90%;
+      max-width: 1280px; } }
 
 .row {
   position: relative;
@@ -437,7 +437,7 @@ header {
       max-width: 300px; } }
 
 footer {
-  text-align: center;
+  text-align: left;
   padding: 20px 0; }
   footer p {
     font-size: 16px;

@@ -173,5 +173,10 @@ function display_logo( $logo_location ) {
  * Display copyright info for footer
  */
 function display_footer_info() {
-	echo '&copy; ' . get_bloginfo() . ' ' . date("Y") . ' | ' . 'College of Arts and Humanities at the University of Central Florida';
+	echo get_bloginfo() . '&nbsp; | &nbsp;' . 'College of Arts and Humanities';
+	echo '<br>';
+	// This should be changed to have site info stored in a plugin and pulled dynamically here
+	echo 'Phone: 407-823-xxxx' . '&nbsp; | &nbsp;' . get_bloginfo('admin_email');
+	echo '<br><br>';
+	echo 'Copyright &copy; ' . date("Y") . ' University of Central Florida';
 }
