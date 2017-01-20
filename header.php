@@ -28,6 +28,7 @@
 <div id="page" class="site container">
 
 	<header id="masthead" class="site-header" role="banner">
+
 		<?php // Logo is overlayed on top of the image/slider ?>
 		<img class="site-logo" src="<?php echo get_stylesheet_directory_uri() . '/public/images/logo.png'; ?>">
 		<?php 
