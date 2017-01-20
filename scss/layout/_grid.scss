@@ -44,12 +44,12 @@ body {
   margin-right: auto;
 
   @media only screen and (min-width: $breakpoint-small) {
-    width: 80%;
+    width: 90%;
   }
 
   @media only screen and (min-width: $breakpoint-large) {
-    width: 75%;
-    max-width: 60rem;
+    width: 90%;
+    max-width: $max-width;
   }
 }
 
