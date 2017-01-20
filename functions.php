@@ -5,6 +5,13 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package cah-starter
+ *
+ * !!! DO NOT PUT CUSTOM POST TYPES HERE !!!
+ *     Make a plugin for them, plenty of examples on the github
+ *	   https://github.com/cahweb
+ *
+ * If you need to add custom functionality, put your functions in the bottom
+ * section of this file
  */
 
 if ( ! function_exists( 'cah_starter_setup' ) ) :
@@ -107,9 +114,12 @@ add_action( 'widgets_init', 'cah_starter_widgets_init' );
 function cah_starter_scripts() {
 	wp_enqueue_style( 'cah-starter-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'cah-starter-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'cah-starter-navigation', get_template_directory_uri() . '/public/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'cah-starter-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'cah-starter-skip-link-focus-fix', get_template_directory_uri() . '/public/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	// UCF Header bar
+	wp_enqueue_script( 'cahweb-starter-ucfhb-script', '//universityheader.ucf.edu/bar/js/university-header.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -141,3 +151,27 @@ require get_template_directory() . '/includes/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/includes/jetpack.php';
+
+/*******
+ * General custom functions
+ * If you need to add a function put it here, and please comment it so
+ * The next guy knows what the hell is going on.
+ * Because chances are he'll also be an intern with 
+ * very little PHP experience at first. Help the little guys out.
+ ****/
+
+/** 
+ * Little function to display logo in markup and to keep the code relatively clean
+ * The default style (in the css) will make it overlay the header image/slideshow 
+ */
+$default_logo_location = get_stylesheet_directory_uri() . '/public/images/logo.png';
+function display_logo( $logo_location ) {
+	echo '<img class="site-logo" src="' . $logo_location . '">';
+}
+
+/**
+ * Display copyright info for footer
+ */
+function display_footer_info() {
+	echo '&copy; ' . get_bloginfo() . ' ' . date("Y") . ' | ' . 'College of Arts and Humanities at the University of Central Florida';
+}

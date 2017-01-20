@@ -12,13 +12,18 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+	<?php // All scripts should be loaded in functions.php using cah_starter_scripts() or equivalent ?>
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<!-- UCF Assets -->
 	<link rel="icon" href="http://www.ucf.edu/img/pegasus-icon.png" type="image/png">
-	<script type="text/javascript" id="ucfhb-script" src="//universityheader.ucf.edu/bar/js/university-header.js"></script> 
+	<?php // UCF header bar is loaded in functions.php with the other scripts ?>
+
+	<!-- Google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 
 
 	<?php wp_head(); ?>
@@ -26,17 +31,17 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site container">
-
 	<header id="masthead" class="site-header" role="banner">
 
-		<?php // Logo is overlayed on top of the image/slider ?>
-		<img class="site-logo" src="<?php echo get_stylesheet_directory_uri() . '/public/images/logo.png'; ?>">
 		<?php 
 			// Get image on frontpage post to use as the full width hero image
 			// Only if this is the homepage though
 			// Uses MetaSlider to display the image(s). 
 			// Get MetaSlider or figure something else out.
-			if (is_front_page()) {
+			if (is_front_page()) { 
+				// Display logo found at the location in the argument
+				// this is a custom function, found in functions.php
+				display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');
     			echo do_shortcode("[metaslider id=14]"); 
     		}
 		?>
