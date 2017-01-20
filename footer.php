@@ -15,6 +15,7 @@
 
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php // This function is in functions.php, you can edit footer info there. ?>
 		<p><?php display_footer_info(); ?></p>
 	</footer><!-- #colophon -->
 

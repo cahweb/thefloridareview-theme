@@ -180,3 +180,22 @@ function display_footer_info() {
 	echo '<br><br>';
 	echo 'Copyright &copy; ' . date("Y") . ' University of Central Florida';
 }
+
+/**
+ * Get post by slug
+ * I'm using this to display three small posts on the homepage as part of the 3 col layout
+ */
+function get_post_by_slug($slug) {
+	$args=array(
+		'name'           => $slug,
+		'post_type'      => 'post',
+		'post_status'    => 'publish',
+		'posts_per_page' => 1
+	);
+
+	$returned_posts = get_posts( $args );
+	if( $returned_posts ) {
+		echo '<h2>' . $returned_posts[0] -> post_title . '</h2>';
+		echo '<p>' . $returned_posts[0] -> post_content . '</p>';
+	}
+}
