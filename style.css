@@ -220,12 +220,21 @@ th {
 /*--------------------------------------------------------------
 # components
 --------------------------------------------------------------*/
-.menu-toggle {
+button {
   background: none;
+  border: 1px solid #ddd; }
+
+button:hover {
+  background: #ddd; }
+
+.menu-toggle {
   color: #fff;
   border: none;
   text-transform: uppercase;
   margin: 0 auto; }
+
+.menu-toggle:hover {
+  background: none; }
 
 .menu-toggle:focus + div #primary-menu {
   display: block; }
@@ -257,7 +266,7 @@ th {
 .menu:hover {
   display: block; }
 
-@media only screen and (min-width: 33.75em) {
+@media only screen and (min-width: 52em) {
   .menu-toggle {
     display: none; }
   .menu {
@@ -270,12 +279,6 @@ th {
       .menu li a {
         display: inline;
         text-align: left; } }
-
-@media only screen and (max-width: 52em) {
-  .menu {
-    text-align: center; }
-    .menu li {
-      line-height: 35px; } }
 
 /*--------------------------------------------------------------
 # layout
@@ -416,8 +419,9 @@ header {
   top: 0;
   left: 0; }
   header .hero-slider {
-    margin: 10px 0 !important;
+    margin: 0 0 10px -6% !important;
     position: relative;
+    width: 111.6% !important;
     z-index: 0; }
   header .site-logo {
     position: absolute;
@@ -435,12 +439,16 @@ header {
       left: 40px;
       margin: 0;
       max-width: 300px; } }
+  @media only screen and (min-width: 52em) {
+    header .hero-slider {
+      margin: 0 0 10px 0 !important;
+      width: 100% !important; } }
 
 footer {
   text-align: left;
-  padding: 20px 0; }
+  padding: 25px 0; }
   footer p {
-    font-size: 16px;
+    font-size: 14px;
     color: #999; }
 
 /*--------------------------------------------------------------
@@ -461,6 +469,13 @@ footer {
   background-color: #043B5A; }
   #site-navigation .menu li a {
     color: #fff; }
+
+@media only screen and (min-width: 52em) {
+  .side-borders {
+    box-sizing: border-box;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 0 20px; } }
 
 h1,
 h2,

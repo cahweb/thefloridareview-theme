@@ -39,7 +39,7 @@
 }
 
 // Desktop navigation
-@media only screen and (min-width: $breakpoint-small) {
+@media only screen and (min-width: $breakpoint-med) {
 
 	// Hide menu toggle button on bigger screens
 	.menu-toggle {
@@ -63,17 +63,4 @@
 				}
 			}
 		}
-}
-
-// Medium display rules		
-@media only screen and (max-width: $breakpoint-med) {
-
-	.menu {
-		text-align: center;	
-
-		// To separate two rows of menu on med screens
-		li {
-			line-height: 35px;
-		}
-	}
 }

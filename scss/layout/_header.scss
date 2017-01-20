@@ -5,8 +5,11 @@ header {
 	left: 0;
 
 	.hero-slider {
-		margin: 10px 0 !important;
+		// This is janky, probably a better way to do it
+		// it being making the header image full width on smaller screens
+		margin: 0 0 10px -6% !important;
 		position: relative;
+		width: 111.6% !important;
 		z-index: 0;
 	}
 
@@ -29,6 +32,13 @@ header {
 			left: 40px;
 			margin: 0;
 			max-width: 300px;
+		}
+	}
+	@media only screen and (min-width: $breakpoint-med) {
+		.hero-slider {
+			// This is janky, probably a better way to do it
+			margin: 0 0 10px 0 !important;
+			width: 100% !important;
 		}
 	}
 }

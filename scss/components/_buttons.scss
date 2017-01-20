@@ -1,12 +1,24 @@
 // Buttons
 
+button {
+	background: none;
+	border: 1px solid $white-grey;
+}
+
+button:hover {
+	background: $white-grey;
+}
+
 // Menu toggle button
 .menu-toggle {
-	background: none;
 	color: $white;
 	border: none;
 	text-transform: uppercase;
 	margin: 0 auto;
+}
+
+.menu-toggle:hover {
+	background: none;
 }
 
 // Wordpress menus suck
