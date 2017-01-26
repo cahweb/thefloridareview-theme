@@ -14,11 +14,15 @@
 // Navigation colors
 #site-navigation {
 	// Nav background
-	background-color: $primary-color;
+	background-color: $white;
+
+  display: flex;
+
+  font-size: 12px;
 
 	//Nav links
 	.menu li a {
-		color: $white;
+		color: $black;
 	}
 }
 

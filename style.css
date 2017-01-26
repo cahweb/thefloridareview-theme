@@ -228,7 +228,7 @@ button:hover {
   background: #ddd; }
 
 .menu-toggle {
-  color: #fff;
+  color: #000;
   border: none;
   text-transform: uppercase;
   margin: 0 auto; }
@@ -240,8 +240,7 @@ button:hover {
   display: block; }
 
 #site-navigation {
-  padding: 5px 0;
-  margin: 10px 0; }
+  flex: 1; }
 
 .menu-toggle {
   display: block; }
@@ -319,7 +318,7 @@ body {
       width: 90%; } }
   @media only screen and (min-width: 60em) {
     .container {
-      width: 90%;
+      width: 100%;
       max-width: 1280px; } }
 
 .row {
@@ -415,30 +414,17 @@ body {
     display: block; } }
 
 header {
-  position: relative;
-  top: 0;
-  left: 0; }
+  width: 100%;
+  padding: 20px;
+  display: flex; }
   header .hero-slider {
     margin: 0 0 10px -6% !important;
     position: relative;
     width: 111.6% !important;
     z-index: 0; }
   header .site-logo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: 40px auto;
-    z-index: 1;
-    max-width: 200px; }
-  @media only screen and (min-width: 33.75em) {
-    header .site-logo {
-      position: absolute;
-      top: 40px;
-      left: 40px;
-      margin: 0;
-      max-width: 300px; } }
+    flex: 1;
+    height: 45px; }
   @media only screen and (min-width: 52em) {
     header .hero-slider {
       margin: 0 0 10px 0 !important;
@@ -466,9 +452,11 @@ footer {
   line-height: 1.5; }
 
 #site-navigation {
-  background-color: #043B5A; }
+  background-color: #fff;
+  display: flex;
+  font-size: 12px; }
   #site-navigation .menu li a {
-    color: #fff; }
+    color: #000; }
 
 @media only screen and (min-width: 52em) {
   .side-borders {

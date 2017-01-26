@@ -33,7 +33,14 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site container">
 	<header id="masthead" class="site-header" role="banner">
+		<?php display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');?>
+		<!-- Navigation -->
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'cah-starter' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
+		</nav><!-- #site-navigation -->
+		
 		<?php 
 			// Get image on frontpage post to use as the full width hero image
 			// Only if this is the homepage though
@@ -42,18 +49,9 @@
 			if (is_front_page()) { 
 				// Display logo found at the location in the argument
 				// this is a custom function, found in functions.php
-				display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');
-    			echo do_shortcode("[metaslider id=14]"); 
+    			//echo do_shortcode("[metaslider id=12]"); 
     		}
 		?>
-
-		<!-- Navigation -->
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'cah-starter' ); ?></button>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

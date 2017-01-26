@@ -1,8 +1,8 @@
 // Header
 header {
-	position: relative;
-	top: 0;
-	left: 0;
+	width:100%;
+	padding: 20px;
+	display: flex;
 
 	.hero-slider {
 		// This is janky, probably a better way to do it
@@ -14,25 +14,13 @@ header {
 	}
 
 	.site-logo {
-		position: absolute;
-		top: 0;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		margin: 40px auto;
-		z-index: 1;
-		max-width: 200px;
+		flex: 1;
+		height: 45px;
 	}
 
 	// Larger screen display
 	@media only screen and (min-width: $breakpoint-small) {
-		.site-logo {
-			position: absolute;
-			top: 40px;
-			left: 40px;
-			margin: 0;
-			max-width: 300px;
-		}
+		
 	}
 	@media only screen and (min-width: $breakpoint-med) {
 		.hero-slider {
