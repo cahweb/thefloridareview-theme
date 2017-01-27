@@ -23,7 +23,7 @@
 	<?php // UCF header bar is loaded in functions.php with the other scripts ?>
 
 	<!-- Google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Proza+Libre:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700" rel="stylesheet">
 
 
@@ -33,9 +33,14 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site container">
 	<header id="masthead" class="site-header" role="banner">
-		<?php display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');?>
+		
+		<!-- Logo-->
+
 		<!-- Navigation -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
+
+			<a class="logo" href="<?=home_url();?>"><?php display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');?></a>
+
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'cah-starter' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 

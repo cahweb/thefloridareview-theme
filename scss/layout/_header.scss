@@ -1,8 +1,7 @@
 // Header
 header {
-	width:100%;
-	padding: 20px;
-	display: flex;
+
+	padding: 40px 60px;
 
 	.hero-slider {
 		// This is janky, probably a better way to do it
@@ -11,11 +10,6 @@ header {
 		position: relative;
 		width: 111.6% !important;
 		z-index: 0;
-	}
-
-	.site-logo {
-		flex: 1;
-		height: 45px;
 	}
 
 	// Larger screen display

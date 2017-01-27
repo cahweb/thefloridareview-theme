@@ -240,16 +240,28 @@ button:hover {
   display: block; }
 
 #site-navigation {
-  flex: 1; }
+  background-color: #fff;
+  display: flex; }
+  #site-navigation .logo {
+    display: inline-block; }
+    #site-navigation .logo img {
+      height: 45px; }
+  #site-navigation div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; }
+    #site-navigation div .menu li a {
+      color: black;
+      font-size: 14px;
+      font-weight: 500; }
 
 .menu-toggle {
   display: block; }
 
 .menu {
   display: none;
-  list-style: none;
-  padding: 25px 0;
-  margin: 0; }
+  list-style: none; }
   .menu li a {
     display: block;
     width: 25%;
@@ -270,8 +282,7 @@ button:hover {
     display: none; }
   .menu {
     display: block;
-    text-align: left;
-    padding: 10px 25px; }
+    text-align: right; }
     .menu li {
       display: inline;
       padding: 0 15px; }
@@ -318,8 +329,7 @@ body {
       width: 90%; } }
   @media only screen and (min-width: 60em) {
     .container {
-      width: 100%;
-      max-width: 1280px; } }
+      width: 100%; } }
 
 .row {
   position: relative;
@@ -414,17 +424,12 @@ body {
     display: block; } }
 
 header {
-  width: 100%;
-  padding: 20px;
-  display: flex; }
+  padding: 40px 60px; }
   header .hero-slider {
     margin: 0 0 10px -6% !important;
     position: relative;
     width: 111.6% !important;
     z-index: 0; }
-  header .site-logo {
-    flex: 1;
-    height: 45px; }
   @media only screen and (min-width: 52em) {
     header .hero-slider {
       margin: 0 0 10px 0 !important;
@@ -450,13 +455,6 @@ footer {
   font-family: "Proza Libre", Helvetica, sans-serif;
   color: #333447;
   line-height: 1.5; }
-
-#site-navigation {
-  background-color: #fff;
-  display: flex;
-  font-size: 12px; }
-  #site-navigation .menu li a {
-    color: #000; }
 
 @media only screen and (min-width: 52em) {
   .side-borders {

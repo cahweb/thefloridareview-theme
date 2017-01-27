@@ -11,21 +11,6 @@
   line-height: $font-height;
 }
 
-// Navigation colors
-#site-navigation {
-	// Nav background
-	background-color: $white;
-
-  display: flex;
-
-  font-size: 12px;
-
-	//Nav links
-	.menu li a {
-		color: $black;
-	}
-}
-
 // Side borders for the middle column on front page
 .side-borders {
 

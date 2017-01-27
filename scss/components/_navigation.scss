@@ -1,10 +1,41 @@
 // Navigation
 
-// Mobile first
+// Logo
+
+// Navigation colors
 #site-navigation {
-	flex: 1;
+	// Nav background
+	background-color: $white;
+	display: flex;
+
+	.logo {
+
+		display: inline-block;
+		img {
+			height: 45px;
+		}
+	}
+
+	//Nav links
+	div {
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+
+		.menu {
+			li a {
+				color: black;
+				font-size: 14px;
+				font-weight: 500;
+			}
+		}
+	}
 }
 
+
+// Mobile firs
 // Show menu toggle button on small screens
 .menu-toggle {
 	display: block;
@@ -14,8 +45,6 @@
 .menu {
 	display: none;
 	list-style: none;
-	padding: 25px 0;
-	margin: 0;
 
 	li a {
 		display: block;
@@ -48,8 +77,7 @@
 	// Show menu Items on bigger screens
 	.menu {
 			display: block;
-			text-align: left;
-			padding: 10px 25px;
+			text-align: right;
 
 
 			li {
