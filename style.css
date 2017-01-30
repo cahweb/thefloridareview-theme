@@ -8,24 +8,25 @@ sass/
 |   |– _normalize.scss       # Reset/normalize 
 | 
 |– components/ 
-|   |– _buttons.scss     # Buttons 
-|   |– _carousel.scss    # Carousel 
-|   |– _cover.scss       # Cover 
-|   |– _dropdown.scss    # Dropdown 
-|   |– _navigation.scss  # Navigation 
+|   |– _buttons.scss     	# Buttons 
+|   |– _carousel.scss    	# Carousel 
+|   |– _cover.scss       	# Cover 
+|   |– _dropdown.scss    	# Dropdown 
+|   |– _navigation.scss  	# Navigation 
 | 
-|– helpers/ 
-|   |– _variables.scss   # Sass Variables 
-|   |– _functions.scss   # Sass Functions 
-|   |– _mixins.scss      # Sass Mixins 
-|   |– _helpers.scss     # Class & placeholders helpers 
+|– helpers/
+|   |– _variables.s```   	# Sass Variables 
+|   |– _functions.scss   	# Sass Functions 
+|   |– _mixins.scss      	# Sass Mixins 
+|   |– _helpers.scss     	# Class & placeholders helpers 
+|	|- _include-media.scss	# include media Framework
 | 
 |– layout/ 
-|   |– _grid.scss        # Grid system 
-|   |– _header.scss      # Header 
-|   |– _footer.scss      # Footer 
-|   |– _sidebar.scss     # Sidebar 
-|   |– _forms.scss       # Forms 
+|   |– _grid.scss        	# Grid system 
+|   |– _header.scss      	# Header 
+|   |– _footer.scss      	# Footer 
+|   |– _sidebar.scss     	# Sidebar 
+|   |– _forms.scss       	# Forms 
 | 
 |– pages/ 
 |   |– _front-page.scss	 # Front-Page specific styles
@@ -239,23 +240,6 @@ button:hover {
 .menu-toggle:focus + div #primary-menu {
   display: block; }
 
-#site-navigation {
-  background-color: #fff;
-  display: flex; }
-  #site-navigation .logo {
-    display: inline-block; }
-    #site-navigation .logo img {
-      height: 45px; }
-  #site-navigation div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1; }
-    #site-navigation div .menu li a {
-      color: black;
-      font-size: 14px;
-      font-weight: 500; }
-
 .menu-toggle {
   display: block; }
 
@@ -277,18 +261,25 @@ button:hover {
 .menu:hover {
   display: block; }
 
-@media only screen and (min-width: 52em) {
+@media (min-width: 961px) {
+  #site-navigation {
+    background-color: #fff;
+    display: flex; }
+    #site-navigation .logo {
+      display: inline-block; }
+      #site-navigation .logo img {
+        height: 45px; }
+    #site-navigation div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1; }
+      #site-navigation div .menu li a {
+        color: black;
+        font-size: 14px;
+        font-weight: 500; }
   .menu-toggle {
-    display: none; }
-  .menu {
-    display: block;
-    text-align: right; }
-    .menu li {
-      display: inline;
-      padding: 0 15px; }
-      .menu li a {
-        display: inline;
-        text-align: left; } }
+    display: none; } }
 
 /*--------------------------------------------------------------
 # layout

@@ -7,24 +7,25 @@ sass/
 |   |– _normalize.scss       # Reset/normalize 
 | 
 |– components/ 
-|   |– _buttons.scss     # Buttons 
-|   |– _carousel.scss    # Carousel 
-|   |– _cover.scss       # Cover 
-|   |– _dropdown.scss    # Dropdown 
-|   |– _navigation.scss  # Navigation 
+|   |– _buttons.scss     	# Buttons 
+|   |– _carousel.scss    	# Carousel 
+|   |– _cover.scss       	# Cover 
+|   |– _dropdown.scss    	# Dropdown 
+|   |– _navigation.scss  	# Navigation 
 | 
-|– helpers/ 
-|   |– _variables.scss   # Sass Variables 
-|   |– _functions.scss   # Sass Functions 
-|   |– _mixins.scss      # Sass Mixins 
-|   |– _helpers.scss     # Class & placeholders helpers 
+|– helpers/
+|   |– _variables.s```   	# Sass Variables 
+|   |– _functions.scss   	# Sass Functions 
+|   |– _mixins.scss      	# Sass Mixins 
+|   |– _helpers.scss     	# Class & placeholders helpers 
+|	|- _include-media.scss	# include media Framework
 | 
 |– layout/ 
-|   |– _grid.scss        # Grid system 
-|   |– _header.scss      # Header 
-|   |– _footer.scss      # Footer 
-|   |– _sidebar.scss     # Sidebar 
-|   |– _forms.scss       # Forms 
+|   |– _grid.scss        	# Grid system 
+|   |– _header.scss      	# Header 
+|   |– _footer.scss      	# Footer 
+|   |– _sidebar.scss     	# Sidebar 
+|   |– _forms.scss       	# Forms 
 | 
 |– pages/ 
 |   |– _front-page.scss	 # Front-Page specific styles
@@ -53,6 +54,7 @@ sass/
 @import "helpers/functions";
 @import "helpers/mixins";
 @import "helpers/helpers";
+@import "helpers/include-media";
 
 /*--------------------------------------------------------------
 # components

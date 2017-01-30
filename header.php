@@ -33,8 +33,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site container">
 	<header id="masthead" class="site-header" role="banner">
-		
-		<!-- Logo-->
 
 		<!-- Navigation -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
