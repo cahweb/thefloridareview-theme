@@ -1,42 +1,15 @@
 // Navigation
 
-// Logo
+// Mobile first
+// Show menu toggle button on small screens
+.logo {
 
-// Navigation colors
-#site-navigation {
-	// Nav background
-	background-color: $white;
-	display: flex;
-
-	.logo {
-
-		display: inline-block;
-		img {
-			height: 45px;
-		}
-	}
-
-	//Nav links
-	div {
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex: 1;
-
-		.menu {
-			li a {
-				color: black;
-				font-size: 14px;
-				font-weight: 500;
-			}
-		}
+	img {
+		height: auto;
+		width: 100%;
 	}
 }
 
-
-// Mobile firs
-// Show menu toggle button on small screens
 .menu-toggle {
 	display: block;
 }	
@@ -45,16 +18,20 @@
 .menu {
 	display: none;
 	list-style: none;
+	padding: 0;
 
-	li a {
+	li {
 		display: block;
 		width: 25%;
 	    margin: 0 auto;
 	    padding: 10px 0;
 	    text-align: center;
 		text-transform: uppercase;
-		text-decoration: none;
 		font-weight: 300;
+
+		a {
+			text-decoration: none;
+		}
 	}
 
 	li a:hover {
@@ -62,32 +39,41 @@
 	}
 }
 
-.menu:hover {
-	display: block;
-}
-
 // Desktop navigation
-@media only screen and (min-width: $breakpoint-med) {
+@include media(">tablet") {
+
+	#site-navigation {
+
+		display: flex;
+
+		.logo {
+			
+			img {
+				margin-top: 10px;
+				width: auto;
+				height: 45px;
+			}
+		}	
+
+		div {
+			flex: 1;
+
+			.menu {
+				display: block;
+				text-align: center;
+
+				li {
+					display: inline-block;
+					width: auto;
+					margin: 0 10px;
+				}
+			}
+		}
+	}
 
 	// Hide menu toggle button on bigger screens
 	.menu-toggle {
 		display: none;
 	}
 
-	// Show menu Items on bigger screens
-	.menu {
-			display: block;
-			text-align: right;
-
-
-			li {
-				display: inline;
-				padding: 0 15px;
-
-				a {
-					display: inline;
-					text-align: left;
-				}
-			}
-		}
 }
