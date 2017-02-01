@@ -127,6 +127,8 @@ function cah_starter_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cah_starter_scripts' );
 
+
+
 /**
  * Implement the Custom Header feature.
  */
