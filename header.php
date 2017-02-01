@@ -43,18 +43,7 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 
 		</nav><!-- #site-navigation -->
-		
-		<?php 
-			// Get image on frontpage post to use as the full width hero image
-			// Only if this is the homepage though
-			// Uses MetaSlider to display the image(s). 
-			// Get MetaSlider or figure something else out.
-			if (is_front_page()) { 
-				// Display logo found at the location in the argument
-				// this is a custom function, found in functions.php
-    			//echo do_shortcode("[metaslider id=12]"); 
-    		}
-		?>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
