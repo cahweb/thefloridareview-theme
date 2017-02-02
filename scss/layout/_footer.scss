@@ -1,9 +1,19 @@
 footer {
-	text-align: left;
-	padding: 25px 0;
+	text-align: center;
+	padding: 20px 50px;
+	font-size: 12px;
+	font-weight: 300;
+	div {
+		text-align: center;
+		.menu {
+			display: inline-block;
 
-	p {
-		font-size: 14px;
-		color: $light-grey;
+			li {
+				font-size: 12px;
+				width: auto;
+				display: inline-block;
+				padding: 10px;
+			}
+		}
 	}
 }

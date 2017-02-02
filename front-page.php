@@ -12,7 +12,13 @@ get_header();
 	
 ?>
 
-<div class="slider">
+<div class="hero-background" style="background-image: url(<?php the_post_thumbnail_url();?>);">
+	<div class="hero-container">
+		<div class="feature-issue"></div>
+		<div class="feature-issue-content">
+			<h3>Hello</h3>
+		</div>
+	</div>
 </div>
 
 <?php

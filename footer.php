@@ -15,8 +15,9 @@
 
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php // This function is in functions.php, you can edit footer info there. ?>
-		<p><?php display_footer_info(); ?></p>
+		<?php wp_nav_menu(array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ));
+		?>
+		<p>Copyright &copy; 2016 The Florida Review, University of Central Florida</p>
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->

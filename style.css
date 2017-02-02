@@ -430,72 +430,54 @@ header {
       width: 100% !important; } }
 
 footer {
-  text-align: left;
-  padding: 25px 0; }
-  footer p {
-    font-size: 14px;
-    color: #999; }
+  text-align: center;
+  padding: 20px 50px;
+  font-size: 12px;
+  font-weight: 300; }
+  footer div {
+    text-align: center; }
+    footer div .menu {
+      display: inline-block; }
+      footer div .menu li {
+        font-size: 12px;
+        width: auto;
+        display: inline-block;
+        padding: 10px; }
 
 /*--------------------------------------------------------------
 # pages
 --------------------------------------------------------------*/
+.hero-background {
+  width: 100%;
+  height: 75vh;
+  background-size: cover; }
+
+.hero-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center; }
+  .hero-container div {
+    margin: 0 10px; }
+
+.feature-issue {
+  width: 250px;
+  height: 350px;
+  background-color: white; }
+
+.feature-issue-content {
+  width: 400px;
+  height: 350px; }
+  .feature-issue-content h3 {
+    color: white; }
+
 /*--------------------------------------------------------------
 # themes
 --------------------------------------------------------------*/
-.edit-link {
-  display: none; }
-
-* {
-  font-family: "Proza Libre", Helvetica, sans-serif;
-  color: #333447;
-  line-height: 1.5; }
-
-@media only screen and (min-width: 52em) {
-  .side-borders {
-    box-sizing: border-box;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    padding: 0 20px; } }
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 700; }
-
-h1 {
-  font-size: 2.5rem; }
-
-h2 {
-  font-size: 2rem; }
-
-h3 {
-  font-size: 1.375rem; }
-
-h4 {
-  font-size: 1.125rem; }
-
-h5 {
-  font-size: 1rem; }
-
-h6 {
-  font-size: 0.875rem; }
-
-p {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.8;
-  letter-spacing: -0.2px; }
-
-.font-light {
-  font-weight: 300; }
-
-.font-regular {
-  font-weight: 400; }
-
-.font-heavy {
-  font-weight: 700; }
+a {
+  color: black; }
 
 /*--------------------------------------------------------------
 # vendors
