@@ -14,9 +14,16 @@ get_header();
 
 <div class="hero-background" style="background-image: url(<?php the_post_thumbnail_url();?>);">
 	<div class="hero-container">
-		<div class="feature-issue"></div>
+		<div class="feature-issue-image">
+			<div></div>
+		</div>
 		<div class="feature-issue-content">
-			<h3>Hello</h3>
+			<img src="<?=wp_get_attachment_url(33)?>">
+			<div class="feature-header">
+				<h2>Current Issue</h2>
+				<h5>41.1 | Winter 2017</h5>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae imperdiet turpis, in volutpat purus. In in ante vel urna viverra commodo laoreet eget nulla. Duis vitae sapien risus. Nulla et mollis eros.</p>
 		</div>
 	</div>
 </div>
