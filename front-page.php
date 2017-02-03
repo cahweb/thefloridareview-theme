@@ -34,7 +34,7 @@ get_header();
 			<div style="background-image: url(<?=get_the_post_thumbnail_url();?>);"></div>
 		</div>
 		<div class="feature-issue-content">
-			<img src="<?=wp_get_attachment_url(42);?>">
+			<img src="<?=get_stylesheet_directory_uri() . "/public/images/bird.png"?>">
 			<div class="feature-header">
 				<h2>Current Issue</h2>
 				<h5><?=$issue_vol.".".$issue_num." | ".$issue_cover_date?></h5>
@@ -46,7 +46,7 @@ get_header();
 </div>
 
 <div class="banner">
-	<img src="<?=wp_get_attachment_url(48);?>" style="text-align: center;">
+	<img src="<?=get_stylesheet_directory_uri() . "/public/images/banner.png"?>">
 </div>
 
 <div class="index-content">
