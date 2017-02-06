@@ -70,11 +70,11 @@ get_header();
 				<h2><?=$article_cat?></h2>
 				<div class="article-container">
 
-				<?php 
+					<?php 
 					$query = new WP_Query(array(
 					    'post_type' => 'article',
 					    'post_status' => 'publish',
-					    'posts_per_page' => 5,
+					    'posts_per_page' => 3,
 					    'category_name' => $slugs[$article_cat]
 					));
 
@@ -109,9 +109,8 @@ get_header();
 		?>
 	</div>
 
-	<div class="sidebar">
-		<h2>Announcements</h2>
-	</div>
+	<?php get_sidebar();?>
+
 </div>
 
 <?php

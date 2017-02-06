@@ -176,6 +176,9 @@ body {
   top: 0;
   font-size: 100%; }
 
+.site {
+  max-width: 1300px; }
+
 .left {
   text-align: left; }
 
@@ -357,6 +360,7 @@ footer {
   border-left: 2px solid #C4C4C4;
   max-height: 400px; }
   .sidebar h2 {
+    font-family: 'PlayFair Display', serif;
     font-size: 30px !important;
     border: none !important; }
 
@@ -459,13 +463,6 @@ footer {
           font-size: 14px;
           margin: 10px 0;
           font-weight: 100; }
-  @media (max-width: 1549px) {
-    .article-content .article-display .article-container a:nth-child(4) {
-      display: none; } }
-
-@media (max-width: 1849px) {
-  .article-display .article-container a:nth-child(5) {
-    display: none; } }
 
 /*--------------------------------------------------------------
 # themes
