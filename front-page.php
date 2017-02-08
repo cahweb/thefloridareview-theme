@@ -58,7 +58,7 @@ get_header();
 
 			$slugs = array(
 				"Literary Features" => "literary-features",
-				"Writer Interviews" => "writer-interviews",
+				"Writer Interviews" => "interview",
 				"Book Reviews" => "book-review",
 				"Digital Stories" => "digital-stories"
 			);
@@ -88,7 +88,7 @@ get_header();
 					?>
 						<a href="<?=get_the_permalink();?>">
 							<div class="article">
-								<img src="<?=$thumbnail?>">
+								<div style="background-image: url(<?=$thumbnail?>);"></div>
 								<h3><?=$post_title?></h3>
 								<h5><?="Fiction by ".$authors?></h5>
 								<h6><?=$date?></h6>
