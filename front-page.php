@@ -36,7 +36,7 @@ get_header();
 		<div class="feature-issue-content">
 			<img src="<?=get_stylesheet_directory_uri() . "/public/images/bird.png"?>">
 			<div class="feature-header">
-				<h2>Current Issue</h2>
+				<h3>Current Issue</h3>
 				<h5><?=$issue_vol.".".$issue_num." | ".$issue_cover_date?></h5>
 			</div>
 			<p><?=(strlen($issue_excerpt) > 250) ? substr($issue_excerpt,0,250)."..." : $issue_excerpt?></p>
@@ -49,9 +49,8 @@ get_header();
 	<img src="<?=get_stylesheet_directory_uri() . "/public/images/banner.png"?>">
 </div>
 
-<div class="index-content">
-
-	<div class="article-content">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
 		<?php
 
 			$article_displays = array("Literary Features", "Writer Interviews", "Book Reviews", "Digital Stories");
@@ -89,7 +88,7 @@ get_header();
 						<a href="<?=get_the_permalink();?>">
 							<div class="article">
 								<div style="background-image: url(<?=$thumbnail?>);"></div>
-								<h3><?=$post_title?></h3>
+								<h4><?=$post_title?></h4>
 								<h5><?="Fiction by ".$authors?></h5>
 								<h6><?=$date?></h6>
 							</div>
@@ -107,14 +106,11 @@ get_header();
 		<?php
 		}
 		?>
-	</div>
-
+	</main>
 	<?php get_sidebar();?>
-
 </div>
 
 <?php
-// get_sidebar();
 get_footer();
 
 ?>

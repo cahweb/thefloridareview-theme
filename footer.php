@@ -19,7 +19,7 @@
 		<div class="thanks">
 			
 			<img src="<?=get_stylesheet_directory_uri() . "/public/images/bird.png"?>">
-			<h2>40 Years of The Florida Review</h2>
+			<h3>40 Years of The Florida Review</h3>
 			<p>The Florida Review, the literary journal published twice yearly by the University of Central Florida. Our artistic mission is to publish the best poetry and prose written by the world's most excitin emerging and established writers. Our thanks to all those who have submitted, subscribed donated, read and supported TFR.</p>
 
 		</div>	
