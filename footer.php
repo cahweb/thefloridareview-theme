@@ -15,7 +15,11 @@
 
 	<?php if(is_front_page()) :
 	?>
-		
+		<?php 
+			// TODO: fix this hack. This is a quick fix that should be changed
+			// Super janky, if is front page end the #page div which constrains the width
+		    // of elements, so that the footer will be full page width ?>	
+		</div><!-- #page -->
 		<div class="thanks">
 			
 			<img src="<?=get_stylesheet_directory_uri() . "/public/images/bird.png"?>">

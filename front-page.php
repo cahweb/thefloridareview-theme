@@ -10,6 +10,15 @@
 get_header(); 
 
 ?>
+
+<?php 
+	// TODO: fix this hack. This is a quick fix that should be changed
+	// Super janky, On front page end the #page div and #content div which constrain 
+    // the width of elements, so that the header will be full page width ?>	
+
+</div> <!-- end site container -->
+</div> <!-- end site-content -->
+
 <div class="hero-background" style="background-image: url(<?php the_post_thumbnail_url();?>);">
 	<div class="hero-container">
 
@@ -44,6 +53,14 @@ get_header();
 		</div>
 	</div>
 </div>
+
+<?php 
+	// TODO: fix this hack. This is a quick fix that should be changed
+	// Super janky, On front page start the #page div and #content div which constrain 
+    // the width of elements, so that the header will be full page width ?>	
+
+<div id="page" class="site container">
+<div id="content" class="site-content">
 
 <div class="banner">
 	<img src="<?=get_stylesheet_directory_uri() . "/public/images/banner.png"?>">
