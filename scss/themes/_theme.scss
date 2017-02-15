@@ -41,4 +41,28 @@ h4 {
 	border-top: 10px solid #61A3B7; 
 	display: flex;
 	padding: 30px 60px;
+
+	.entry-header {
+		padding: 25px 0;
+	}
+
+	h3 {
+		padding: 15px 0;
+	}
+
+	p {
+		letter-spacing: 1.2;
+		line-height: 2;
+	}
+
+	ul {
+		padding: 25px;
+		list-style: circle;
+
+		li {
+			font-size: 0.9em;
+			letter-spacing: 1.2;
+			line-height: 2;
+		}
+	}
 }
