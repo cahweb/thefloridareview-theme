@@ -16,7 +16,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<h3><?=$title?></h3>
-			<?php echo $body?>
+			<?php echo wpautop($body, true)?>
 		</main><!-- #main -->
 		<?php get_sidebar();?>
 	</div><!-- #primary -->
