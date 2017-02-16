@@ -106,7 +106,7 @@ get_header();
 							<div class="article">
 								<div style="background-image: url(<?=$thumbnail?>);"></div>
 								<h4><?=$post_title?></h4>
-								<h5><?="Fiction by ".$authors?></h5>
+								<h5><?="By ".$authors?></h5>
 								<h6><?=$date?></h6>
 							</div>
 						</a>
