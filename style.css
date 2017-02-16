@@ -211,6 +211,8 @@ button:hover {
       #site-navigation .logo img {
         width: auto;
         height: 45px; }
+    #site-navigation .bird-logo {
+      height: 60px !important; }
     #site-navigation div {
       flex: 1; }
       #site-navigation div .menu {
@@ -220,7 +222,7 @@ button:hover {
         #site-navigation div .menu li {
           display: inline-block;
           width: auto;
-          margin: 0 10px; }
+          margin: 0 7px; }
   .menu-toggle {
     display: none; } }
 

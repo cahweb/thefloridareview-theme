@@ -56,7 +56,11 @@
 				width: auto;
 				height: 45px;
 			}
-		}	
+		}
+
+		.bird-logo {
+			height: 60px !important;
+		}
 
 		div {
 			flex: 1;
@@ -68,7 +72,7 @@
 				li {
 					display: inline-block;
 					width: auto;
-					margin: 0 10px;
+					margin: 0 7px;
 				}
 			}
 		}

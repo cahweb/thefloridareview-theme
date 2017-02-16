@@ -9,5 +9,7 @@
 ?>
 
 <div class="sidebar">
-	<h2><?=(is_front_page()) ? "Announcements" : "In This Issue"?></h2>
+	<h2><?=(is_front_page()) ? "Announcements" : "Read More"?></h2>
+
+
 </div>

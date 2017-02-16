@@ -39,7 +39,13 @@
 		<!-- Navigation -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 
-			<a class="logo" href="<?=home_url();?>"><?php display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');?></a>
+			<a class="logo" href="<?=home_url();?>"><?php 
+			if(is_front_page())
+				display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');
+			else
+				echo "<img class=\"site-logo bird-logo\" src=\"".get_stylesheet_directory_uri().'/public/images/logobird.png'."\">";
+
+			?></a>
 
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'cah-starter' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?> 

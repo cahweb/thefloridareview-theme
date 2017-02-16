@@ -18,9 +18,7 @@ get_header();
 
 	<div id="primary" class="content-area border-top">
 		<main id="main" class="site-main" role="main">
-			<?php if(has_post_thumbnail())
-				echo "<div class=\"article-banner\" style=\"background-image: url(".get_the_post_thumbnail_url().");\"></div>"; 
-			?>
+			
 			<h3><?=$title?></h3>
 			<?php echo wpautop($body, true)?>
 			<div class="author">

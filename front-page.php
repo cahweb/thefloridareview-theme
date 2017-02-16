@@ -49,7 +49,7 @@ get_header();
 				<h5><?=$issue_vol.".".$issue_num." | ".$issue_cover_date?></h5>
 			</div>
 			<p><?=(strlen($issue_excerpt) > 250) ? substr($issue_excerpt,0,250)."..." : $issue_excerpt?></p>
-			<a href="<?=$issue_url?>" class="read-more">Read More</a>
+			<!-- <a href="<?=$issue_url?>" class="read-more">Read More</a> -->
 		</div>
 	</div>
 </div>
