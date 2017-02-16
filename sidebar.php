@@ -16,12 +16,19 @@
 		<?php
 			wp_reset_postdata();
 
-			$query = new WP_Query(array(
-			    'post_type' => 'post',
-			    'post_status' => 'publish',
-			    'posts_per_page' => 3,
-			    'category_name' => $slugs['announement']
-			));
+			if($post_type == "article")
+				$query = new WP_Query(array(
+				    'post_type' => 'article',
+				    'post_status' => 'publish',
+				    'posts_per_page' => 10
+				));
+			else
+				$query = new WP_Query(array(
+				    'post_type' => 'post',
+				    'post_status' => 'publish',
+				    'posts_per_page' => 3,
+				    'category_name' => $slugs['announement']
+				));
 
 			while ($query->have_posts()) {
 			    $query->the_post();
