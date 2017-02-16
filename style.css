@@ -203,6 +203,10 @@ button:hover {
     text-decoration: underline; }
 
 @media (min-width: 821px) {
+  .aquifer-header {
+    padding: 10px; }
+    .aquifer-header .menu {
+      margin: 40px 0 !important; }
   #site-navigation {
     display: flex; }
     #site-navigation .logo {
@@ -213,6 +217,8 @@ button:hover {
         height: 45px; }
     #site-navigation .bird-logo {
       height: 60px !important; }
+    #site-navigation .aquifer-logo {
+      height: 110px !important; }
     #site-navigation div {
       flex: 1; }
       #site-navigation div .menu {
@@ -425,7 +431,17 @@ footer {
   .sidebar h2 {
     font-family: 'PlayFair Display', serif;
     font-size: 30px !important;
-    border: none !important; }
+    border: none !important;
+    padding-bottom: 0; }
+  .sidebar ul {
+    padding: 20px 0;
+    list-style-type: none; }
+    .sidebar ul li {
+      padding: 5px 0;
+      border-top: 1px solid #C4C4C4; }
+  .sidebar > a {
+    font-style: italic;
+    color: #61A3B7; }
 
 /*--------------------------------------------------------------
 # pages

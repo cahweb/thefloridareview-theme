@@ -98,9 +98,18 @@ get_header();
 					    $query->the_post();
 					    $post_id = get_the_id();
 					    $post_title = get_the_title();
-					    $thumbnail = get_the_post_thumbnail_url($post_id);
 					    $authors = get_post_meta($post_id,"authors",true);
 					    $date = get_post_meta($post_id,"doi",true);
+						
+						if(kdmfi_has_featured_image("author-image", $post_id))
+							$thumbnail = kdmfi_get_featured_image_src( "author-image", "small", $post_id );
+
+					    else if(has_post_thumbnail())
+					    	$thumbnail = get_the_post_thumbnail_url($post_id);
+					    
+					    else
+					    	$thumbnail = get_stylesheet_directory_uri() . "/public/images/empty.png";
+
 					?>
 						<a href="<?=get_the_permalink();?>">
 							<div class="article">

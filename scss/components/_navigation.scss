@@ -45,6 +45,14 @@
 // Desktop navigation
 @include media(">tablet") {
 
+	.aquifer-header {
+		padding: 10px;
+
+		.menu {
+			margin: 40px 0 !important;
+		}
+	}
+
 	#site-navigation {
 
 		display: flex;
@@ -60,6 +68,10 @@
 
 		.bird-logo {
 			height: 60px !important;
+		}
+
+		.aquifer-logo {
+			height: 110px !important;
 		}
 
 		div {
