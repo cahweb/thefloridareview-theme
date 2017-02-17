@@ -41,7 +41,7 @@ get_header();
 
 					<div class="author-info">
 						<h3><?=$authors?></h3>
-						<a href="<?=$auth_url?>"><?=preg_replace('#^https?://#', '',$auth_url)?></a>
+						<?php if(!empty($auth_url)) : ?><a href="<?=$auth_url?>"><?=preg_replace('#^https?://#', '',$auth_url)?></a><?php endif; ?>
 						<?php echo wpautop($auth_info, true)?>
 					</div>
 				</div>
