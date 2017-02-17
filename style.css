@@ -373,7 +373,7 @@ header {
 
 footer {
   text-align: center;
-  padding: 50px;
+  padding: 20px 40px;
   font-size: 14px;
   font-weight: 300; }
   footer div {
@@ -418,6 +418,8 @@ footer {
     text-align: center; }
 
 @media (min-width: 540px) {
+  footer {
+    padding: 50px; }
   .thanks {
     padding: 75px 100px; }
     .thanks img {

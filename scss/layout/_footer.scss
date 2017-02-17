@@ -1,6 +1,6 @@
 footer {
 	text-align: center;
-	padding: 50px;
+	padding: 20px 40px;
 	font-size: 14px;
 	font-weight: 300;
 
@@ -53,6 +53,10 @@ footer {
 }
 
 @include media(">=phone") {
+	footer {
+		padding: 50px;
+	}
+
 	.thanks {
 		padding: 75px 100px;
 
