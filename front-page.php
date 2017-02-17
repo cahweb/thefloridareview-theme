@@ -61,8 +61,8 @@ get_header();
 <div id="page" class="site container">
 <div id="content" class="site-content">
 
-<div class="banner">
-	<img src="<?=get_stylesheet_directory_uri() . "/public/images/banner.png"?>">
+<div class="aquifer-banner">
+	<img src="<?=get_stylesheet_directory_uri() . "/public/images/aquifer-compact.png"?>">
 </div>
 
 <div id="primary" class="content-area">

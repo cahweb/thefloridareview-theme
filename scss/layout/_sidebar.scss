@@ -1,4 +1,9 @@
 .sidebar {
+	display: none;
+}
+
+@include media(">=desktop"){
+	.sidebar {
 	flex: 1;
 	display: inline-block;
 	padding: 20px;
@@ -27,4 +32,5 @@
 		color: #61A3B7;
 	} 
 	
+}
 }

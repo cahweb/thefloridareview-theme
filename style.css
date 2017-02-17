@@ -91,6 +91,9 @@ table {
   border-spacing: 0; }
 
 /*--------------------------------------------------------------
+# helpers
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # themes
 --------------------------------------------------------------*/
 html {
@@ -129,31 +132,29 @@ h4 {
 .border-top {
   border-top: 10px solid #61A3B7; }
 
-.site-main {
-  flex: 5;
-  padding: 0 45px 0 20px; }
+.content-area h3 {
+  padding: 15px 0;
+  margin: 0 0 30px 0; }
 
-.content-area {
-  display: flex;
-  padding: 30px 60px; }
-  .content-area .entry-header {
-    padding: 25px 0; }
-  .content-area h3 {
-    padding: 15px 0;
-    margin: 0 0 30px 0; }
-  .content-area p {
+.content-area p {
+  line-height: 2; }
+
+.content-area ul {
+  padding: 25px;
+  list-style: circle; }
+  .content-area ul li {
+    font-size: 0.9em;
+    letter-spacing: 1.2;
     line-height: 2; }
-  .content-area ul {
-    padding: 25px;
-    list-style: circle; }
-    .content-area ul li {
-      font-size: 0.9em;
-      letter-spacing: 1.2;
-      line-height: 2; }
 
-/*--------------------------------------------------------------
-# helpers
---------------------------------------------------------------*/
+@media (min-width: 820px) {
+  .site-main {
+    flex: 5;
+    padding: 0 45px 0 20px; }
+  .content-area {
+    display: flex;
+    padding: 30px 60px; } }
+
 /*--------------------------------------------------------------
 # components
 --------------------------------------------------------------*/
@@ -390,10 +391,10 @@ footer {
   background-color: black;
   text-align: center;
   position: relative;
-  padding: 75px 100px; }
+  padding: 10px; }
   .thanks img {
     position: absolute;
-    height: 100%;
+    height: 50%;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -401,7 +402,7 @@ footer {
     left: 0;
     opacity: .2; }
   .thanks h3 {
-    font-size: 32px;
+    font-size: 20px;
     color: white;
     font-weight: 300;
     font-family: 'Open Sans', sans-serif; }
@@ -411,30 +412,45 @@ footer {
     margin: auto;
     padding: 10px;
     color: white;
-    font-size: 20px;
+    font-size: 14px;
     font-style: italic;
     line-height: 1.5;
-    text-align: left; }
+    text-align: center; }
+
+@media (min-width: 540px) {
+  .thanks {
+    padding: 75px 100px; }
+    .thanks img {
+      height: 100%; }
+    .thanks h3 {
+      font-size: 32px; }
+    .thanks p {
+      font-size: 20px;
+      text-align: left; } }
 
 .sidebar {
-  flex: 1;
-  display: inline-block;
-  padding: 20px;
-  border-left: 2px solid #C4C4C4; }
-  .sidebar h2 {
-    font-family: 'PlayFair Display', serif;
-    font-size: 30px !important;
-    border: none !important;
-    padding-bottom: 0; }
-  .sidebar ul {
-    padding: 20px 0;
-    list-style-type: none; }
-    .sidebar ul li {
-      padding: 5px 0;
-      border-top: 1px solid #C4C4C4; }
-  .sidebar > a {
-    font-style: italic;
-    color: #61A3B7; }
+  display: none; }
+
+@media (min-width: 1200px) {
+  .sidebar {
+    flex: 1;
+    display: inline-block;
+    padding: 20px;
+    border-left: 2px solid #C4C4C4; }
+    .sidebar h2 {
+      font-family: 'PlayFair Display', serif;
+      font-size: 30px !important;
+      border: none !important;
+      padding-bottom: 0; }
+    .sidebar ul {
+      padding: 20px 0;
+      list-style-type: none; }
+      .sidebar ul li {
+        padding: 5px 0;
+        border-top: 1px solid #C4C4C4; }
+    .sidebar > a {
+      font-style: italic;
+      color: #61A3B7; } }
 
 /*--------------------------------------------------------------
 # pages
@@ -480,37 +496,53 @@ footer {
   border-radius: 5px;
   padding: 10px 30px; }
 
-.banner {
-  width: 100%;
+.aquifer-banner {
+  padding: 20px;
   text-align: center; }
-  .banner img {
-    height: 125px; }
+  .aquifer-banner img {
+    width: 300px; }
 
 .article-display {
   display: block;
   padding: 0 20px;
   flex: 5; }
   .article-display .article-container {
-    margin: 20px 0; }
-    .article-display .article-container .article {
-      margin-right: 30px;
-      display: inline-block; }
-      .article-display .article-container .article div {
-        width: 225px;
-        height: 150px;
-        background-size: cover;
-        background-position: center; }
-      .article-display .article-container .article h4 {
-        margin: 15px 0; }
-      .article-display .article-container .article h5 {
-        font-size: 14px;
-        font-weight: 300; }
-      .article-display .article-container .article h6 {
-        font-size: 14px;
-        margin: 10px 0;
-        font-weight: 100; }
+    margin: 20px 0;
+    display: block; }
+    .article-display .article-container > a {
+      width: 100%;
+      display: inline-block;
+      margin: 10px 0; }
+      .article-display .article-container > a .article {
+        width: 100%;
+        display: inline-block;
+        text-align: center; }
+        .article-display .article-container > a .article div {
+          margin: auto;
+          width: 225px;
+          height: 150px;
+          background-size: cover;
+          background-position: center; }
+        .article-display .article-container > a .article h4 {
+          margin: 15px 0; }
+        .article-display .article-container > a .article h5 {
+          font-size: 14px;
+          font-weight: 300; }
+        .article-display .article-container > a .article h6 {
+          font-size: 14px;
+          margin: 10px 0;
+          font-weight: 100; }
 
 @media (min-width: 820px) {
+  .article-display .article-container {
+    display: inline-block; }
+    .article-display .article-container > a {
+      width: auto;
+      margin-right: 30px;
+      display: inline-block; }
+      .article-display .article-container > a .article {
+        display: inline-block;
+        width: auto; }
   .hero-background {
     height: 75vh;
     background-size: cover; }
@@ -541,7 +573,16 @@ footer {
       display: block;
       margin: 30px 0;
       max-width: 700px;
-      font-weight: 300; } }
+      font-weight: 300; }
+  .aquifer-banner img {
+    width: 600px; } }
+
+@media (min-width: 1200px) {
+  .aquifer-banner {
+    padding: 0; }
+    .aquifer-banner img {
+      width: 1000px;
+      content: url("./public/images/banner.png"); } }
 
 .site-main > p {
   font-size: 16px; }
