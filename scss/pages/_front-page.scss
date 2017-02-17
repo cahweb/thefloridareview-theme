@@ -7,7 +7,7 @@
 .hero-container {
 	height: 100%;
 	background-color: rgba(0,0,0,0.5);
-	padding: 20px;
+	padding: 40px 20px;
 }
 
 .feature-issue-image {
@@ -29,10 +29,10 @@
 	font-size: 20px;
 	line-height: 1.5;
 	display: inline-block;
+	width: 100%;
 
 	.feature-header {
 		display: block;
-		width: 100%;
 		text-align: center;
 	}
 
@@ -104,7 +104,6 @@
 	.hero-background {
 		height: 75vh;
 		background-size: cover;
-		background-image: url("./public/images/banner.png");
 	}
 
 	.hero-container {
@@ -132,6 +131,7 @@
 
 		.feature-header {
 			width: auto;
+			display: inline-block;
 		}
 
 		img {

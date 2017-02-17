@@ -179,7 +179,8 @@ button {
 .menu {
   display: none;
   list-style: none;
-  padding: 0; }
+  padding: 0;
+  margin-top: 10px; }
   .menu li {
     display: block;
     width: 25%;
@@ -446,7 +447,7 @@ footer {
 .hero-container {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px; }
+  padding: 40px 20px; }
 
 .feature-issue-image {
   display: inline-block;
@@ -463,10 +464,10 @@ footer {
   color: white;
   font-size: 20px;
   line-height: 1.5;
-  display: inline-block; }
+  display: inline-block;
+  width: 100%; }
   .feature-issue-content .feature-header {
     display: block;
-    width: 100%;
     text-align: center; }
   .feature-issue-content img {
     display: none; }
@@ -512,8 +513,7 @@ footer {
 @media (min-width: 820px) {
   .hero-background {
     height: 75vh;
-    background-size: cover;
-    background-image: url("./public/images/banner.png"); }
+    background-size: cover; }
   .hero-container {
     display: flex;
     align-items: center;
@@ -530,7 +530,8 @@ footer {
     padding: 0 60px;
     height: 350px; }
     .feature-issue-content .feature-header {
-      width: auto; }
+      width: auto;
+      display: inline-block; }
     .feature-issue-content img {
       display: inline-block;
       margin-top: 20px;
@@ -573,11 +574,12 @@ footer {
       font-weight: 700;
       padding: 0;
       margin: 0 0 20px 0; }
-    .author .author-info a {
-      font-size: 16px; }
+    .author .author-info > a {
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 20px; }
     .author .author-info p {
       font-size: 16px;
-      margin: 20px 0 0 0;
       line-height: 1.5;
       opacity: .7; }
 

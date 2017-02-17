@@ -103,7 +103,7 @@ get_header();
 						if(kdmfi_has_featured_image("author-image", $post_id))
 							$thumbnail = kdmfi_get_featured_image_src( "author-image", "small", $post_id );
 
-					    else if(has_post_thumbnail())
+					    if(has_post_thumbnail())
 					    	$thumbnail = get_the_post_thumbnail_url($post_id);
 					    
 					    else
