@@ -158,30 +158,23 @@ h4 {
 # components
 --------------------------------------------------------------*/
 button {
-  background: none;
-  border: 1px solid #ddd; }
-
-button:hover {
-  background: #ddd; }
-
-.menu-toggle {
-  color: #000;
-  border: none;
-  text-transform: uppercase;
-  margin: 0 auto; }
-
-.menu-toggle:hover {
-  background: none; }
+  background-color: #FFF;
+  border: none; }
 
 .menu-toggle:focus + div #primary-menu {
   display: block; }
 
 .logo img {
-  height: auto;
-  width: 100%; }
+  height: 20px;
+  width: auto; }
 
 .menu-toggle {
-  display: block; }
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  float: right;
+  margin-top: -5px;
+  background-size: cover; }
 
 .menu {
   display: none;
@@ -202,7 +195,13 @@ button:hover {
   .menu li a:hover {
     text-decoration: underline; }
 
-@media (min-width: 821px) {
+@media (max-width: 1199px) and (min-width: 820px) {
+  .logo img {
+    height: 30px; }
+  .menu-toggle {
+    margin-top: 0; } }
+
+@media (min-width: 1200px) {
   .aquifer-header {
     padding: 10px; }
     .aquifer-header .menu {
@@ -266,15 +265,9 @@ body {
   display: none; }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto; }
-  @media only screen and (min-width: 33.75em) {
-    .container {
-      width: 90%; } }
-  @media only screen and (min-width: 60em) {
-    .container {
-      width: 100%; } }
 
 .row {
   position: relative;
@@ -369,16 +362,12 @@ body {
     display: block; } }
 
 header {
-  padding: 40px 60px; }
+  padding: 20px; }
   header .hero-slider {
     margin: 0 0 10px -6% !important;
     position: relative;
     width: 111.6% !important;
     z-index: 0; }
-  @media only screen and (min-width: 52em) {
-    header .hero-slider {
-      margin: 0 0 10px 0 !important;
-      width: 100% !important; } }
 
 footer {
   text-align: center;
@@ -507,8 +496,7 @@ footer {
   padding: 0 20px;
   flex: 5; }
   .article-display .article-container {
-    margin: 20px 0;
-    min-width: 800px; }
+    margin: 20px 0; }
     .article-display .article-container .article {
       margin-right: 30px;
       display: inline-block; }

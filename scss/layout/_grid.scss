@@ -43,18 +43,10 @@ body {
 
 // grid
 .container {
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-
-  @media only screen and (min-width: $breakpoint-small) {
-    width: 90%;
-  }
-
-  @media only screen and (min-width: $breakpoint-large) {
-    width: 100%;
-    //max-width: $max-width;
-  }
+  
 }
 
 .row {

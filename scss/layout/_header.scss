@@ -1,7 +1,7 @@
 // Header
 header {
 
-	padding: 40px 60px;
+	padding: 20px;
 
 	.hero-slider {
 		// This is janky, probably a better way to do it
@@ -12,15 +12,4 @@ header {
 		z-index: 0;
 	}
 
-	// Larger screen display
-	@media only screen and (min-width: $breakpoint-small) {
-		
-	}
-	@media only screen and (min-width: $breakpoint-med) {
-		.hero-slider {
-			// This is janky, probably a better way to do it
-			margin: 0 0 10px 0 !important;
-			width: 100% !important;
-		}
-	}
 }
