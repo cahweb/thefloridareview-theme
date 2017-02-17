@@ -40,7 +40,10 @@ footer {
 	}
 
 	p {
-		padding: 10px 50px 50px 50px;
+		display: inline-block;
+		max-width: 1000px;
+		margin: auto;
+		padding: 10px;
 		color: white;
 		font-size: 20px;
 		font-style: italic;

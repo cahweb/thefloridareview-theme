@@ -405,7 +405,10 @@ footer {
     font-weight: 300;
     font-family: 'Open Sans', sans-serif; }
   .thanks p {
-    padding: 10px 50px 50px 50px;
+    display: inline-block;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
     color: white;
     font-size: 20px;
     font-style: italic;
@@ -437,27 +440,19 @@ footer {
 --------------------------------------------------------------*/
 .hero-background {
   width: 100%;
-  height: 75vh;
-  background-size: cover; }
+  background-image: none;
+  height: auto; }
 
 .hero-container {
-  display: flex;
-  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
-  justify-content: center; }
-  .hero-container div {
-    margin: 0 10px; }
-
-.feature-header {
-  display: inline-block; }
+  padding: 20px; }
 
 .feature-issue-image {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end; }
+  display: inline-block;
+  width: 100%; }
   .feature-issue-image div {
+    margin: auto;
     width: 250px;
     height: 350px;
     background-color: white;
@@ -465,19 +460,18 @@ footer {
     background-position: right; }
 
 .feature-issue-content {
-  height: 350px;
-  flex: 2;
-  padding: 0 60px;
   color: white;
   font-size: 20px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  display: inline-block; }
+  .feature-issue-content .feature-header {
+    display: block;
+    width: 100%;
+    text-align: center; }
   .feature-issue-content img {
-    margin-top: 20px;
-    width: 150px; }
+    display: none; }
   .feature-issue-content p {
-    margin: 30px 0;
-    max-width: 700px;
-    font-weight: 300; }
+    display: none; }
 
 .read-more {
   color: white;
@@ -514,6 +508,39 @@ footer {
         font-size: 14px;
         margin: 10px 0;
         font-weight: 100; }
+
+@media (min-width: 820px) {
+  .hero-background {
+    height: 75vh;
+    background-size: cover;
+    background-image: url("./public/images/banner.png"); }
+  .hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px; }
+    .hero-container div {
+      margin: 0 10px; }
+  .feature-issue-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; }
+  .feature-issue-content {
+    flex: 2;
+    padding: 0 60px;
+    height: 350px; }
+    .feature-issue-content .feature-header {
+      width: auto; }
+    .feature-issue-content img {
+      display: inline-block;
+      margin-top: 20px;
+      width: 150px; }
+    .feature-issue-content p {
+      text-align: left;
+      display: block;
+      margin: 30px 0;
+      max-width: 700px;
+      font-weight: 300; } }
 
 .site-main > p {
   font-size: 16px; }

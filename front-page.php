@@ -8,7 +8,6 @@
  * @package cah-starter
  */
 get_header(); 
-
 ?>
 
 <?php 
