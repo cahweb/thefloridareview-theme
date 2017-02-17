@@ -161,9 +161,6 @@ button {
   background-color: #FFF;
   border: none; }
 
-.menu-toggle:focus + div #primary-menu {
-  display: block; }
-
 .logo img {
   height: 20px;
   width: auto; }
@@ -175,6 +172,9 @@ button {
   float: right;
   margin-top: -5px;
   background-size: cover; }
+
+.toggled {
+  display: block !important; }
 
 .menu {
   display: none;

@@ -18,7 +18,11 @@
 	float: right;
 	margin-top: -5px;
 	background-size: cover;
-}	
+}
+
+.toggled {
+	display: block !important;
+}
 
 // Don't display menu items on small screens
 .menu {

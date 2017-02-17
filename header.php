@@ -50,7 +50,7 @@
 
 			?></a>
 
-			<button class="menu-toggle" style="background-image: url(<?=get_stylesheet_directory_uri().'/public/images/menu.png'?>);" aria-controls="primary-menu" aria-expanded="false"></button>
+			<div class="menu-toggle" style="background-image: url(<?=get_stylesheet_directory_uri().'/public/images/menu.png'?>);"></div>
 			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?> 
 
 		</nav><!-- #site-navigation -->
