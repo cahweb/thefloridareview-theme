@@ -100,10 +100,10 @@ get_header();
 					    $authors = get_post_meta($post_id,"authors",true);
 					    $date = get_post_meta($post_id,"doi",true);
 						
-						if(kdmfi_has_featured_image("author-image", $post_id))
+						if(kdmfi_has_featured_image("author-image", $post_id) && !has_post_thumbnail())
 							$thumbnail = kdmfi_get_featured_image_src( "author-image", "small", $post_id );
 
-					    if(has_post_thumbnail())
+					    else if(has_post_thumbnail())
 					    	$thumbnail = get_the_post_thumbnail_url($post_id);
 					    
 					    else

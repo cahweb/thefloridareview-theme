@@ -31,6 +31,7 @@ h2 {
 }
 
 h3 {
+	padding: 10px 0;
 	font-size: 40px;
 	font-weight: 100;
 	font-family: 'PlayFair Display', serif;
@@ -46,19 +47,19 @@ h4 {
 	border-top: 10px solid #61A3B7; 
 }
 
-.content-area {
+.entry-title {
+	padding: 15px 0;
+	margin: 0 0 30px 0;
+}
 
-	h3 {
-		padding: 15px 0;
-		margin: 0 0 30px 0;
-	}
+.content-area {
 
 	p {
 		line-height: 2;
 	}
 
 	ul {
-		padding: 25px;
+		padding: 5px 25px;
 		list-style: circle;
 
 		li {

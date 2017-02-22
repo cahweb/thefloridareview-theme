@@ -24,7 +24,7 @@ get_header();
 	<div id="primary" class="content-area border-top">
 		<main id="main" class="site-main" role="main">
 			
-			<h3><?=$title?></h3>
+			<h3 class="entry-title"><?=$title?></h3>
 			<?php echo wpautop($body, true)?>
 
 			<?php if(!empty($authors)) : ?>
