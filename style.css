@@ -133,6 +133,28 @@ h4 {
 .border-top {
   border-top: 10px solid #61A3B7; }
 
+.wp-caption-text {
+  font-style: italic;
+  padding: 10px; }
+
+.alignleft {
+  float: left;
+  margin-right: 25px; }
+  .alignleft .wp-caption-text {
+    text-align: left; }
+
+.alignright {
+  float: right;
+  margin-left: 25px; }
+  .alignright .wp-caption-text {
+    text-align: right; }
+
+.aligncenter {
+  display: block;
+  margin: auto; }
+  .aligncenter .wp-caption-text {
+    text-align: center; }
+
 .entry-title {
   padding: 15px 0;
   margin: 0 0 30px 0; }
