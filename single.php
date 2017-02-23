@@ -10,13 +10,9 @@ global $post;
 the_post();
 $id = get_the_ID();
 $title = get_the_title();
-$body = get_post_meta($id,"body",true);
 $authors = get_post_meta($id,"authors",true);
 $auth_url = get_post_meta($id,"auth-url",true);
 $auth_info = get_post_meta($id,"auth-info",true);
-
-if(empty($body))
-	$body = get_the_content();
 
 get_header(); 
 ?>
@@ -25,7 +21,7 @@ get_header();
 		<main id="main" class="site-main" role="main">
 			
 			<h3 class="entry-title"><?=$title?></h3>
-			<?php echo wpautop($body, true)?>
+			<?php the_content();?>
 
 			<?php if(!empty($authors)) : ?>
 				<div class="author">
