@@ -1,5 +1,5 @@
 .site-main > p {
-	font-size: 16px;
+	font-size: 14px;
 
 }
 
@@ -12,16 +12,15 @@
 }
 
 .author {
-	display: flex;
 	width: 100%;
-	margin: 40px 0 0 0;
-	padding: 40px 0 0 0;
+	margin: 20px 0 0 0;
+	padding-top: 20px;
 	border-top: 1px solid black;
 
-	.author-image {
-		flex: 1;
 
+	.author-image {
 		div {
+			margin: auto;
 			height: 300px;
 			width: 225px;
 			background-size: cover;
@@ -30,26 +29,72 @@
 	}
 
 	.author-info {
-		flex: 3;
-		padding: 0 30px;
-
+		text-align: center;
 		h3 {
 			font-size: 32px;
 			font-weight: 700;
 			padding: 0;
-			margin: 0 0 20px 0;
+			margin-top: 10px;
 		}
 
 		> a {
 			display: inline-block;
 			font-size: 16px;
-			margin-bottom: 20px;
+			padding: 10px;
 		}
 
 		p {
-			font-size: 16px;
+			font-size: 14px;
 			line-height: 1.5;
 			opacity: .7;
+		}
+	}
+}
+
+
+
+@include media(">=tablet"){
+	.site-main > p {
+		font-size: 16px;
+	}
+
+	.author {
+		display: flex;
+		width: 100%;
+		margin: 40px 0 0 0;
+		padding: 40px 0 0 0;
+		border-top: 1px solid black;
+
+		.author-image {
+			flex: 1;
+
+			div {
+				height: 300px;
+				width: 225px;
+			}
+		}
+
+		.author-info {
+			flex: 3;
+			padding: 0 30px;
+			text-align: left;
+			h3 {
+				font-size: 32px;
+				font-weight: 700;
+				padding: 0;
+			}
+
+			> a {
+				padding: 10px 0;
+				display: inline-block;
+				font-size: 16px;
+			}
+
+			p {
+				font-size: 16px;
+				line-height: 1.5;
+				opacity: .7;
+			}
 		}
 	}
 }

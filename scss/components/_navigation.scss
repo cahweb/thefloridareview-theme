@@ -6,8 +6,8 @@
 .logo {
 
 	img {
-		height: 20px;
-		width: auto;
+		width: 250px;
+		height: auto;
 	}
 }
 
@@ -52,16 +52,32 @@
 	}
 }
 
+.aquifer-header {
+	.main-navigation {
+		.menu-toggle {
+			margin-top: 10px;
+		}
+	}
+}
+
 @include media("<desktop", ">=tablet"){
 	.logo {
 
 		img {
-			height: 30px;
+			width: 400px;
 		}
 	}
 
 	.menu-toggle {
 		margin-top: 0;
+	}
+
+	.aquifer-header {
+		.main-navigation {
+			.menu-toggle {
+				margin-top: 20px;
+			}
+		}
 	}
 }
 
@@ -84,18 +100,11 @@
 			flex: 1;
 			text-align: center;
 			img {
-				width: auto;
-				height: 45px;
+				width: 550px;
+				height: auto;
 			}
 		}
-
-		.bird-logo {
-			height: 60px !important;
-		}
-
-		.aquifer-logo {
-			height: 110px !important;
-		}
+		
 
 		div {
 			flex: 1;

@@ -114,14 +114,15 @@ h1 {
   font-family: 'PlayFair Display', serif; }
 
 h2 {
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'PlayFair Display', serif;
+  text-align: center;
   padding-bottom: 20px;
   border-bottom: 2px solid #61A3B7; }
 
 h3 {
   padding: 10px 0;
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 100;
   font-family: 'PlayFair Display', serif; }
 
@@ -156,27 +157,39 @@ h4 {
     text-align: center; }
 
 .entry-title {
-  padding: 15px 0;
-  margin: 0 0 30px 0; }
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 15px; }
 
-.content-area p {
-  line-height: 2; }
-
-.content-area ul {
-  padding: 5px 25px;
-  list-style: circle; }
-  .content-area ul li {
-    font-size: 0.9em;
-    letter-spacing: 1.2;
+.content-area {
+  padding: 30px 30px 0 30px; }
+  .content-area p {
     line-height: 2; }
+  .content-area ul {
+    padding: 5px 25px;
+    list-style: circle; }
+    .content-area ul li {
+      font-size: 0.9em;
+      letter-spacing: 1.2;
+      line-height: 2; }
 
-@media (min-width: 820px) {
+@media (min-width: 720px) {
+  h2 {
+    font-size: 40px;
+    text-align: left; }
+  h3 {
+    font-size: 40px; }
   .site-main {
     flex: 5;
     padding: 0 45px 0 20px; }
   .content-area {
     display: flex;
-    padding: 30px 60px; } }
+    padding: 30px 60px 0px 60px; }
+  .entry-title {
+    font-size: 50px;
+    text-align: left;
+    padding: 15px 0;
+    margin: 0 0 20px 0; } }
 
 /*--------------------------------------------------------------
 # components
@@ -186,8 +199,8 @@ button {
   border: none; }
 
 .logo img {
-  height: 20px;
-  width: auto; }
+  width: 250px;
+  height: auto; }
 
 .menu-toggle {
   display: inline-block;
@@ -220,11 +233,16 @@ button {
   .menu li a:hover {
     text-decoration: underline; }
 
-@media (max-width: 1199px) and (min-width: 820px) {
+.aquifer-header .main-navigation .menu-toggle {
+  margin-top: 10px; }
+
+@media (max-width: 1199px) and (min-width: 720px) {
   .logo img {
-    height: 30px; }
+    width: 400px; }
   .menu-toggle {
-    margin-top: 0; } }
+    margin-top: 0; }
+  .aquifer-header .main-navigation .menu-toggle {
+    margin-top: 20px; } }
 
 @media (min-width: 1200px) {
   .aquifer-header {
@@ -237,12 +255,8 @@ button {
       flex: 1;
       text-align: center; }
       #site-navigation .logo img {
-        width: auto;
-        height: 45px; }
-    #site-navigation .bird-logo {
-      height: 60px !important; }
-    #site-navigation .aquifer-logo {
-      height: 110px !important; }
+        width: 550px;
+        height: auto; }
     #site-navigation div {
       flex: 1; }
       #site-navigation div .menu {
@@ -558,7 +572,7 @@ footer {
           margin: 10px 0;
           font-weight: 100; }
 
-@media (min-width: 820px) {
+@media (min-width: 720px) {
   .article-display .article-container {
     display: inline-block; }
     .article-display .article-container > a {
@@ -610,7 +624,7 @@ footer {
       content: url("./public/images/banner.png"); } }
 
 .site-main > p {
-  font-size: 16px; }
+  font-size: 14px; }
 
 .article-banner {
   width: 100%;
@@ -620,34 +634,62 @@ footer {
   margin: 0 0 30px 0; }
 
 .author {
-  display: flex;
   width: 100%;
-  margin: 40px 0 0 0;
-  padding: 40px 0 0 0;
+  margin: 20px 0 0 0;
+  padding-top: 20px;
   border-top: 1px solid black; }
-  .author .author-image {
-    flex: 1; }
-    .author .author-image div {
-      height: 300px;
-      width: 225px;
-      background-size: cover;
-      background-position: center; }
+  .author .author-image div {
+    margin: auto;
+    height: 300px;
+    width: 225px;
+    background-size: cover;
+    background-position: center; }
   .author .author-info {
-    flex: 3;
-    padding: 0 30px; }
+    text-align: center; }
     .author .author-info h3 {
       font-size: 32px;
       font-weight: 700;
       padding: 0;
-      margin: 0 0 20px 0; }
+      margin-top: 10px; }
     .author .author-info > a {
       display: inline-block;
       font-size: 16px;
-      margin-bottom: 20px; }
+      padding: 10px; }
     .author .author-info p {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1.5;
       opacity: .7; }
+
+@media (min-width: 720px) {
+  .site-main > p {
+    font-size: 16px; }
+  .author {
+    display: flex;
+    width: 100%;
+    margin: 40px 0 0 0;
+    padding: 40px 0 0 0;
+    border-top: 1px solid black; }
+    .author .author-image {
+      flex: 1; }
+      .author .author-image div {
+        height: 300px;
+        width: 225px; }
+    .author .author-info {
+      flex: 3;
+      padding: 0 30px;
+      text-align: left; }
+      .author .author-info h3 {
+        font-size: 32px;
+        font-weight: 700;
+        padding: 0; }
+      .author .author-info > a {
+        padding: 10px 0;
+        display: inline-block;
+        font-size: 16px; }
+      .author .author-info p {
+        font-size: 16px;
+        line-height: 1.5;
+        opacity: .7; } }
 
 /*--------------------------------------------------------------
 # vendors
