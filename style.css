@@ -107,7 +107,7 @@ em {
 
 a {
   text-decoration: none;
-  color: black; }
+  color: #27b6df; }
 
 h1 {
   font-size: 60px;
@@ -163,6 +163,10 @@ h4 {
   padding: 30px 30px 0 30px; }
   .content-area p {
     line-height: 2; }
+    .content-area p .content-area {
+      line-height: 2.0;
+      margin-top: 20px;
+      font-family: 'Open Sans'; }
   .content-area ul {
     padding: 5px 25px;
     list-style: circle; }

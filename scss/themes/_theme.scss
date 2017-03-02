@@ -15,7 +15,7 @@ em {
 
 a {
 	text-decoration: none;
-	color: black;
+	color: #27b6df;
 }
 
 h1 {
@@ -43,7 +43,7 @@ h4 {
 }
 
 .border-top {
-	border-top: 10px solid #61A3B7; 
+	border-top: 10px solid #61A3B7;
 }
 
 .wp-caption-text {
@@ -71,7 +71,7 @@ h4 {
 
 .aligncenter {
 	display: block;
-	margin: auto; 
+	margin: auto;
 
 	.wp-caption-text {
 		text-align: center;
@@ -89,6 +89,12 @@ h4 {
 
 	p {
 		line-height: 2;
+
+		.content-area {
+			line-height: 2.0;
+			margin-top: 20px;
+			font-family: 'Open Sans';
+		}
 	}
 
 	ul {
