@@ -20,10 +20,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php 
-			the_title( '<h1 class="entry-title">', '</h1>' );
-			the_content();
+				the_title( '<h1 class="entry-title">', '</h1>' );
+				the_content();
 			?>
 		</main><!-- #main -->
+		<?php get_sidebar();?>
 	</div><!-- #primary -->
 
 <?php

@@ -9,7 +9,6 @@
 global $post;
 the_post();
 $id = get_the_ID();
-$title = get_the_title();
 $authors = get_post_meta($id,"authors",true);
 $auth_url = get_post_meta($id,"auth-url",true);
 $auth_info = get_post_meta($id,"auth-info",true);
@@ -20,7 +19,7 @@ get_header();
 	<div id="primary" class="content-area border-top">
 		<main id="main" class="site-main" role="main">
 			
-			<h3 class="entry-title"><?=$title?></h3>
+			<?php the_title( '<h1 class="entry-title">', '</h1>' );?>
 			<?php the_content();?>
 
 			<?php if(!empty($authors)) : ?>

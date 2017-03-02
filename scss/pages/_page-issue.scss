@@ -1,0 +1,27 @@
+.issue-display {
+	display: block;
+
+	.issue-container {
+		padding: 15px 0;
+		.issue-image {
+			width: 175px;
+			height: 250px;
+			margin: auto;
+			margin-bottom: 10px;
+			background-color: purple;
+		}
+
+		.issue-info {
+			text-align: center;
+		}
+	}
+}
+
+@include media(">=tablet") {
+	.issue-display{
+		display: flex;
+		.issue-container{
+			flex: 1;
+		}
+	}
+}

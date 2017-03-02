@@ -127,8 +127,6 @@ h3 {
   font-family: 'PlayFair Display', serif; }
 
 h4 {
-  text-transform: uppercase;
-  font-weight: 800;
   font-size: 16px; }
 
 .border-top {
@@ -689,6 +687,25 @@ footer {
         font-size: 16px;
         line-height: 1.5;
         opacity: .7; } }
+
+.issue-display {
+  display: block; }
+  .issue-display .issue-container {
+    padding: 15px 0; }
+    .issue-display .issue-container .issue-image {
+      width: 175px;
+      height: 250px;
+      margin: auto;
+      margin-bottom: 10px;
+      background-color: purple; }
+    .issue-display .issue-container .issue-info {
+      text-align: center; }
+
+@media (min-width: 720px) {
+  .issue-display {
+    display: flex; }
+    .issue-display .issue-container {
+      flex: 1; } }
 
 /*--------------------------------------------------------------
 # vendors
