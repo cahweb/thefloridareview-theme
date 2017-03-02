@@ -106,7 +106,8 @@ em {
   font-style: oblique; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
 
 h1 {
   font-size: 60px;
@@ -165,7 +166,7 @@ h4 {
     .content-area p .content-area {
       line-height: 2.0;
       margin-top: 20px;
-      font-family: 'Open Sans'; }
+      font-family: "Open Sans", sans-serif; }
   .content-area ul {
     padding: 5px 25px;
     list-style: circle; }
