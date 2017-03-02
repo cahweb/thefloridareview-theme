@@ -15,7 +15,10 @@ em {
 
 a {
 	text-decoration: none;
-	color: #27b6df;
+
+	.content-area {
+		color: #27b6df;
+	}
 }
 
 h1 {

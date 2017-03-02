@@ -106,8 +106,9 @@ em {
   font-style: oblique; }
 
 a {
-  text-decoration: none;
-  color: #27b6df; }
+  text-decoration: none; }
+  a .content-area {
+    color: #27b6df; }
 
 h1 {
   font-size: 60px;
