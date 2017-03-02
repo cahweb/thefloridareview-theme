@@ -42,6 +42,28 @@ h4 {
 	font-size: 16px;
 }
 
+div {
+ .content-area {
+
+	 p {
+		 line-height: 2.0;
+		 margin-top: 20px;
+		 font-family: "Open Sans", sans-serif;
+	 }
+
+	 a {
+		 color: #27b6df;
+	 }
+	}
+
+	.sidebar {
+
+		li > a {
+			color: black;
+		}
+	}
+}
+
 .border-top {
 	border-top: 10px solid #61A3B7;
 }
@@ -89,12 +111,6 @@ h4 {
 
 	p {
 		line-height: 2;
-
-		.content-area {
-			line-height: 2.0;
-			margin-top: 20px;
-			font-family: "Open Sans", sans-serif;
-		}
 	}
 
 	ul {
@@ -128,10 +144,6 @@ h4 {
 	.content-area {
 		display: flex;
 		padding: 30px 60px 0px 60px;
-
-		div a {
-			color:#27b6df;
-		}
 	}
 
 	.entry-title {

@@ -129,6 +129,17 @@ h3 {
 h4 {
   font-size: 16px; }
 
+div .content-area p {
+  line-height: 2.0;
+  margin-top: 20px;
+  font-family: "Open Sans", sans-serif; }
+
+div .content-area a {
+  color: #27b6df; }
+
+div .sidebar li > a {
+  color: black; }
+
 .border-top {
   border-top: 10px solid #61A3B7; }
 
@@ -163,10 +174,6 @@ h4 {
   padding: 30px 30px 0 30px; }
   .content-area p {
     line-height: 2; }
-    .content-area p .content-area {
-      line-height: 2.0;
-      margin-top: 20px;
-      font-family: "Open Sans", sans-serif; }
   .content-area ul {
     padding: 5px 25px;
     list-style: circle; }
@@ -187,8 +194,6 @@ h4 {
   .content-area {
     display: flex;
     padding: 30px 60px 0px 60px; }
-    .content-area div a {
-      color: #27b6df; }
   .entry-title {
     font-size: 50px;
     text-align: left;
