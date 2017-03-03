@@ -21,6 +21,11 @@
 				$issue_num = get_post_meta($id,"issue-num",true);
 				$cov_date = get_post_meta($id,"cov-date",true);
 				$permalink = get_the_permalink();
+
+				if(empty($thumbnail)){
+					$thumbnail = get_stylesheet_directory_uri() . "/public/images/emptyIssue.png";
+				}
+
 				if($count % $issues_per_row == 0)
 					echo "<div class=\"issue-display\">";
 		?>
