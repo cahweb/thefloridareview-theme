@@ -182,6 +182,12 @@ div .sidebar li > a {
       letter-spacing: 1.2;
       line-height: 2; }
 
+* {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease; }
+
 @media (min-width: 720px) {
   h2 {
     font-size: 40px;
@@ -701,22 +707,28 @@ footer {
 
 .issue-display {
   display: block; }
-  .issue-display .issue-container {
-    padding: 15px 0; }
-    .issue-display .issue-container .issue-image {
-      width: 175px;
-      height: 250px;
-      margin: auto;
-      margin-bottom: 10px;
-      background-color: purple; }
-    .issue-display .issue-container .issue-info {
-      text-align: center; }
+
+.issue-container {
+  padding: 15px 0;
+  cursor: pointer; }
+  .issue-container .issue-image {
+    width: 175px;
+    height: 250px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: right;
+    box-shadow: 2px 2px 5px #888888; }
+    .issue-container .issue-image:hover {
+      box-shadow: 5px 5px 5px #888888; }
+  .issue-container .issue-info {
+    text-align: center; }
 
 @media (min-width: 720px) {
   .issue-display {
     display: flex; }
-    .issue-display .issue-container {
-      flex: 1; } }
+  .issue-container {
+    flex: 1; } }
 
 /*--------------------------------------------------------------
 # vendors

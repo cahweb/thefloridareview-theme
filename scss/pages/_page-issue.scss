@@ -1,27 +1,36 @@
 .issue-display {
 	display: block;
+}
 
-	.issue-container {
-		padding: 15px 0;
-		.issue-image {
-			width: 175px;
-			height: 250px;
-			margin: auto;
-			margin-bottom: 10px;
-			background-color: purple;
+.issue-container {
+	padding: 15px 0;
+	cursor: pointer;
+
+	.issue-image {
+		&:hover{
+			box-shadow: 5px 5px 5px #888888;
 		}
 
-		.issue-info {
-			text-align: center;
-		}
+		width: 175px;
+		height: 250px;
+		margin: auto;
+		margin-bottom: 10px;
+		background-size: cover;
+		background-position: right;
+		box-shadow: 2px 2px 5px #888888;
+	}
+
+	.issue-info {
+		text-align: center;
 	}
 }
 
 @include media(">=tablet") {
 	.issue-display{
 		display: flex;
-		.issue-container{
-			flex: 1;
-		}
+	}
+
+	.issue-container{
+		flex: 1;
 	}
 }
