@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Wordpress starter theme for the UCF College of Arts and Humanities web development team",
   "main": "index.php",
-  "author": "Austin Tindle",
+  "author": "Alessandro Vecchi",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "./bin/build-css",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cahweb/starter-theme.git"
+    "url": "git+https://github.com/cahweb/thefloridareview.git"
   },
   "license": "ISC",
   "bugs": {
