@@ -578,11 +578,15 @@ footer {
           background-size: cover;
           background-position: center; }
         .article-display .article-container > a .article h4 {
-          margin: 15px 0; }
+          color: black;
+          font-weight: bold;
+          margin: 15px 0px 5px 0px; }
         .article-display .article-container > a .article h5 {
+          color: black;
           font-size: 14px;
           font-weight: 300; }
         .article-display .article-container > a .article h6 {
+          color: black;
           font-size: 14px;
           margin: 10px 0;
           font-weight: 100; }
