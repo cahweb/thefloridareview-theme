@@ -158,13 +158,13 @@ require get_template_directory() . '/includes/jetpack.php';
  * General custom functions
  * If you need to add a function put it here, and please comment it so
  * The next guy knows what the hell is going on.
- * Because chances are he'll also be an intern with 
+ * Because chances are he'll also be an intern with
  * very little PHP experience at first. Help the little guys out.
  ****/
 
-/** 
+/**
  * Little function to display logo in markup and to keep the code relatively clean
- * The default style (in the css) will make it overlay the header image/slideshow 
+ * The default style (in the css) will make it overlay the header image/slideshow
  */
 $default_logo_location = get_stylesheet_directory_uri() . '/public/images/logo.png';
 function display_logo( $logo_location ) {
@@ -201,3 +201,53 @@ function get_post_by_slug($slug) {
 		echo '<p>' . $returned_posts[0] -> post_content . '</p>';
 	}
 }
+
+/**
+ * Returns the permalink to a post's featured image.
+ */
+function get_featured_image_url($post_id) {
+
+	// Got a White Screen of Death when I ran this function, until I added in the
+	// try/catch statement. Not sure if that fixed it, or there was something else
+	// I was doing wrong.
+	try {
+
+		$thumb_id = get_post_thumbnail_id($post_id);
+
+	} catch (Exception $e) {
+
+		// Placeholder, in case we want to add some back-up functionality in the future.
+		return "#";
+	}
+
+	$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+	$thumb_url = $thumb_url_array[0];
+
+	return $thumb_url;
+}
+
+/**
+ * Add Open Graph meta tags to the post header, so FB and other Social Media crawlers can
+ * access the proper images and content when generating their share links.
+ */
+function add_open_graph_tags() {
+
+	global $post;
+
+	$post_id = $post->ID;
+
+	$og_meta = array(
+		"url" => get_permalink($post_id),
+		"type" => get_post_type($post_id),
+		"title" => get_the_title($post_id),
+		"description" => get_the_excerpt($post_id),
+		"image" => get_featured_image_url($post_id)
+	);
+
+	foreach ($og_meta as $key => $value) {
+
+		echo "<meta property=\"og:" . $key . "\" content=\"" . $value . "\" />\n";
+	}
+}
+
+add_action( 'wp_head', 'add_open_graph_tags' );
