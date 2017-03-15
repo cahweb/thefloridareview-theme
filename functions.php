@@ -241,12 +241,25 @@ function add_open_graph_tags() {
 		"type" => get_post_type($post_id),
 		"title" => get_the_title($post_id),
 		"description" => get_the_excerpt($post_id),
-		"image" => get_featured_image_url($post_id)
+		"image" => get_featured_image_url($post_id),
+		"site_name" => get_bloginfo('name'),
+		"locale" => get_locale()
 	);
 
 	foreach ($og_meta as $key => $value) {
 
 		echo "<meta property=\"og:" . $key . "\" content=\"" . $value . "\" />\n";
+	}
+
+	$twitter_meta = array(
+		"card" => "summary",
+		"site" => "@TheFLReview",
+		"image:src" => get_featured_image_url($post_id)
+	);
+
+	foreach ($twitter_meta as $key => $value) {
+
+		echo "<meta property=\"twitter:" . $key . "\" content=\"" . $value . "\" />\n";
 	}
 }
 
