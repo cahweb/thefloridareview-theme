@@ -232,6 +232,8 @@ function get_featured_image_url($post_id) {
  */
 function add_open_graph_tags() {
 
+	echo "\n<!-- Open Graph Tags -->\n";
+
 	global $post;
 
 	$post_id = $post->ID;
@@ -261,6 +263,8 @@ function add_open_graph_tags() {
 
 		echo "<meta property=\"twitter:" . $key . "\" content=\"" . $value . "\" />\n";
 	}
+
+	echo "<!-- end Open Graph Tags -->\n\n";
 }
 
 add_action( 'wp_head', 'add_open_graph_tags' );

@@ -2,42 +2,42 @@
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-sass/ 
-| 
-|– base/ 
-|   |– _normalize.scss       # Reset/normalize 
-| 
-|– components/ 
-|   |– _buttons.scss     	# Buttons 
-|   |– _carousel.scss    	# Carousel 
-|   |– _cover.scss       	# Cover 
-|   |– _dropdown.scss    	# Dropdown 
-|   |– _navigation.scss  	# Navigation 
+sass/
+|
+|– base/
+|   |– _normalize.scss       # Reset/normalize
+|
+|– components/
+|   |– _buttons.scss     	# Buttons
+|   |– _carousel.scss    	# Carousel
+|   |– _cover.scss       	# Cover
+|   |– _dropdown.scss    	# Dropdown
+|   |– _navigation.scss  	# Navigation
 |	|- _sidebar.scss		# Sidebar
-| 
+|
 |– helpers/
-|   |– _variables.s```   	# Sass Variables 
-|   |– _functions.scss   	# Sass Functions 
-|   |– _mixins.scss      	# Sass Mixins 
-|   |– _helpers.scss     	# Class & placeholders helpers 
+|   |– _variables.s```   	# Sass Variables
+|   |– _functions.scss   	# Sass Functions
+|   |– _mixins.scss      	# Sass Mixins
+|   |– _helpers.scss     	# Class & placeholders helpers
 |	|- _include-media.scss	# include media Framework
-| 
-|– layout/ 
-|   |– _grid.scss        	# Grid system 
-|   |– _header.scss      	# Header 
-|   |– _footer.scss      	# Footer 
-|   |– _forms.scss       	# Forms 
-| 
-|– pages/ 
+|
+|– layout/
+|   |– _grid.scss        	# Grid system
+|   |– _header.scss      	# Header
+|   |– _footer.scss      	# Footer
+|   |– _forms.scss       	# Forms
+|
+|– pages/
 |   |– _front-page.scss	 # Front-Page specific styles
-| 
-|– themes/ 
-|   |– _theme.scss       # Default theme 
-|   |– _admin.scss       # Admin theme 
-| 
+|
+|– themes/
+|   |– _theme.scss       # Default theme
+|   |– _admin.scss       # Admin theme
+|
 |– vendors/
-| 
-| 
+|
+|
 `– main.scss             # primary Sass file
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -755,3 +755,6 @@ footer {
       margin-top: 5px;
       line-height: 1;
       font-size: 14px; }
+
+div .article-row a {
+  color: black; }
