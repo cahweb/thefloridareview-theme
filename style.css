@@ -748,13 +748,17 @@ footer {
     vertical-align: top;
     width: 70%; }
     .article-row .article-text h4 {
-      font-family: 'PlayFair Display', sans-serif;
+      /* font-family: 'PlayFair Display', sans-serif; */
       font-weight: 700;
       font-size: 16px; }
     .article-row .article-text p {
       margin-top: 5px;
       line-height: 1;
       font-size: 14px; }
+
+p .category-list {
+  margin-top: 10px;
+  font-size: 12px; }
 
 div .article-row a {
   color: black; }
