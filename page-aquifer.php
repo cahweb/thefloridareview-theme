@@ -4,10 +4,29 @@
 	<main id="main" class="site-main" role="main">
 		<?php
 
-			$display_categories = array(6 => "Fiction", 8 => "Interview", 9 => "Non-Fiction", 10 => "Poetry", 15 => "Book Review", 16 => "Digital Stories", 17 => "Graphic Narrative");
+			$display_categories = array("All", "Fiction", "Non-Fiction", "Poetry", "Graphic Narrative", "Digital Stories", "Interview", "Book Review");
 
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
+		?>
+
+		<h4><em>Show:</em></h4>
+
+		<div id="filter-bar" class="flex-container">
+
+			<?php foreach ($display_categories as $item) { ?>
+
+				<div id="<?=strtolower($item)?>" class="flex-item" data-is-selected="false" onclick="updateSelection(this)">
+					<a href="#sort-<?=strtolower($item)?>"><p><?=strtoupper($item)?></p></a>
+				</div>
+
+			<?php
+				}
+			?>
+
+		</div> <!-- end filter-bar -->
+
+		<?php
 			$query = new WP_Query(array(
 			    'post_type' => 'article',
 			    'post_status' => 'publish'
@@ -30,7 +49,18 @@
 						array_push($categories_to_show, $cat->name);
 				}
 
-				// Skip the filler
+				//Arrange categories in a string for filter handling.
+				$js_filter_list = "";
+
+				foreach ($categories_to_show as $cat) {
+
+					$js_filter_list .= strtolower($cat);
+
+					if (next($categories_to_show) !== false)
+						$js_filter_list .= " ";
+				}
+
+				// Skip the filler content
 				if ($title == "Coming Soon!")
 					continue;
 
@@ -43,15 +73,17 @@
 			    else
 			    	$thumbnail = get_stylesheet_directory_uri() . "/public/images/empty.png";
 		?>
-				<div class="article-row"><a href="<?=$permalink?>">
+				<div class="article-row" data-is-category="<?=$js_filter_list?>"><a href="<?=$permalink?>">
 					<div class="article-thumb" style="background-image: url(<?=$thumbnail?>);"></div>
 					<div class="article-text">
 						<h4><?=$title?></h4>
 						<p><?=substr($excerpt,0,125)?></p></a>
-						<p class="category-list"><em><?php $cat_out = "";
+						<p style="margin-top: 10px; font-size: 12px;"><em>
+
+							<?php $cat_out = "";
 								 foreach ($categories_to_show as $cat_name) {
 
-									 $cat_out .= $cat_name;
+									 $cat_out .= "<a href=\"#sort-" . strtolower($cat_name) . "\">" . $cat_name . "</a>";
 
 									 if (next($categories_to_show) !== false)
 									 	$cat_out .= ", ";
@@ -59,8 +91,8 @@
 
 								 echo $cat_out;
 							?></em></p>
-					</div>
-				</div>
+					</div> <!-- end article-text -->
+				</div> <!-- end article-row -->
 
 		<?php
 			}

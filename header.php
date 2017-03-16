@@ -34,7 +34,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site container">
-	<header id="masthead" class="site-header <?=(in_category("aquifer")) ? "aquifer-header" : "" ?>" role="banner">
+	<header id="masthead" class="site-header <?=(in_category("aquifer") || is_page("aquifer")) ? "aquifer-header" : "" ?>" role="banner">
 
 		<!-- Navigation -->
 		<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -43,7 +43,7 @@
 
 			if(is_front_page())
 				display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');
-			else if(in_category("aquifer"))
+			else if(in_category("aquifer") || is_page("aquifer"))
 				echo "<img class=\"site-logo aquifer-logo\" src=\"".get_stylesheet_directory_uri().'/public/images/aquifer-compact.png'."\">";
 			else
 				echo "<img class=\"site-logo bird-logo\" src=\"".get_stylesheet_directory_uri().'/public/images/logobird.png'."\">";

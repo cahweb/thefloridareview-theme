@@ -1,0 +1,21 @@
+@mixin flexbox {
+    display:    -webkit-flex;
+    display:            flex;
+    -webkit-flex-wrap:  wrap;
+    flex-wrap:          wrap;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius:  $radius;
+    -moz-border-radius:     $radius;
+    -ms-border-radius:      $radius;
+    border-radius:          $radius;
+}
+
+@mixin quick-set-transition($args) {
+
+    -webkit-transition: $args;
+    -moz-transition:    $args;
+    -ms-transition:     $args;
+    -o-transition:      $args;
+}

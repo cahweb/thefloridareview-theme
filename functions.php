@@ -118,6 +118,8 @@ function cah_starter_scripts() {
 
 	wp_enqueue_script( 'cah-starter-skip-link-focus-fix', get_template_directory_uri() . '/public/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'aquifer_sort', get_template_directory_uri() . '/public/js/aquifer-sort.js', array('jquery'), '20170316', true );
+
 	// UCF Header bar
 	wp_enqueue_script( 'cahweb-starter-ucfhb-script', '//universityheader.ucf.edu/bar/js/university-header.js', array(), '20151215', true );
 

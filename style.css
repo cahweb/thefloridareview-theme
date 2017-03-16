@@ -245,7 +245,7 @@ button {
     font-family: Lato; }
     .menu li a {
       text-decoration: none; }
-  .menu li a:hover {
+  .menu li a:hover, .menu li .flex-container .flex-item a:active, .flex-container .flex-item .menu li a:active {
     text-decoration: underline; }
 
 .aquifer-header .main-navigation .menu-toggle {
@@ -723,7 +723,7 @@ footer {
     background-size: cover;
     background-position: right;
     box-shadow: 2px 2px 5px #888888; }
-    .issue-container .issue-image:hover {
+    .issue-container .issue-image:hover, .issue-container .flex-container .flex-item .issue-image:active, .flex-container .flex-item .issue-container .issue-image:active {
       box-shadow: 5px 5px 5px #888888; }
   .issue-container .issue-info {
     text-align: center; }
@@ -756,9 +756,33 @@ footer {
       line-height: 1;
       font-size: 14px; }
 
-p .category-list {
-  margin-top: 10px;
-  font-size: 12px; }
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .flex-container .flex-item {
+    margin: 5px;
+    padding: 0px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid black;
+    /*background: white;
+		color: black; */
+    -webkit-transition: initial;
+    -moz-transition: initial;
+    -ms-transition: initial;
+    -o-transition: initial; }
+    .flex-container .flex-item p {
+      margin: 0px;
+      padding: 0px 5px;
+      font-size: 14px;
+      font-weight: 700; }
+    .flex-container .flex-item :hover, .flex-container .flex-item :active {
+      background: black;
+      color: white; }
 
-div .article-row a {
-  color: black; }
+div .article-row a, div .flex-item a {
+  color: inherit; }

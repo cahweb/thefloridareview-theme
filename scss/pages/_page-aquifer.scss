@@ -30,19 +30,43 @@
 	}
 }
 
-p {
-	.category-list {
-		margin-top: 10px;
-		font-size: 12px;
+.flex-container {
+
+	@include flexbox;
+
+	.flex-item {
+		margin: 5px;
+		padding: 0px;
+		@include border-radius(8px);
+		border: 1px solid black;
+		/*background: white;
+		color: black; */
+		@include quick-set-transition(initial);
+
+		p {
+			margin: 0px;
+			padding: 0px 5px;
+			font-size: 14px;
+			font-weight: 700;
+		}
+
+		:hover {
+			background: black;
+			color: white;
+		}
+
+		:active {
+			@extend :hover;
+		}
 	}
 }
 
 div {
 
-	.article-row {
+	.article-row, .flex-item {
 
 		a {
-			color: black;
+			color: inherit;
 		}
 	}
 }
