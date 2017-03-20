@@ -642,6 +642,11 @@ footer {
       width: 1000px;
       content: url("./public/images/banner.png"); } }
 
+div #primary pre {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 2;
+  margin-top: 25px; }
+
 .site-main > p {
   font-size: 14px; }
 
