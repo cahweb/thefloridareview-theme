@@ -134,6 +134,11 @@ div .content-area p {
   margin-top: 20px;
   font-family: "Open Sans", sans-serif; }
 
+div .content-area pre {
+  line-height: 2.0;
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif; }
+
 div .content-area a {
   color: #27b6df; }
 
@@ -645,7 +650,7 @@ footer {
 div #primary pre {
   font-family: 'Open Sans', sans-serif;
   line-height: 2;
-  margin-top: 25px; }
+  margin-top: 20px; }
 
 .site-main > p {
   font-size: 14px; }
