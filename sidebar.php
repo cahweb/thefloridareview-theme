@@ -34,15 +34,29 @@
 			    $query->the_post();
 			    $post_id = get_the_id();
 			    $post_title = get_the_title();
-				
+
 				echo "<a href=\"".get_the_permalink()."\"><li>".$post_title."</a>";
 
 			}
+
 		?>
 	</ul>
 
-	<?php?>
+	<?php
 
-	<a href="#">More</a>
+		$more_url = get_site_url();
+
+		if ($post_type != "article") {
+
+			$more_url .= "/about";
+
+		} else {
+
+			$more_url .= "/aquifer";
+		}
+
+	?>
+
+	<a href=<?=$more_url?>>More</a>
 
 </div>

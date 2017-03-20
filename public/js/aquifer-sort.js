@@ -1,8 +1,21 @@
 jQuery(document).ready(function($) {
 
-    $("#all").attr("data-is-selected", "true");
+    var pathname = window.location.pathname;
+    var url = window.location.href;
 
-    updateSortCSS();
+    activeType = url.exec(/.*(#.*)/)[1]
+
+    if (activeType != null) {
+        newActiveType = jQuery(activeType).attr("id");
+
+        updateSelection(newActiveType);
+
+    } else {
+
+        $("#all").attr("data-is-selected", "true");
+        updateSortCSS();
+        
+    }
 });
 
 function updateSelection(id) {

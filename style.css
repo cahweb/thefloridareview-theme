@@ -555,6 +555,11 @@ footer {
   border-radius: 5px;
   padding: 10px 30px; }
 
+div .read-more-body {
+  float: right;
+  align-self: flex-end;
+  margin-bottom: 5px; }
+
 .aquifer-banner {
   padding: 20px;
   text-align: center; }

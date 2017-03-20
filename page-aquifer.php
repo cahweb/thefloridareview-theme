@@ -4,7 +4,7 @@
 	<main id="main" class="site-main" role="main">
 		<?php
 
-			$display_categories = array("All", "Fiction", "Non-Fiction", "Poetry", "Graphic Narrative", "Digital Stories", "Interview", "Book Review");
+			$display_categories = array("all" => "All", "fiction" => "Fiction", "non-fiction" => "Non-Fiction", "poetry" => "Poetry", "graphic-narrative" => "Graphic Narrative", "digital-stories" => "Digital Stories", "interview" => "Interview", "book-review" => "Book Review");
 
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
@@ -14,10 +14,10 @@
 
 		<div id="filter-bar" class="flex-container">
 
-			<?php foreach ($display_categories as $item) { ?>
+			<?php foreach ($display_categories as $key => $item) { ?>
 
-				<div id="<?=strtolower($item)?>" class="flex-item" data-is-selected="false" onclick="updateSelection(this)">
-					<a href="#sort-<?=strtolower($item)?>"><p><?=strtoupper($item)?></p></a>
+				<div id="<?=$key?>" class="flex-item" data-is-selected="false" onclick="updateSelection(this)">
+					<a href="#<?=$key?>"><p><?=strtoupper($item)?></p></a>
 				</div>
 
 			<?php
@@ -54,11 +54,13 @@
 
 				foreach ($categories_to_show as $cat) {
 
-					$js_filter_list .= strtolower($cat);
+					$js_filter_list .= str_replace(" ", "-", $cat);
 
 					if (next($categories_to_show) !== false)
 						$js_filter_list .= " ";
 				}
+
+				$js_filter_list = strtolower($js_filter_list);
 
 				// Skip the filler content
 				if ($title == "Coming Soon!")
@@ -78,12 +80,12 @@
 					<div class="article-text">
 						<h4><?=$title?></h4>
 						<p><?=substr($excerpt,0,125)?></p></a>
-						<p style="margin-top: 10px; font-size: 12px;"><em>
+						<p style="margin-top: 10px; font-size: 12px;" onclick="updateSelection('#<?=$js_filter_list?>')"><em>
 
 							<?php $cat_out = "";
 								 foreach ($categories_to_show as $cat_name) {
 
-									 $cat_out .= "<a href=\"#sort-" . strtolower($cat_name) . "\">" . $cat_name . "</a>";
+									 $cat_out .= "<a href=\"#" . strtolower(str_replace(" ", "-", $cat_name)) . "\">" . $cat_name . "</a>";
 
 									 if (next($categories_to_show) !== false)
 									 	$cat_out .= ", ";

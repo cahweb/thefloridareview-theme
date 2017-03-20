@@ -7,13 +7,13 @@
  *
  * @package cah-starter
  */
-get_header(); 
+get_header();
 ?>
 
-<?php 
+<?php
 	// TODO: fix this hack. This is a quick fix that should be changed
-	// Super janky, On front page end the #page div and #content div which constrain 
-    // the width of elements, so that the header will be full page width ?>	
+	// Super janky, On front page end the #page div and #content div which constrain
+    // the width of elements, so that the header will be full page width ?>
 
 </div> <!-- end site container -->
 </div> <!-- end site-content -->
@@ -53,10 +53,10 @@ get_header();
 	</div>
 </div>
 
-<?php 
+<?php
 	// TODO: fix this hack. This is a quick fix that should be changed
-	// Super janky, On front page start the #page div and #content div which constrain 
-    // the width of elements, so that the header will be full page width ?>	
+	// Super janky, On front page start the #page div and #content div which constrain
+    // the width of elements, so that the header will be full page width ?>
 
 <div id="page" class="site container">
 <div id="content" class="site-content">
@@ -85,7 +85,7 @@ get_header();
 				<h2><?=$article_cat?></h2>
 				<div class="article-container">
 
-					<?php 
+					<?php
 					$query = new WP_Query(array(
 					    'post_type' => 'article',
 					    'post_status' => 'publish',
@@ -99,13 +99,13 @@ get_header();
 					    $post_title = get_the_title();
 					    $authors = get_post_meta($post_id,"authors",true);
 					    $date = get_post_meta($post_id,"doi",true);
-						
+
 						if(kdmfi_has_featured_image("author-image", $post_id) && !has_post_thumbnail())
 							$thumbnail = kdmfi_get_featured_image_src( "author-image", "small", $post_id );
 
 					    else if(has_post_thumbnail())
 					    	$thumbnail = get_the_post_thumbnail_url($post_id);
-					    
+
 					    else
 					    	$thumbnail = get_stylesheet_directory_uri() . "/public/images/empty.png";
 
@@ -124,6 +124,10 @@ get_header();
 
 					wp_reset_postdata();
 					?>
+				</div>
+
+				<div class="read-more-body">
+					<a href="<?=get_site_url()?>/aquifer/"><em>Read More...</em></a>
 				</div>
 			</div>
 
