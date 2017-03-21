@@ -27,10 +27,12 @@
 		</div> <!-- end filter-bar -->
 
 		<?php
+			$aquiferID = (get_category_by_slug('aquifer'))->term_id;
+
 			$query = new WP_Query(array(
 			    'post_type' => 'article',
 			    'post_status' => 'publish',
-			    'category_name' => 'aquifer'
+			    'category__not_in' => array($aquiferID)
 			));
 
 			while ($query->have_posts()) {
