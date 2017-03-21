@@ -27,7 +27,8 @@
 		</div> <!-- end filter-bar -->
 
 		<?php
-			$aquiferID = (get_category_by_slug('aquifer'))->term_id;
+			$aquiferCat =get_category_by_slug('aquifer');
+			$aquiferID = $aquiferCat->term_id;
 
 			$query = new WP_Query(array(
 			    'post_type' => 'article',
