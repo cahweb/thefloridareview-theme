@@ -1,23 +1,47 @@
+/* Aquifer Sorter
+ *
+ * Script that handles the sort functionality on the main Aquifer page.
+ *
+ * By: Mike Leavitt
+ */
+
 jQuery(document).ready(function($) {
 
-    var pathname = window.location.pathname;
-    var url = window.location.href;
+    var pagePath = window.location.pathname;
+    var patt1 = /\/aquifer\//
 
-    activeType = url.exec(/.*(#.*)/)[1]
+    //Checks to see if we're on the Aquifer page.
+    if (patt1.test(pagePath)) {
 
-    if (activeType != null) {
-        newActiveType = jQuery(activeType).attr("id");
+        //Grabs the URL.
+        var url = window.location.href;
 
-        updateSelection(newActiveType);
+        // RegExp pattern, grouping together everything after the # marker.
+        var patt2 = /.*(#.*)/i;
 
-    } else {
+        //Grabs whatever is after the # marker.
+        activeType = patt2.exec(url)[1];
 
-        $("#all").attr("data-is-selected", "true");
-        updateSortCSS();
-        
+        //Tests to see if there's anything there.
+        if (activeType != null) {
+
+            //If so, updates the selected category right off the bat.
+            updateSelection(activeType);
+
+        } else {
+
+            //Otherwise, defaults to "All".
+            $("#all").attr("data-is-selected", "true");
+            updateSortCSS();
+
+        }
     }
 });
 
+/* Master update function. Accepts a JQuery/HTML #id as a parameter, changes the various
+ * data-is-selected attributes to reflect the current selected category (the passed #id),
+ * and then calls the other functions to update the actual look of the page.
+ */
 function updateSelection(id) {
 
     jQuery('.flex-item').attr("data-is-selected", "false");
@@ -27,8 +51,12 @@ function updateSelection(id) {
 
     updateSortCSS();
     updateSortVisible(active);
+
+    return;
 }
 
+/* Updates the appearances of the sort buttons to reflect the currently selected button.
+ */
 function updateSortCSS() {
 
     var sortButtons = jQuery('.flex-item').toArray();
@@ -50,6 +78,9 @@ function updateSortCSS() {
     return;
 }
 
+/* Loops through the article rows, shows all that match the currently selected category,
+ * and hides the others.
+ */
 function updateSortVisible(id) {
 
     var active = id;

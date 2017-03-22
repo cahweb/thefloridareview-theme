@@ -127,8 +127,15 @@ get_header();
 					?>
 				</div>
 
+				<?
+					$read_more_url = get_site_url() . "/aquifer/";
+
+					if ($article_cat != "Literary Features")
+						$read_more_url .= "#" . $slugs[$article_cat];
+				?>
+
 				<div class="read-more-body">
-					<a href="<?=get_site_url()?>/aquifer/"><em>Read More...</em></a>
+					<a href="<?=$read_more_url?>"><em>Read More...</em></a>
 				</div> <!-- /read-more-body -->
 				</div> <!-- /article-wrapper -->
 			</div> <!-- /article-display -->
