@@ -55,7 +55,6 @@
 div .read-more-body {
 	float: right;
 	align-self: flex-end;
-	margin-bottom: 5px;
 }
 
 .aquifer-banner {
@@ -68,6 +67,11 @@ div .read-more-body {
 		//width: 100%;
 	}
 
+}
+
+.article-wrapper {
+	@include flexbox;
+	@include flex-direction(column);
 }
 
 .article-display {

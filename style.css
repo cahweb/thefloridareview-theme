@@ -557,14 +557,21 @@ footer {
 
 div .read-more-body {
   float: right;
-  align-self: flex-end;
-  margin-bottom: 5px; }
+  align-self: flex-end; }
 
 .aquifer-banner {
   padding: 20px;
   text-align: center; }
   .aquifer-banner img {
     width: 300px; }
+
+.article-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
 
 .article-display {
   display: block;

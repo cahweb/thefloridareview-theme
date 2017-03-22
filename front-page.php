@@ -69,11 +69,11 @@ get_header();
 	<main id="main" class="site-main" role="main">
 		<?php
 
-			$article_displays = array("Literary Features", "Writer Interviews", "Book Reviews", "Digital Stories");
+			$article_displays = array("Literary Features", "Interviews", "Book Reviews", "Digital Stories");
 
 			$slugs = array(
 				"Literary Features" => "literary-features",
-				"Writer Interviews" => "interview",
+				"Interviews" => "interview",
 				"Book Reviews" => "book-review",
 				"Digital Stories" => "digital-stories"
 			);
@@ -83,6 +83,7 @@ get_header();
 
 			<div class="article-display">
 				<h2><?=$article_cat?></h2>
+				<div class="article-wrapper">
 				<div class="article-container">
 
 					<?php
@@ -128,8 +129,9 @@ get_header();
 
 				<div class="read-more-body">
 					<a href="<?=get_site_url()?>/aquifer/"><em>Read More...</em></a>
-				</div>
-			</div>
+				</div> <!-- /read-more-body -->
+				</div> <!-- /article-wrapper -->
+			</div> <!-- /article-display -->
 
 
 		<?php
