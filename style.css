@@ -804,7 +804,11 @@ div #primary pre {
       font-weight: 700; }
     .flex-container .flex-item :hover, .flex-container .flex-item :active {
       background: black;
-      color: white; }
+      color: white;
+      -webkit-border-radius: 7px;
+      -moz-border-radius: 7px;
+      -ms-border-radius: 7px;
+      border-radius: 7px; }
 
 div .article-row a, div .flex-item a {
   color: inherit; }

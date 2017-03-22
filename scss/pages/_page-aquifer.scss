@@ -53,6 +53,7 @@
 		:hover {
 			background: black;
 			color: white;
+			@include border-radius(7px);
 		}
 
 		:active {
