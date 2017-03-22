@@ -2,6 +2,10 @@
 	display: none;
 }
 
+.feed-link {
+	margin-top: 10px;
+}
+
 @include media(">=desktop"){
 	.sidebar {
 	flex: 1;
@@ -30,7 +34,7 @@
 	>a {
 		font-style: italic;
 		color: #61A3B7;
-	} 
-	
+	}
+
 }
 }

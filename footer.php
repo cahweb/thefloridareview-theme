@@ -21,26 +21,30 @@
 			the_post();
 			$thanks = get_the_content();
 	?>
-		<?php 
+		<?php
 			// TODO: fix this hack. This is a quick fix that should be changed
 			// Super janky, if is front page end the #page div which constrains the width
-		    // of elements, so that the footer will be full page width ?>	
+		    // of elements, so that the footer will be full page width ?>
 		</div><!-- #page -->
 
 		<div class="thanks">
-			
+
 			<img src="<?=get_stylesheet_directory_uri() . "/public/images/bird.png"?>">
 			<?php
 				echo wpautop($thanks);
 			?>
 
-		</div>	
+		</div>
 
 	<?php endif;?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php wp_nav_menu(array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ));
 		?>
+		<div class="feed-link">
+			<a href="<?=get_site_url()?>/feed"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/uploads/2017/03/feed-icon-28x28.png" alt="Subscribe!" /></a>
+		</div> <!-- /.feed-link -->
+
 		<p>Copyright &copy; 2016 The Florida Review, University of Central Florida</p>
 	</footer><!-- #colophon -->
 
