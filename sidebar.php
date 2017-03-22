@@ -60,7 +60,7 @@
 	<a href=<?=$more_url?>>More...</a>
 
 	<div class="feed-link">
-		<a href="<?=get_site_url()?>/feed"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/uploads/2017/03/feed-icon-28x28.png" alt="Subscribe!" /></a>
+		<a href="<?=get_site_url()?>/feed"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/uploads/sites/34/2017/03/feed-icon-28x28.png" alt="Subscribe!" /></a>
 	</div> <!-- /.feed-link -->
 
 </div>
