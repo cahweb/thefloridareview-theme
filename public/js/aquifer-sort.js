@@ -7,14 +7,11 @@
 
 jQuery(document).ready(function($) {
 
-    var pagePath = window.location.pathname;
+    var url = window.location.href;
     var patt1 = /\/aquifer\//
 
     //Checks to see if we're on the Aquifer page.
-    if (patt1.test(pagePath)) {
-
-        //Grabs the URL.
-        var url = window.location.href;
+    if (patt1.test(url)) {
 
         // RegExp pattern, grouping together everything after the # marker.
         var patt2 = /.*(#.*)/i;
