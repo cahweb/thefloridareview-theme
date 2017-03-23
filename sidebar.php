@@ -44,6 +44,7 @@
 
 	<?php
 
+		$uploads_folder = wp_upload_dir();
 		$more_url = get_site_url();
 
 		if ($post_type != "article") {
@@ -60,7 +61,7 @@
 	<a href=<?=$more_url?>>More...</a>
 
 	<div class="feed-link">
-		<a href="<?=get_site_url()?>/feed"><img class="img-responsive" src="<?=get_site_url()?>/wp-content/uploads/sites/34/2017/03/feed-icon-28x28.png" alt="Subscribe!" /></a>
+		<a href="<?=get_site_url()?>/feed"><img class="img-responsive" src="<?=$uploads_folder['baseurl']?>/2017/03/feed-icon-28x28.png" alt="Subscribe!" title="Subscribe!" /></a>
 	</div> <!-- /.feed-link -->
 
 </div>
