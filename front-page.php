@@ -11,6 +11,7 @@ get_header();
 ?>
 
 <?php
+
 	// TODO: fix this hack. This is a quick fix that should be changed
 	// Super janky, On front page end the #page div and #content div which constrain
     // the width of elements, so that the header will be full page width ?>
@@ -78,6 +79,13 @@ get_header();
 				"Digital Stories" => "digital-stories"
 			);
 
+			$category_types = array(
+				"fiction" => "Fiction",
+				"non-fiction" => "Non-Fiction",
+				"poetry" => "Poetry",
+				"graphic-narrative" => "Graphic Narrative"
+			);
+
 			foreach ($article_displays as $article_cat) {
 		?>
 
@@ -99,7 +107,8 @@ get_header();
 					    $post_id = get_the_id();
 					    $post_title = get_the_title();
 					    $authors = get_post_meta($post_id,"authors",true);
-					    $date = get_post_meta($post_id,"doi",true);
+					    $date = get_the_date();
+						$categories = get_the_category($post_id);
 
 						if(kdmfi_has_featured_image("author-image", $post_id) && !has_post_thumbnail())
 							$thumbnail = kdmfi_get_featured_image_src( "author-image", "small", $post_id );
@@ -110,13 +119,33 @@ get_header();
 					    else
 					    	$thumbnail = get_stylesheet_directory_uri() . "/public/images/empty.png";
 
+						if ($article_cat == "Literary Features") {
+
+							$post_category = [];
+							foreach ($categories as $item) {
+
+								if (in_array($item->name, $category_types))
+									array_push($post_category, $item->name);
+							}
+
+							$post_cat_out = "";
+							foreach ($post_category as $item) {
+								$post_cat_out .= $item;
+
+								if (next($post_category) !== false)
+									$post_cat_out .= ", ";
+							}
+						}
+
 					?>
 						<a href="<?=get_the_permalink();?>">
 							<div class="article">
 								<div style="background-image: url(<?=$thumbnail?>);"></div>
 								<h4><?=$post_title?></h4>
 								<h5><?="By ".$authors?></h5>
-								<h6><?=$date?></h6>
+								<p><? if ($article_cat == "Literary Features") { ?>
+									<em><?=$post_cat_out?></em><br />
+								<? } ?>
 							</div>
 						</a>
 
@@ -127,7 +156,7 @@ get_header();
 					?>
 				</div>
 
-				<?
+				<?php
 					$read_more_url = get_site_url() . "/aquifer/";
 
 					if ($article_cat != "Literary Features")

@@ -4,7 +4,16 @@
 	<main id="main" class="site-main" role="main">
 		<?php
 
-			$display_categories = array("all" => "All", "fiction" => "Fiction", "non-fiction" => "Non-Fiction", "poetry" => "Poetry", "graphic-narrative" => "Graphic Narrative", "digital-stories" => "Digital Stories", "interview" => "Interview", "book-review" => "Book Review");
+			$display_categories = array(
+				"all" => "All",
+				"fiction" => "Fiction",
+				"non-fiction" => "Non-Fiction",
+				"poetry" => "Poetry",
+				"graphic-narrative" => "Graphic Narrative",
+				"digital-stories" => "Digital Stories",
+				"interview" => "Interview",
+				"book-review" => "Book Review"
+			);
 
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
@@ -39,6 +48,8 @@
 				$title = get_the_title();
 				$excerpt = get_the_excerpt();
 				$permalink = get_the_permalink();
+				$pub_date = get_the_date();
+				$author = get_post_meta($id, "authors", true);
 				$categories = get_the_category();
 
 				//Get the article's relevant categories for display in the article row
@@ -80,13 +91,14 @@
 					<div class="article-thumb" style="background-image: url(<?=$thumbnail?>);"></div>
 					<div class="article-text">
 						<h4><?=$title?></h4>
+						<p><em>By <?=$author?></em></p>
 						<p><?=substr($excerpt,0,125)?></p></a>
 						<p style="margin-top: 10px; font-size: 12px;" onclick="updateSelection('#<?=$js_filter_list?>')"><em>
 
 							<?php $cat_out = "";
 								 foreach ($categories_to_show as $cat_name) {
 
-									 $cat_out .= "<a href=\"#" . strtolower(str_replace(" ", "-", $cat_name)) . "\">" . $cat_name . "</a>";
+									 $cat_out .= "<a href=\"#" . strtolower(str_replace(" ", "-", $cat_name)) . "\">" . $cat_name . "</a><span style=\"float: right;\">Published: " . $pub_date . "</span>";
 
 									 if (next($categories_to_show) !== false)
 									 	$cat_out .= ", ";

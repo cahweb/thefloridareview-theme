@@ -87,6 +87,7 @@ div .read-more-body {
 			width: 100%;
 			display: inline-block;
 			margin: 10px 0;
+			color: inherit;
 
 			.article {
 				width: 100%;
@@ -118,9 +119,14 @@ div .read-more-body {
 					font-weight: 100;
 				}
 
+				p {
+					line-height: 1.25;
+					font-size: 12px;
+					margin: 10px 0px 2px 0px;
+					font-weight: 100;
+				}
 			}
 		}
-
 	}
 }
 

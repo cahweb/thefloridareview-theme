@@ -589,7 +589,8 @@ div .read-more-body {
     .article-display .article-container > a {
       width: 100%;
       display: inline-block;
-      margin: 10px 0; }
+      margin: 10px 0;
+      color: inherit; }
       .article-display .article-container > a .article {
         width: 100%;
         display: inline-block;
@@ -612,6 +613,11 @@ div .read-more-body {
           color: black;
           font-size: 14px;
           margin: 10px 0;
+          font-weight: 100; }
+        .article-display .article-container > a .article p {
+          line-height: 1.25;
+          font-size: 12px;
+          margin: 10px 0px 2px 0px;
           font-weight: 100; }
 
 @media (min-width: 720px) {
