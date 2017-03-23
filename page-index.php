@@ -9,12 +9,9 @@
 			the_title( '<h1 class="entry-title">', '</h1>' );
 
 		?>
+<!--
 
-		<h4><em>Show:</em></h4>
-
-		<div id="filter-bar" class="flex-container">
-
-			<?php foreach ($display_categories as $key => $item) { ?>
+			<?php /*foreach ($display_categories as $key => $item) { ?>
 
 				<div id="<?=$key?>" class="flex-item" data-is-selected="false" onclick="updateSelection(this)">
 					<a href="#<?=$key?>"><p><?=strtoupper($item)?></p></a>
@@ -24,9 +21,9 @@
 				}
 			?>
 
-		</div> <!-- end filter-bar -->
+		</div> --><!-- end filter-bar -->
 
-		<?php
+		<!--<?php
 			$aquiferCat =get_category_by_slug('aquifer');
 			$aquiferID = $aquiferCat->term_id;
 
@@ -97,12 +94,12 @@
 
 								 echo $cat_out;
 							?></em></p>
-					</div> <!-- end article-text -->
-				</div> <!-- end article-row -->
+					</div> --><!-- end article-text -->
+				<!-- </div> --> <!-- end article-row -->
 
 		<?php
-			}
-		?>
+	} */
+		?> -->
 	</main>
 	<?php get_sidebar();?>
 </div>
