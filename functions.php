@@ -212,6 +212,7 @@ function get_featured_image_url($post_id) {
 	// Got a White Screen of Death when I ran this function, until I added in the
 	// try/catch statement. Not sure if that fixed it, or there was something else
 	// I was doing wrong.
+
 	try {
 
 		$thumb_id = get_post_thumbnail_id($post_id);
@@ -250,20 +251,38 @@ function add_open_graph_tags() {
 		"locale" => get_locale()
 	);
 
-	foreach ($og_meta as $key => $value) {
-
-		echo "<meta property=\"og:" . $key . "\" content=\"" . $value . "\" />\n";
-	}
-
 	$twitter_meta = array(
 		"card" => "summary",
 		"site" => "@TheFLReview",
 		"image:src" => get_featured_image_url($post_id)
 	);
 
+	if (is_front_page() || is_page("aquifer")) {
+
+		$upload_dir = wp_upload_dir();
+
+		$img_url = $upload_dir['baseurl'] . "/2017/03/";
+
+		if (is_front_page()) {
+			$img_url .= "TFR-og-splash-full.png";
+
+		} elseif (is_page("aquifer")) {
+			$img_url .= "Aquifer-og-splash-full.png";
+		}
+
+		$og_meta['image'] = $img_url;
+		$twitter_meta['image:src'] = $img_url;
+	}
+
+	foreach ($og_meta as $key => $value) {
+
+			echo "<meta property=\"og:" . $key . "\" content=\"" . $value . "\" />\n";
+	}
+
+
 	foreach ($twitter_meta as $key => $value) {
 
-		echo "<meta property=\"twitter:" . $key . "\" content=\"" . $value . "\" />\n";
+			echo "<meta property=\"twitter:" . $key . "\" content=\"" . $value . "\" />\n";
 	}
 
 	echo "<!-- end Open Graph Tags -->\n\n";
