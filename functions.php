@@ -118,7 +118,8 @@ function cah_starter_scripts() {
 
 	wp_enqueue_script( 'cah-starter-skip-link-focus-fix', get_template_directory_uri() . '/public/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'aquifer_sort', get_template_directory_uri() . '/public/js/aquifer-sort.js', array('jquery'), '20170316', true );
+	if (is_page('aquifer'))
+		wp_enqueue_script( 'aquifer_sort', get_template_directory_uri() . '/public/js/aquifer-sort.js', array('jquery'), '20170316', true );
 
 	// UCF Header bar
 	wp_enqueue_script( 'cahweb-starter-ucfhb-script', '//universityheader.ucf.edu/bar/js/university-header.js', array(), '20151215', true );
@@ -241,6 +242,8 @@ function add_open_graph_tags() {
 
 	$post_id = $post->ID;
 
+	// Create array of Open Graph data, with the keys as the part of the property attribute
+	// that follows "og:", and the value as the content.
 	$og_meta = array(
 		"url" => get_permalink($post_id),
 		"type" => get_post_type($post_id),
@@ -251,35 +254,47 @@ function add_open_graph_tags() {
 		"locale" => get_locale()
 	);
 
+	// Same thing as above, but for Twitter meta, which has a few platform-specific options.
 	$twitter_meta = array(
 		"card" => "summary",
 		"site" => "@TheFLReview",
-		"image:src" => get_featured_image_url($post_id)
+		"image:src" => $og_meta[ 'image' ]
 	);
 
+	// Setting the images for the TFR homepage and the Aquifer page. Will probably
+	// add further conditionals to this bit as the site expands, making sure we get
+	// the right images on the various pages. I might end up turning it into its
+	// own function eventually, if it gets bloated enough.
 	if (is_front_page() || is_page("aquifer")) {
 
+		// Grab the upload folder directory array.
 		$upload_dir = wp_upload_dir();
 
+		// Grab the base upload directory URL, and add the year and month of the
+		// images I created.
 		$img_url = $upload_dir['baseurl'] . "/2017/03/";
 
+		// If we're on the front page, set it to the general TFR sharing image.
 		if (is_front_page()) {
 			$img_url .= "TFR-og-splash-full.png";
 
+		// If we're on the Aquifer page, switch to the Aquifer splash image.
 		} elseif (is_page("aquifer")) {
 			$img_url .= "Aquifer-og-splash-full.png";
 		}
 
+		// Change the appropriate entries in the two above arrays.
 		$og_meta['image'] = $img_url;
 		$twitter_meta['image:src'] = $img_url;
 	}
 
+	// Build the actual Open Graph tags.
 	foreach ($og_meta as $key => $value) {
 
 			echo "<meta property=\"og:" . $key . "\" content=\"" . $value . "\" />\n";
 	}
 
-
+	// Ditto for Twitter.
 	foreach ($twitter_meta as $key => $value) {
 
 			echo "<meta property=\"twitter:" . $key . "\" content=\"" . $value . "\" />\n";
