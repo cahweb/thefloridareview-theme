@@ -210,22 +210,22 @@ function get_post_by_slug($slug) {
  */
 function get_featured_image_url($post_id) {
 
-	// Got a White Screen of Death when I ran this function, until I added in the
-	// try/catch statement. Not sure if that fixed it, or there was something else
-	// I was doing wrong.
+	if (kdmfi_has_featured_image("author-image", $post_id) && !has_post_thumbnail($post_id))
+		$thumb_url = kdmfi_get_featured_images_src("author-image", "small", $post_id);
 
-	try {
+	elseif (has_post_thumbnail() && !is_front_page())
+		$thumb_url = get_the_post_thumbnail_url($post_id);
 
-		$thumb_id = get_post_thumbnail_id($post_id);
+	else {
+		$uploads_dir = wp_upload_dir();
 
-	} catch (Exception $e) {
+		$thumb_url = $uploads_dir['baseurl'] . "/2017/03/";
 
-		// Placeholder, in case we want to add some back-up functionality in the future.
-		return "#";
+		if (in_category("aquifer") || is_page("aquifer"))
+			$thumb_url .= "Aquifer-og-splash-full.png";
+		else
+			$thumb_url .= "TFR-og-splash-full.png";
 	}
-
-	$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-	$thumb_url = $thumb_url_array[0];
 
 	return $thumb_url;
 }
@@ -260,33 +260,6 @@ function add_open_graph_tags() {
 		"site" => "@TheFLReview",
 		"image:src" => $og_meta[ 'image' ]
 	);
-
-	// Setting the images for the TFR homepage and the Aquifer page. Will probably
-	// add further conditionals to this bit as the site expands, making sure we get
-	// the right images on the various pages. I might end up turning it into its
-	// own function eventually, if it gets bloated enough.
-	if (is_front_page() || is_page("aquifer")) {
-
-		// Grab the upload folder directory array.
-		$upload_dir = wp_upload_dir();
-
-		// Grab the base upload directory URL, and add the year and month of the
-		// images I created.
-		$img_url = $upload_dir['baseurl'] . "/2017/03/";
-
-		// If we're on the front page, set it to the general TFR sharing image.
-		if (is_front_page()) {
-			$img_url .= "TFR-og-splash-full.png";
-
-		// If we're on the Aquifer page, switch to the Aquifer splash image.
-		} elseif (is_page("aquifer")) {
-			$img_url .= "Aquifer-og-splash-full.png";
-		}
-
-		// Change the appropriate entries in the two above arrays.
-		$og_meta['image'] = $img_url;
-		$twitter_meta['image:src'] = $img_url;
-	}
 
 	// Build the actual Open Graph tags.
 	foreach ($og_meta as $key => $value) {
