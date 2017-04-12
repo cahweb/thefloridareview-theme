@@ -16,21 +16,21 @@ jQuery(document).ready(function($) {
         // RegExp pattern, grouping together everything after the # marker.
         var patt2 = /.*(#.*)/i;
 
-        //Grabs whatever is after the # marker.
-        activeType = patt2.exec(url)[1];
+        if (patt2.test(url)) {
+            //Grabs whatever is after the # marker.
+            activeType = patt2.exec(url)[1];
 
-        //Tests to see if there's anything there.
-        if (activeType != null) {
+            //Tests to see if there's anything there.
+            if (activeType != null) {
 
-            //If so, updates the selected category right off the bat.
-            updateSelection(activeType);
+                //If so, updates the selected category right off the bat.
+                updateSelection(activeType);
+            }
 
         } else {
 
             //Otherwise, defaults to "All".
-            $("#all").attr("data-is-selected", "true");
-            updateSortCSS();
-
+            updateSelection("#all");
         }
     }
 });
