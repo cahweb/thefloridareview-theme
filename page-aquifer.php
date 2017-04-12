@@ -39,7 +39,8 @@
 			$query = new WP_Query(array(
 			    'post_type' => 'article',
 			    'post_status' => 'publish',
-			    'category_name' => 'aquifer'
+			    'category_name' => 'aquifer',
+				'posts_per_page' => -1
 			));
 
 			while ($query->have_posts()) {
