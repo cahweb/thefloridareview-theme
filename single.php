@@ -13,12 +13,12 @@ $authors = get_post_meta($id,"authors",true);
 $auth_url = get_post_meta($id,"auth-url",true);
 $auth_info = get_post_meta($id,"auth-info",true);
 
-get_header(); 
+get_header();
 ?>
 
 	<div id="primary" class="content-area border-top">
 		<main id="main" class="site-main" role="main">
-			
+
 			<?php the_title( '<h1 class="entry-title">', '</h1>' );?>
 			<?php the_content();?>
 
@@ -40,7 +40,7 @@ get_header();
 						<?php echo wpautop($auth_info, true)?>
 					</div>
 				</div>
-			
+
 			<?php endif;?>
 
 		</main><!-- #main -->

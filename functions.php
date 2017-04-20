@@ -211,12 +211,13 @@ function get_post_by_slug($slug) {
 function get_featured_image_url($post_id) {
 
 	if (kdmfi_has_featured_image("author-image", $post_id) && !has_post_thumbnail($post_id))
-		$thumb_url = kdmfi_get_featured_images_src("author-image", "small", $post_id);
+		$thumb_url = kdmfi_get_featured_image_src("author-image", "large", $post_id);
 
 	elseif (has_post_thumbnail() && !is_front_page())
 		$thumb_url = get_the_post_thumbnail_url($post_id);
 
 	else {
+
 		$uploads_dir = wp_upload_dir();
 
 		$thumb_url = $uploads_dir['baseurl'] . "/2017/03/";
@@ -225,7 +226,7 @@ function get_featured_image_url($post_id) {
 			$thumb_url .= "Aquifer-og-splash-full.png";
 		else
 			$thumb_url .= "TFR-og-splash-full.png";
-	}
+		}
 
 	return $thumb_url;
 }
