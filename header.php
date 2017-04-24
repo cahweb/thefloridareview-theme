@@ -14,6 +14,23 @@
 <head>
 	<?php // All scripts should be loaded in functions.php using cah_starter_scripts() or equivalent ?>
 
+	<title>
+		<?php
+
+			$title = get_bloginfo('name') . " at UCF";
+
+			if (!is_front_page()) {
+				global $post;
+				$postId = $post->ID;
+
+				$title = get_the_title($postId) . " | " . $title;
+			}
+
+			echo $title;
+
+		 ?>
+	</title>
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
