@@ -90,7 +90,8 @@ div .read-more-body {
 			color: inherit;
 
 			.article {
-				width: 225px;
+				width: 100%;
+				max-width: 225px;
 				display: inline-block;
 				text-align: center;
 				div {
