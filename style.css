@@ -590,8 +590,8 @@ div .read-more-body {
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
     -webkit-justify-content: center;
     -moz-justify-content: center;
     justify-content: center; }
