@@ -604,7 +604,15 @@ div .read-more-body {
         width: 100%;
         max-width: 225px;
         min-height: 250px;
-        display: inherit;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: flex-start;
+        align-content: flex-start;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
         text-align: center; }
         .article-display .article-container > a .article div {
           margin: auto;

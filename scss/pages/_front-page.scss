@@ -99,7 +99,12 @@ div .read-more-body {
 				width: 100%;
 				max-width: 225px;
 				min-height: 250px;
-				display: inherit;
+				@include flexbox;
+				-webkit-align-content: 	flex-start;
+				align-content: 			flex-start;
+				-webkit-justify-content: 	center;
+				-moz-justify-content: 		center;
+				justify-content: 			center;
 				text-align: center;
 				div {
 					margin: auto;
