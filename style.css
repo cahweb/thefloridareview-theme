@@ -597,23 +597,14 @@ div .read-more-body {
     justify-content: center; }
     .article-display .article-container > a {
       width: 100%;
-      display: inline-block;
+      display: inherit;
       margin: 10px 0;
       color: inherit; }
       .article-display .article-container > a .article {
         width: 100%;
         max-width: 225px;
         min-height: 250px;
-        /*display: inline-block;*/
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-align-items: flex-start;
-        align-items: flex-start;
-        -webkit-justify-content: center;
-        -moz-justify-content: center;
-        justify-content: center;
+        display: inherit;
         text-align: center; }
         .article-display .article-container > a .article div {
           margin: auto;
