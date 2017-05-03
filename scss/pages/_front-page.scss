@@ -81,7 +81,13 @@ div .read-more-body {
 
 	.article-container {
 		margin: 20px 0;
-		display: block;
+		/*display: block;*/
+		@include flexbox;
+		-webkit-align-items: 	flex-start;
+		align-items: 			flex-start;
+		-webkit-justify-content: 	center;
+		-moz-justify-content: 		center;
+		justify-content: 			center;
 
 		>a {
 			width: 100%;

@@ -585,7 +585,16 @@ div .read-more-body {
   flex: 5; }
   .article-display .article-container {
     margin: 20px 0;
-    display: block; }
+    /*display: block;*/
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center; }
     .article-display .article-container > a {
       width: 100%;
       display: inline-block;
