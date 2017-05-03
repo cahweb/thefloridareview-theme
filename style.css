@@ -598,7 +598,7 @@ div .read-more-body {
     .article-display .article-container > a {
       width: 100%;
       display: inline-block;
-      margin: 10px 0;
+      margin: 10px 15px;
       color: inherit; }
       .article-display .article-container > a .article {
         width: 100%;
