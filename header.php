@@ -61,7 +61,7 @@
 			if(is_front_page())
 				display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');
 			else if(in_category("aquifer") || is_page("aquifer"))
-				echo "<img class=\"site-logo aquifer-logo\" src=\"".get_stylesheet_directory_uri().'/public/images/aquifer-compact.png'."\">";
+				echo "<img class=\"site-logo aquifer-logo\" src=\"".get_stylesheet_directory_uri().'/public/images/aquifer-compact-2.png'."\">";
 			else
 				echo "<img class=\"site-logo bird-logo\" src=\"".get_stylesheet_directory_uri().'/public/images/logobird.png'."\">";
 
