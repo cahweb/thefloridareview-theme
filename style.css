@@ -594,6 +594,7 @@ div .read-more-body {
       .article-display .article-container > a .article {
         width: 100%;
         max-width: 225px;
+        min-height: 250px;
         display: inline-block;
         text-align: center; }
         .article-display .article-container > a .article div {
