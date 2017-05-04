@@ -60,6 +60,15 @@ div #primary {
 	}
 }
 
+p.justify-all{
+
+	text-align: justify;
+
+	> span.ph {
+		display: inline-block;
+		width: 100%;
+	}
+}
 
 
 @include media(">=tablet"){

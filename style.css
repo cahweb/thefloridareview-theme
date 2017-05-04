@@ -179,6 +179,15 @@ div .sidebar li > a {
   padding: 30px 30px 0 30px; }
   .content-area p {
     line-height: 2; }
+    .content-area p.justify-all {
+      text-align: justify;
+      line-height: 1.0;
+      margin-bottom: 20px; }
+      .content-area p.justify-all > span.ph {
+        display: inline-block;
+        width: 100%; }
+      .content-area p.justify-all > em {
+        line-height: 1.0; }
   .content-area ul {
     padding: 5px 25px;
     list-style: circle; }
@@ -730,6 +739,12 @@ div #primary pre {
       font-size: 14px;
       line-height: 1.5;
       opacity: .7; }
+
+p.justify-all {
+  text-align: justify; }
+  p.justify-all > span.ph {
+    display: inline-block;
+    width: 100%; }
 
 @media (min-width: 720px) {
   .site-main > p {

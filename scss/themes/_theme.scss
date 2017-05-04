@@ -118,6 +118,22 @@ div {
 
 	p {
 		line-height: 2;
+
+		&.justify-all {
+
+			text-align: justify;
+			line-height: 1.0;
+			margin-bottom: 20px;
+
+			> span.ph {
+				display: inline-block;
+				width: 100%;
+			}
+
+			> em {
+				line-height: 1.0;
+			}
+		}
 	}
 
 	ul {
