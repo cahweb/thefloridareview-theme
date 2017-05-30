@@ -134,11 +134,6 @@ div .content-area p {
   margin-top: 20px;
   font-family: "Open Sans", sans-serif; }
 
-div .content-area pre {
-  line-height: 2.0;
-  margin-top: 20px;
-  font-family: 'Open Sans', sans-serif; }
-
 div .content-area a {
   color: #27b6df; }
 
@@ -689,7 +684,7 @@ div .read-more-body {
       width: 1000px;
       content: url("./public/images/banner.png"); } }
 
-div #primary pre {
+#main pre {
   font-family: 'Open Sans', sans-serif;
   line-height: 2;
   margin-top: 20px; }
