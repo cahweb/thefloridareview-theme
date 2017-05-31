@@ -48,7 +48,7 @@
 
 	<?php wp_head(); ?>
 
-	<?php if (in_category("aquifer")) : ?>
+	<?php if ("article" == get_post_type() && in_category("aquifer")) : ?>
 
 		<style type="text/css">
 			#main p {

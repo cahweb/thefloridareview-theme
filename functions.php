@@ -131,14 +131,18 @@ function cah_starter_scripts() {
 add_action( 'wp_enqueue_scripts', 'cah_starter_scripts' );
 
 
-/**
- * Enqueue scripts for back-end pages. Not working correctly...yet.
- */
-function cah_admin_starter_scripts() {
+function cah_add_custom_editor_styles() {
 
-	wp_enqueue_script( 'pre-style', get_template_directory_uri() . '/public/js/pre-styles.js', array('jquery'), '20170530', false);
+	add_editor_style( '/public/css/editor-general.css' );
+
+	global $pagenow;
+	if ( 'post.php' === $pagenow && isset( $_GET['post'] ) && 'article' === get_post_type( $_GET['post'] ) ) {
+
+		add_editor_style( '/public/css/editor-article.css' );
+	}
+
 }
-//add_action( 'admin_enqueue_scripts', 'cah_admin_starter_scripts');
+add_action( 'admin_init', 'cah_add_custom_editor_styles' );
 
 
 /**
