@@ -47,6 +47,20 @@
 
 
 	<?php wp_head(); ?>
+
+	<?php if (in_category("aquifer")) : ?>
+
+		<style type="text/css">
+			#main p {
+				margin-top: 0;
+			}
+
+			#main h3 {
+				margin-bottom: 20px;
+			}
+		</style>
+
+	<?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>
