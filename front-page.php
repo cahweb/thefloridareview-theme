@@ -26,7 +26,20 @@ get_header();
 			$query = new WP_Query(array(
 					    'post_type' => 'issue',
 					    'post_status' => 'publish',
-					    'posts_per_page' => 1
+					    'posts_per_page' => 1,
+						'meta_query'	=> array(
+							'relation'	=> 'AND',
+							'vol_num'	=> array(
+								'key'	=> 'vol-num'
+							),
+							'issue_num'	=> array(
+								'key'	=> 'issue-num'
+							)
+						),
+						'orderby'	=> array(
+							'vol_num'	=> 'DESC',
+							'issue_num'	=> 'DESC'
+						)
 					));
 
 			$query->the_post();
