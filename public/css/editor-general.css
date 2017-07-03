@@ -45,3 +45,14 @@ pre {
     font-family: 'Open Sans', sans-serif;
     line-height: 2;
 }
+
+@media (min-width: 720px) {
+    h2 {
+        font-size: 40px;
+        text-align: left;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+}

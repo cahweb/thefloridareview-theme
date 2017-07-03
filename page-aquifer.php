@@ -25,8 +25,8 @@
 
 			<?php foreach ($display_categories as $key => $item) { ?>
 
-				<div id="<?=$key?>" class="flex-item" data-is-selected="false" onclick="updateSelection(this)">
-					<a href="#<?=$key?>"><p><?=strtoupper($item)?></p></a>
+				<div id="<?=$key?>" class="flex-item" data-is-selected="false">
+					<a href="<?= '#' . $key ?>"><p><?=strtoupper($item)?></p></a>
 				</div>
 
 			<?php
@@ -35,6 +35,7 @@
 
 		</div> <!-- end filter-bar -->
 
+		<div id="archive-results">
 		<?php
 			$query = new WP_Query(array(
 			    'post_type' => 'article',
@@ -112,7 +113,9 @@
 
 		<?php
 			}
+			wp_reset_postdata();
 		?>
+		</div>
 	</main>
 	<?php get_sidebar();?>
 </div>

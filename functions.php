@@ -121,6 +121,15 @@ function cah_starter_scripts() {
 	if (is_page('aquifer'))
 		wp_enqueue_script( 'aquifer_sort', get_template_directory_uri() . '/public/js/aquifer-sort.js', array('jquery'), '20170316', true );
 
+	if (is_page('query-testing')) {
+
+		wp_enqueue_script( 'aquifer_paged_query', get_template_directory_uri() . '/public/js/aquifer-paged-query.js', array('jquery'), '20170605', true);
+		wp_localize_script( 'aquifer_paged_query', 'js_ajax', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'action' => 'aquifer_archive_query_retrieve'
+		));
+	}
+
 	// UCF Header bar
 	wp_enqueue_script( 'cahweb-starter-ucfhb-script', '//universityheader.ucf.edu/bar/js/university-header.js', array(), '20151215', true );
 
@@ -291,3 +300,151 @@ function add_open_graph_tags() {
 }
 
 add_action( 'wp_head', 'add_open_graph_tags' );
+
+
+add_action( 'wp_ajax_aquifer_archive_query_retrieve', 'aquifer_archive_query_retrieve' );
+add_action( 'wp_ajax_nopriv_aquifer_archive_query_retrieve', 'aquifer_archive_query_retrieve' );
+function aquifer_archive_query_retrieve() {
+
+	global $wp_query;
+
+	$resp_HTML = '';
+
+	$type = ( isset($_REQUEST['type'] ) && !empty( $_REQUEST['type'] ) ) ? $_REQUEST['type'] : 'post';
+	$display_categories = ( isset($_REQUEST['categories'] ) && !empty( $_REQUEST['categories'] ) ) ? json_decode( $_REQUEST['categories'] ) : NULL;
+	$per_page = ( isset( $_REQUEST['per_page'] ) && !empty($_REQUEST['per_page'] ) ) ? $_REQUEST['per_page'] : 10; // Defaults to 10
+	$genre = ( isset( $_REQUEST['genre'] ) && !empty( $_REQUEST['genre'] ) ) ? 'aquifer+' . $_REQUEST['genre'] : 'aquifer';
+	$paged = ( isset( $_REQUEST['page'] ) && !empty( $_REQUEST['page'] ) ) ? $_REQUEST['page'] : 1;
+
+	$args = array(
+		'post_type'         => $type,
+		'post_status'       => 'publish',
+		'category_name'     => $genre,
+		'posts_per_page'    => $per_page,
+	);
+
+	if ( !empty( $paged ) )
+		$args['paged'] = $paged;
+
+	query_posts($args);
+
+	if ( have_posts() ) {
+		while ( have_posts() ) {
+
+			the_post();
+
+			$id = get_the_ID();
+			$title = get_the_title();
+			$excerpt = get_the_excerpt();
+			$permalink = get_the_permalink();
+			$pub_date = get_the_date();
+			$author = get_post_meta( $id, 'authors', true );
+			$categories = get_the_category();
+
+			$categories_to_show = array();
+
+			if (!empty( $display_categories ) && !empty( $categories ) ) {
+				foreach ($categories as $cat) {
+
+					if ( in_array( $cat->name, $display_categories) )
+						array_push( $categories_to_show, $cat->name);
+				} // End foreach
+			}// End if
+
+			// All killer, no filler.
+			if ($title == 'Coming Soon!')
+				continue;
+
+			if (kdmfi_has_featured_image( 'author-image', $id) && !has_post_thumbnail() )
+				$thumbnail = kdmfi_get_featured_image_src( 'author-image', 'small', $id );
+
+			else if ( has_post_thumbnail() )
+				$thumbnail = get_the_post_thumbnail_url( $id );
+
+			else
+				$thumbnail = get_stylesheet_directory_uri() . '/public/images/empty.png';
+
+			$resp_HTML .= '<div class="article-row">';
+			$resp_HTML .= '<a href="' . $permalink . '">';
+			$resp_HTML .= '<div class="article-thumb" style="background-image: url(' . $thumbnail . ');"></div>';
+			$resp_HTML .= '<div class="article-text">';
+			$resp_HTML .= '<h4>' . $title . '</h4>';
+			$resp_HTML .= '<p><em>By ' . $author . '</em></p>';
+			$resp_HTML .= '<p>' . substr( $excerpt, 0, 125 ) . '</p>';
+
+			if ( !empty($categories_to_show ) ) {
+				$cat_out = '';
+				foreach ( $categories_to_show as $cat_name ) {
+
+					$cat_out .= $cat_name . '<span style="float: right;">Published: ' . $pub_date . '</span>';
+
+					if ( next( $categories_to_show ) !== false )
+						$cat_out .= ', ';
+				} // End foreach
+
+				$resp_HTML .= '<p style="margin-top: 10px; font-size: 12px;"><em>' . $cat_out . '</em></p>';
+			} // End if
+
+			$resp_HTML .= '</div>'; // End .article-text
+			$resp_HTML .= '</a>';
+			$resp_HTML .= '</div>'; // End .article-row
+		} // End while
+
+		wp_reset_postdata();
+
+		$resp_HTML .= '<div id="nav-button-row" class="flex-container">';
+
+		if ( get_previous_posts_link() ) {
+
+			$resp_HTML .= '<div id="prev-button" class="flex-item-nav">';
+			$resp_HTML .= get_previous_posts_link( '« Prev' );
+			$resp_HTML .= '</div>';
+
+		} else {
+
+			$resp_HTML .= '<div id="prev-button" class="flex-item-nav disabled"><p>« Prev</p></div>';
+		} // End if
+
+		$page_links = paginate_links( array(
+			'mid_size' 	=> 2,
+			'prev_next' => false,
+			'type' 		=> 'array'
+		) );
+
+		if ( !empty( $page_links ) ) {
+
+			$resp_HTML .= '<div id="pages" class="flex-item-nav">';
+
+			foreach ( $page_links as $link ) {
+
+				$resp_HTML .= $link;
+			} // End foreach
+
+			$resp_HTML .='</div>';
+		} // End if
+
+		if ( get_next_posts_link() ) {
+
+			$resp_HTML .= '<div id="next-button" class="flex-item-nav">';
+			$resp_HTML .= get_next_posts_link( 'Next »' );
+			$resp_HTML .= '</div>';
+
+		} else {
+
+			$resp_HTML .= '<div id="next-button" class="flex-item-nav disabled"><p>Next »</p></div>';
+		} // End if
+
+	} else {
+
+		$resp_HTML .= '<div class="article-row">';
+		$resp_HTML .= '<h4>Sorry!</h4>';
+		$resp_HTML .= '<p>No posts were found that matched these criteria.</p>';
+		$resp_HTML .= '</div>';
+	} // End if
+
+	wp_reset_query();
+
+	echo $resp_HTML;
+
+	wp_die();
+} // End aquifer_archive_query_retrieve
