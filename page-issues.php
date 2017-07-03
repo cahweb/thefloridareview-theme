@@ -3,11 +3,19 @@
 <div id="primary" class="content-area border-top">
 	<main id="main" class="site-main" role="main">
 		<?php
+			the_post();
+
 			the_title( '<h1 class="entry-title">', '</h1>' );
+
+			the_content();
 
 			$query = new WP_Query(array(
 			    'post_type' => 'issue',
-			    'post_status' => 'publish'
+			    'post_status' => 'publish',
+				'meta_key' => 'pub-date',
+				'orderby' => 'meta_value_num',
+				'order' => 'DESC'
+				'posts_per_page' => -1
 			));
 
 			$issues_per_row = 3;
@@ -41,6 +49,8 @@
 					echo "</div>";
 				$count++;
 			}
+
+			wp_reset_postdata();
 		?>
 	</main>
 	<?php get_sidebar();?>
