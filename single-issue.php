@@ -45,7 +45,7 @@ if ( !empty( $editorial ) ) {
                 </div> <!-- /.issue-img -->
 
                 <div class="issue-purchase-info">
-                    <p><a class="issue-purchase-button"<?= ( empty( $pur_url ) ) ? ' disabled' : '' ?> href="<?= ( !empty( $pur_url ) ) ? $pur_url : '#' ?>">PURCHASE</a></p>
+                    <p><a class="issue-purchase-button"<?= ( empty( $pur_url ) ) ? ' disabled' : '' ?> target="_blank" href="<?= ( !empty( $pur_url ) ) ? $pur_url : '#' ?>">PURCHASE</a></p>
 
                 <? if ( !empty( $isbn ) ) : ?>
                     <p><strong>ISBN:</strong> <?= $isbn ?></p>

@@ -853,3 +853,86 @@ p.justify-all {
 
 div .article-row a, div .flex-item a {
   color: inherit; }
+
+.issue-title {
+  margin-bottom: 0px; }
+
+.issue-theme {
+  font-size: 35px;
+  margin-bottom: 20px; }
+
+.issue-block {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start; }
+
+.issue-metadata {
+  width: 33%;
+  margin-right: 15px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
+  .issue-metadata .issue-img {
+    max-width: 20vw; }
+    .issue-metadata .issue-img img {
+      max-width: 20vw;
+      height: auto; }
+    .issue-metadata .issue-img .issue-img-caption {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 5px; }
+  .issue-metadata .issue-purchase-info .issue-purchase-button {
+    font-size: 14px;
+    padding: 5px 15px;
+    background: #323232;
+    color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+  .issue-metadata .issue-purchase-info a[disabled] {
+    background: rgba(50, 50, 50, 0.5);
+    color: #646464;
+    cursor: default;
+    pointer-events: none; }
+  .issue-metadata .issue-editorial {
+    margin-top: 20px; }
+    .issue-metadata .issue-editorial h4 {
+      font-size: 18px;
+      margin-bottom: 10px; }
+    .issue-metadata .issue-editorial p:first-of-type {
+      font-size: 16px;
+      margin-top: 0px; }
+
+.issue-content {
+  width: 66%;
+  margin-left: 15px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
+  .issue-content h4 {
+    margin-bottom: 20px; }
+  .issue-content p:first-of-type {
+    margin-top: 0px; }
+
+.issue-data-table tr {
+  margin: 10px 0px; }
+  .issue-data-table tr td:first-child {
+    padding: 3px 0px;
+    text-align: right;
+    padding-right: 10px; }

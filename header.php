@@ -43,7 +43,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,600,600i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
 
 
 	<?php wp_head(); ?>

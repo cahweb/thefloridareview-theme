@@ -4,6 +4,8 @@
 	<main id="main" class="site-main" role="main">
 		<?php
 
+			the_post();
+
 			$display_categories = array(
 				"all" => "All",
 				"fiction" => "Fiction",
@@ -16,6 +18,8 @@
 			);
 
 			the_title( '<h1 class="entry-title">', '</h1>' );
+
+			the_content();
 
 		?>
 
