@@ -127,7 +127,8 @@ h3 {
   font-family: 'PlayFair Display', serif; }
 
 h4 {
-  font-size: 16px; }
+  font-size: 16px;
+  font-weight: 600; }
 
 div .content-area p {
   line-height: 2.0;
@@ -254,7 +255,7 @@ button {
     font-family: Lato; }
     .menu li a {
       text-decoration: none; }
-  .menu li a:hover, .menu li .flex-container .flex-item a:active, .flex-container .flex-item .menu li a:active {
+  .menu li a:hover, .menu li .flex-container .flex-item a:active, .flex-container .flex-item .menu li a:active, .menu li #nav-button-row a.flex-item-nav:active, #nav-button-row .menu li a.flex-item-nav:active {
     text-decoration: underline; }
 
 .aquifer-header .main-navigation .menu-toggle {
@@ -786,7 +787,7 @@ p.justify-all {
     background-size: cover;
     background-position: right;
     box-shadow: 2px 2px 5px #888888; }
-    .issue-container .issue-image:hover, .issue-container .flex-container .flex-item .issue-image:active, .flex-container .flex-item .issue-container .issue-image:active {
+    .issue-container .issue-image:hover, .issue-container .flex-container .flex-item .issue-image:active, .flex-container .flex-item .issue-container .issue-image:active, .issue-container #nav-button-row .issue-image.flex-item-nav:active, #nav-button-row .issue-container .issue-image.flex-item-nav:active {
       box-shadow: 5px 5px 5px #888888; }
   .issue-container .issue-info {
     text-align: center; }
@@ -843,15 +844,84 @@ p.justify-all {
       padding: 0px 5px;
       font-size: 14px;
       font-weight: 700; }
-    .flex-container .flex-item :hover, .flex-container .flex-item :active {
+    .flex-container .flex-item :hover, .flex-container .flex-item :active, .flex-container .flex-item #nav-button-row .flex-item-nav:active, #nav-button-row .flex-container .flex-item .flex-item-nav:active {
       background: black;
       color: white;
       -webkit-border-radius: 7px;
       -moz-border-radius: 7px;
       -ms-border-radius: 7px;
       border-radius: 7px; }
+  .flex-container .active {
+    background: black;
+    color: white;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border-radius: 7px; }
 
-div .article-row a, div .flex-item a {
+#nav-button-row {
+  justify-content: space-between; }
+  #nav-button-row .flex-item-nav {
+    margin: 5px;
+    padding: 0px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid black;
+    -webkit-transition: initial;
+    -moz-transition: initial;
+    -ms-transition: initial;
+    -o-transition: initial; }
+    #nav-button-row .flex-item-nav p {
+      margin: 0px;
+      padding: 0px 5px;
+      font-size: 14px; }
+    #nav-button-row .flex-item-nav:hover, #nav-button-row .flex-item-nav:active {
+      background: black;
+      color: white;
+      -webkit-border-radius: 7px;
+      -moz-border-radius: 7px;
+      -ms-border-radius: 7px;
+      border-radius: 7px; }
+    #nav-button-row .flex-item-nav a {
+      line-height: 2.0;
+      padding: 0px 5px;
+      font-size: 14px; }
+    #nav-button-row .flex-item-nav span {
+      line-height: 2.0;
+      padding: 0px 5px;
+      font-size: 14px; }
+    #nav-button-row .flex-item-nav:not(.disabled) {
+      cursor: pointer; }
+  #nav-button-row .disabled {
+    cursor: default;
+    color: #969696;
+    border: 1px solid #969696; }
+    #nav-button-row .disabled:hover, #nav-button-row .flex-container .flex-item .disabled:active, .flex-container .flex-item #nav-button-row .disabled:active, #nav-button-row .disabled.flex-item-nav:active {
+      background: white;
+      color: #969696;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      border-radius: 8px; }
+    #nav-button-row .disabled a {
+      cursor: default; }
+  #nav-button-row #pages:hover, #nav-button-row .flex-container .flex-item #pages:active, .flex-container .flex-item #nav-button-row #pages:active, #nav-button-row #pages.flex-item-nav:active {
+    background: white;
+    color: black;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px; }
+  #nav-button-row #pages .current {
+    cursor: default;
+    font-weight: bold;
+    text-decoration: underline; }
+  #nav-button-row #pages a:hover, #nav-button-row #pages .flex-container .flex-item a:active, .flex-container .flex-item #nav-button-row #pages a:active, #nav-button-row #pages a.flex-item-nav:active {
+    font-weight: bold; }
+
+div .article-row a, div .flex-item a, div .flex-item-nav a {
   color: inherit; }
 
 .issue-title {

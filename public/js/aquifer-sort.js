@@ -1,11 +1,20 @@
-/* Aquifer Sorter
+/**
+ * Aquifer Sorter
  *
  * Script that handles the sort functionality on the main Aquifer page.
  *
- * By: Mike Leavitt
+ * @author Mike Leavitt
  */
 
 jQuery(document).ready(function($) {
+
+    $('.flex-item').each(function() {
+        $(this).on({
+            click: function() {
+                updateSelection(this);
+            }
+        });
+    });
 
     var url = window.location.href;
     var patt1 = /\/aquifer\//
@@ -35,16 +44,22 @@ jQuery(document).ready(function($) {
     }
 });
 
-/* Master update function. Accepts a JQuery/HTML #id as a parameter, changes the various
- * data-is-selected attributes to reflect the current selected category (the passed #id),
- * and then calls the other functions to update the actual look of the page.
+
+/**
+ * Master update function. Changes the various data-is-selected attributes to
+ * reflect the current selected category, and then calls the other functions to
+ * update the actual look of the page.
+ *
+ * @param JavaScript DOM Element elem - The element calling the function.
+ *
+ * @return void
  */
-function updateSelection(id) {
+function updateSelection(elem) {
 
     jQuery('.flex-item').attr("data-is-selected", "false");
 
-    jQuery(id).attr("data-is-selected", "true");
-    var active = jQuery(id).attr("id");
+    jQuery(elem).attr("data-is-selected", "true");
+    var active = jQuery(elem).attr("id");
 
     updateSortCSS();
     updateSortVisible(active);
@@ -52,48 +67,59 @@ function updateSelection(id) {
     return;
 }
 
-/* Updates the appearances of the sort buttons to reflect the currently selected button.
+
+/**
+ * Updates the appearances of the sort buttons to reflect the currently selected button.
+ *
+ * @return void
  */
 function updateSortCSS() {
 
-    var sortButtons = jQuery('.flex-item').toArray();
+    var sortButtons = jQuery('.flex-item');
 
-    for (i in sortButtons) {
+    sortButtons.each(function() {
 
-        if (jQuery(sortButtons[i]).attr("data-is-selected") == "true") {
-
-            jQuery(sortButtons[i]).css("backgroundColor", "black");
-            jQuery(sortButtons[i]).css("color", "white");
-
+        if ( jQuery(this).attr('data-is-selected') == 'true') {
+            jQuery(this).css({
+                'backgroundColor':  'black',
+                'color':            'white'
+            });
         } else {
-
-            jQuery(sortButtons[i]).css("backgroundColor", "white");
-            jQuery(sortButtons[i]).css("color", "black");
+            jQuery(this).css({
+                'backgroundColor': 'white',
+                'color': 'black'
+            });
         }
-    }
+    });
 
     return;
 }
 
-/* Loops through the article rows, shows all that match the currently selected category,
+
+/**
+ * Loops through the article rows, shows all that match the currently selected category,
  * and hides the others.
+ *
+ * @param string id - The ID of the active select button.
+ *
+ * @return void
  */
 function updateSortVisible(id) {
 
     var active = id;
 
-    var articles = jQuery('.article-row').toArray();
+    var articles = jQuery('.article-row');
 
-    for (i in articles) {
+    articles.each(function() {
 
-        if (jQuery(articles[i]).attr("data-is-category") === active || active == "all") {
+        if ( jQuery(this).attr('data-is-category') === active || active == 'all') {
 
-            jQuery(articles[i]).show();
+            jQuery(this).show();
 
         } else {
-            jQuery(articles[i]).hide();
+            jQuery(this).hide();
         }
-    }
+    });
 
     return;
 }

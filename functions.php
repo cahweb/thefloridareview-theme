@@ -121,6 +121,15 @@ function cah_starter_scripts() {
 	if (is_page('aquifer'))
 		wp_enqueue_script( 'aquifer_sort', get_template_directory_uri() . '/public/js/aquifer-sort.js', array('jquery'), '20170316', true );
 
+	if (is_page('query-testing')) {
+
+		wp_enqueue_script( 'aquifer_paged_query', get_template_directory_uri() . '/public/js/aquifer-paged-query.js', array('jquery'), '20170605', true);
+		wp_localize_script( 'aquifer_paged_query', 'js_ajax', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' ),
+			'action' => 'aquifer_archive_query_retrieve'
+		));
+	}
+
 	// UCF Header bar
 	wp_enqueue_script( 'cahweb-starter-ucfhb-script', '//universityheader.ucf.edu/bar/js/university-header.js', array(), '20151215', true );
 
