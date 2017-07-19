@@ -9,9 +9,38 @@
 global $post;
 the_post();
 $id = get_the_ID();
-$authors = get_post_meta($id,"authors",true);
+$author_last = get_post_meta( $id, 'author1-last', true );
+$author_first = get_post_meta( $id, 'author1-first', true );
+$other_authors = get_post_meta( $id, 'other-authors', true );
 $auth_url = get_post_meta($id,"auth-url",true);
 $auth_info = get_post_meta($id,"auth-info",true);
+
+$other_auth_string = '';
+
+if ( !empty( $other_authors ) ) {
+
+	$other_arr = explode( ',', $other_authors );
+
+	if ( count( $other_arr ) > 1 ) {
+
+		for ( $i = 0; $i < count( $other_arr); $i++ ) {
+
+			if ( $i + 1 == count( $other_arr ) )
+				$other_auth_string .= ', and ';
+			else
+				$other_auth_string .= ', ';
+
+			$other_auth_string .= trim( $other_arr[$i] );
+		} // End for
+	} else {
+
+		$other_auth_string .= ' and ' . $other_arr[0];
+	} // End if
+} // End if
+
+$authors = '';
+$authors .= ( !empty( $author_first ) ) ? $author_first . ' ' : '';
+$authors .= $author_last . $other_auth_string;
 
 get_header();
 ?>

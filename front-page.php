@@ -106,9 +106,38 @@ get_header();
 					    $query->the_post();
 					    $post_id = get_the_id();
 					    $post_title = get_the_title();
-					    $authors = get_post_meta($post_id,"authors",true);
+					    $author_last = get_post_meta( $post_id, "author1-last", true );
+						$author_first = get_post_meta( $post_id, "author1-first", true );
+						$other_authors = get_post_meta( $post_id, "other-authors", true );
 					    $date = get_the_date();
 						$categories = get_the_category($post_id);
+
+						$other_auth_string = '';
+
+			            if ( !empty( $other_authors ) ) {
+
+			                $other_arr = explode( ',', $other_authors );
+
+			                if ( count( $other_arr ) > 1 ) {
+
+			                    for ( $i = 0; $i < count( $other_arr); $i++ ) {
+
+			                        if ( $i + 1 == count( $other_arr ) )
+			                            $other_auth_string .= ', and ';
+			                        else
+			                            $other_auth_string .= ', ';
+
+			                        $other_auth_string .= trim( $other_arr[$i] );
+			                    } // End for
+			                } else {
+
+			                    $other_auth_string .= ' and ' . $other_arr[0];
+			                } // End if
+			            } // End if
+
+						$authors = '';
+						$authors .= ( !empty( $author_first ) ) ? $author_first . ' ' : '';
+						$authors .= $author_last . $other_auth_string;
 
 						if(kdmfi_has_featured_image("author-image", $post_id) && !has_post_thumbnail())
 							$thumbnail = kdmfi_get_featured_image_src( "author-image", "small", $post_id );
@@ -136,6 +165,8 @@ get_header();
 									$post_cat_out .= ", ";
 							}
 						}
+
+
 
 					?>
 						<a href="<?=get_the_permalink();?>">
