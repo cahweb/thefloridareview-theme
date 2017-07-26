@@ -261,6 +261,24 @@ button {
 .aquifer-header .main-navigation .menu-toggle {
   margin-top: 10px; }
 
+#site-navigation .menu li ul li {
+  margin: 5px;
+  padding: 0px; }
+
+#site-navigation .menu li > a[href="#"] {
+  cursor: default; }
+  #site-navigation .menu li > a[href="#"]:hover, #site-navigation .menu .flex-container .flex-item li > a[href="#"]:active, .flex-container .flex-item #site-navigation .menu li > a[href="#"]:active, #site-navigation .menu #nav-button-row li > a[href="#"].flex-item-nav:active, #nav-button-row #site-navigation .menu li > a[href="#"].flex-item-nav:active {
+    text-decoration: none; }
+
+#site-navigation .menu .dropdown-menu > li > a:hover, #site-navigation .menu .flex-container .flex-item .dropdown-menu > li > a:active, .flex-container .flex-item #site-navigation .menu .dropdown-menu > li > a:active, #site-navigation .menu #nav-button-row .dropdown-menu > li > a.flex-item-nav:active, #nav-button-row #site-navigation .menu .dropdown-menu > li > a.flex-item-nav:active {
+  background-color: inherit; }
+
+#site-navigation .menu .dropdown-menu > .active > a {
+  background-color: inherit;
+  color: inherit; }
+  #site-navigation .menu .dropdown-menu > .active > a:hover, #site-navigation .menu .flex-container .flex-item .dropdown-menu > .active > a:active, .flex-container .flex-item #site-navigation .menu .dropdown-menu > .active > a:active, #site-navigation .menu #nav-button-row .dropdown-menu > .active > a.flex-item-nav:active, #nav-button-row #site-navigation .menu .dropdown-menu > .active > a.flex-item-nav:active {
+    text-decoration: underline; }
+
 @media (max-width: 1199px) and (min-width: 720px) {
   .logo img {
     width: 400px; }
@@ -292,22 +310,27 @@ button {
           display: inline-block;
           width: auto;
           margin: 0 7px; }
-          #site-navigation div .menu li ul li {
-            margin: 5px;
-            padding: 0px; }
-          #site-navigation div .menu li > a[href="#"] {
-            cursor: default; }
-            #site-navigation div .menu li > a[href="#"]:hover, #site-navigation div .menu .flex-container .flex-item li > a[href="#"]:active, .flex-container .flex-item #site-navigation div .menu li > a[href="#"]:active, #site-navigation div .menu #nav-button-row li > a[href="#"].flex-item-nav:active, #nav-button-row #site-navigation div .menu li > a[href="#"].flex-item-nav:active {
-              text-decoration: none; }
-    #site-navigation .dropdown-menu > li > a:hover, #site-navigation .flex-container .flex-item .dropdown-menu > li > a:active, .flex-container .flex-item #site-navigation .dropdown-menu > li > a:active, #site-navigation #nav-button-row .dropdown-menu > li > a.flex-item-nav:active, #nav-button-row #site-navigation .dropdown-menu > li > a.flex-item-nav:active {
-      background-color: inherit; }
-    #site-navigation .dropdown-menu > .active > a {
-      background-color: inherit;
-      color: inherit; }
-      #site-navigation .dropdown-menu > .active > a:hover, #site-navigation .flex-container .flex-item .dropdown-menu > .active > a:active, .flex-container .flex-item #site-navigation .dropdown-menu > .active > a:active, #site-navigation #nav-button-row .dropdown-menu > .active > a.flex-item-nav:active, #nav-button-row #site-navigation .dropdown-menu > .active > a.flex-item-nav:active {
-        text-decoration: underline; }
   .menu-toggle {
     display: none; } }
+
+@media (max-width: 1200px) {
+  #primary-menu .dropdown-menu {
+    position: relative;
+    float: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none; }
+    #primary-menu .dropdown-menu li {
+      padding: 5px !important; } }
+
+@media (max-width: 768px) {
+  #primary-menu .dropdown-menu li {
+    margin: 0px 30px !important;
+    text-align: center; }
+    #primary-menu .dropdown-menu li > a {
+      padding: 0px;
+      width: auto;
+      text-align: center; } }
 
 /*--------------------------------------------------------------
 # layout

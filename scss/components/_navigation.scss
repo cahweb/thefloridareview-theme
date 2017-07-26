@@ -60,6 +60,53 @@
 	}
 }
 
+#site-navigation {
+
+	.menu {
+
+		li {
+
+			ul li {
+				margin: 5px;
+				padding: 0px;
+			}
+
+			> a[href="#"] {
+				cursor: default;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+
+		.dropdown-menu {
+
+			> li {
+
+				> a {
+
+					&:hover {
+						background-color: inherit;
+					}
+				}
+			}
+
+			> .active {
+
+				> a {
+					background-color: inherit;
+					color: inherit;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
 @include media("<desktop", ">=tablet"){
 	.logo {
 
@@ -117,44 +164,6 @@
 					display: inline-block;
 					width: auto;
 					margin: 0 7px;
-
-					ul li {
-						margin: 5px;
-						padding: 0px;
-					}
-
-					> a[href="#"] {
-						cursor: default;
-
-						&:hover {
-							text-decoration: none;
-						}
-					}
-				}
-			}
-		}
-
-		.dropdown-menu {
-
-			> li {
-
-				> a {
-
-					&:hover {
-						background-color: inherit;
-					}
-				}
-			}
-
-			> .active {
-
-				> a {
-					background-color: inherit;
-					color: inherit;
-
-					&:hover {
-						text-decoration: underline;
-					}
 				}
 			}
 		}
@@ -165,4 +174,42 @@
 		display: none;
 	}
 
+}
+
+@media (max-width: 1200px) {
+
+	#primary-menu {
+
+		.dropdown-menu {
+			position: relative;
+			float: none;
+			border-radius: 0;
+			border: none;
+			box-shadow: none;
+
+			li {
+				padding: 5px !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	#primary-menu {
+
+		.dropdown-menu {
+
+			li {
+				margin: 0px 30px !important;
+				text-align: center;
+
+				>a {
+					padding: 0px;
+					width: auto;
+					text-align: center;
+				}
+			}
+		}
+	}
 }
