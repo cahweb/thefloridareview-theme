@@ -82,13 +82,18 @@
 			?></a>
 
 			<div class="menu-toggle" style="background-image: url(<?=get_stylesheet_directory_uri().'/public/images/menu.png'?>);"></div>
-			<?php wp_nav_menu( array(
+			<?php /*wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id' => 'primary-menu',
 				//'depth' => 2,
-			) );
+			) );*/
 
-
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id' => 'primary-menu',
+					'depth' => 2,
+					'walker' => new WP_Bootstrap_Navwalker()
+				) );
 			?>
 
 		</nav><!-- #site-navigation -->

@@ -14,6 +14,9 @@
  * section of this file
  */
 
+// Register Custom Nav Walker
+require_once( 'wp-bootstrap-navwalker.php' );
+
 if ( ! function_exists( 'cah_starter_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -52,6 +55,7 @@ function cah_starter_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'cah-starter' ),
+		'footer_menu' => esc_html__( 'Footer', 'cah-starter' )
 	) );
 
 	/*
@@ -112,6 +116,13 @@ add_action( 'widgets_init', 'cah_starter_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cah_starter_scripts() {
+
+	// Bootstrap
+	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
+
+	wp_enqueue_script( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
+
+	// Theme style
 	wp_enqueue_style( 'cah-starter-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'cah-starter-navigation', get_template_directory_uri() . '/public/js/navigation.js', array('jquery'), '20151215', true );
@@ -136,6 +147,7 @@ function cah_starter_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 add_action( 'wp_enqueue_scripts', 'cah_starter_scripts' );
 

@@ -39,7 +39,7 @@
 	<?php endif;?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php wp_nav_menu(array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ));
+		<?php wp_nav_menu(array( 'theme_location' => 'footer_menu', 'menu_id' => 'footer-menu' ));
 
 			$uploads_folder = wp_upload_dir();
 		?>
