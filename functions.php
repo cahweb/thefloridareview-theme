@@ -55,7 +55,36 @@ function cah_starter_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'cah-starter' ),
-		'footer_menu' => esc_html__( 'Footer', 'cah-starter' )
+		'footer_menu' => esc_html__( 'Footer', 'cah-starter' ),
+		'sidebar_menu_about' => esc_html__( 'Sidebar (About)', 'cah-starter' ),
+		'sidebar_menu_store' => esc_html__( 'Sidebar (Store)', 'cah-starter' ),
+		'sidebar_menu_submit' => esc_html__( 'Sidebar (Submit)', 'cah-starter' )
+	) );
+
+	// Registering various sidebars. Using individual register_sidebar() calls for more
+	// customization options in the individual menu items.
+	register_sidebar( array(
+		'name' => esc_html__( 'Main Sidebar', 'cah-starter' ),
+		'id'	=> 'sidebar-main',
+		'description' => 'The default sidebar for the theme.',
+	) );
+
+	register_sidebar( array(
+		'name' => esc_html__( 'About Sidebar', 'cah-starter' ),
+		'id' => 'sidebar-about',
+		'description' => 'The sidebar for the About pages.'
+	) );
+
+	register_sidebar( array(
+		'name' => esc_html__( 'Store Sidebar', 'cah-starter' ),
+		'id' => 'sidebar-store',
+		'description' => 'The sidebar for the Store pages.'
+	) );
+
+	register_sidebar( array(
+		'name' => esc_html__( 'Submit Sidebar', 'cah-starter' ),
+		'id' => 'sidebar-submit',
+		'description' => 'The sidebar for the Submit pages.'
 	) );
 
 	/*
