@@ -74,7 +74,8 @@
 			> a[href="#"] {
 				cursor: default;
 
-				&:hover {
+				&:hover, &:focus {
+					color: inherit;
 					text-decoration: none;
 				}
 			}
@@ -88,6 +89,7 @@
 
 					&:hover {
 						background-color: inherit;
+						color: inherit;
 					}
 				}
 			}
@@ -102,6 +104,18 @@
 						text-decoration: underline;
 					}
 				}
+			}
+		}
+	}
+}
+
+#primary-menu {
+
+	li {
+		> a {
+
+			&:hover {
+				color: inherit;
 			}
 		}
 	}
@@ -169,6 +183,10 @@
 		}
 	}
 
+	.dropdown-menu {
+		left: -100%;
+	}
+
 	// Hide menu toggle button on bigger screens
 	.menu-toggle {
 		display: none;
@@ -180,15 +198,40 @@
 
 	#primary-menu {
 
+		li {
+
+			margin: 0;
+			width: 100%;
+		}
+
 		.dropdown-menu {
 			position: relative;
 			float: none;
 			border-radius: 0;
-			border: none;
-			box-shadow: none;
+			border: 1px solid rgb(225, 225, 225);
+			box-shadow: 2px 2px 1px rgb(200, 200, 200) inset;
+			margin: 5px 0px 0px 0px;
+			background-color: rgb(240, 240, 240);
+
 
 			li {
 				padding: 5px !important;
+				margin: 0 !important;
+
+				&:first-child {
+					margin-top: 5px !important;
+				}
+
+				&:last-child {
+					margin-bottom: 5px !important;
+				}
+
+				a {
+
+					&:active {
+						text-decoration: underline;
+					}
+				}
 			}
 		}
 	}
@@ -201,7 +244,6 @@
 		.dropdown-menu {
 
 			li {
-				margin: 0px 30px !important;
 				text-align: center;
 
 				>a {
