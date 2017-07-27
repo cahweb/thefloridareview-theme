@@ -506,6 +506,8 @@ footer {
 
 .feed-link {
   margin: 0px 0px 10px 0px; }
+  .feed-link a > img {
+    margin: 0px auto; }
 
 .thanks {
   background-color: black;
