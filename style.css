@@ -562,13 +562,13 @@ footer {
 
 @media (min-width: 1200px) {
   .sidebar {
-    flex: 1;
+    flex: 2;
     display: inline-block;
-    padding: 20px;
+    padding: 0px 0px 0px 20px;
     border-left: 2px solid #C4C4C4; }
     .sidebar h2 {
       font-family: 'PlayFair Display', serif;
-      font-size: 30px !important;
+      font-size: 24px !important;
       border: none !important;
       padding-bottom: 0; }
     .sidebar ul {
@@ -576,10 +576,48 @@ footer {
       list-style-type: none; }
       .sidebar ul li {
         padding: 5px 0;
-        border-top: 1px solid #C4C4C4; }
+        /*border-top: 1px solid #C4C4C4;*/ }
+    .sidebar .menu {
+      display: block;
+      margin: 0;
+      padding: 0;
+      list-style: circle inside !important; }
+      .sidebar .menu li {
+        /*display: list-item;*/
+        border: none;
+        margin: 0;
+        padding: 0px 0px 0px 10px;
+        text-transform: none;
+        text-align: left;
+        list-style: inherit;
+        font-size: 16px;
+        width: 100%; }
+        .sidebar .menu li:not(:first-child) {
+          border-top: 1px solid #c8c8c8; }
+        .sidebar .menu li a {
+          color: #27b6df; }
     .sidebar > a {
       font-style: italic;
-      color: #61A3B7; } }
+      color: #61A3B7; }
+  .sidebar-menu {
+    padding: 0 !important; }
+    .sidebar-menu > li:not(:first-child) {
+      margin-top: 10px; }
+    .sidebar-menu > li .widgettitle {
+      margin-bottom: 5px; }
+    .sidebar-menu .widget {
+      padding: 0; }
+    .sidebar-menu ul {
+      padding: 0px 0px 0px 5px; }
+      .sidebar-menu ul li {
+        padding: 0; }
+        .sidebar-menu ul li:not(:first-child) {
+          border-top: 1px solid #c8c8c8; }
+        .sidebar-menu ul li .post-date {
+          font-style: italic; }
+          .sidebar-menu ul li .post-date::before {
+            content: '|';
+            padding: 3px; } }
 
 /*--------------------------------------------------------------
 # pages
