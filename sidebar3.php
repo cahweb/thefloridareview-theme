@@ -13,11 +13,13 @@ if ( !empty( $parents ) ) {
 
     $parent_name = $parent->post_name;
 
-    echo '<p>' . $parent_name . '</p>';
+    $sidebar_id = 'sidebar-' . $parent_name;
+
+    dynamic_sidebar( $sidebar_id );
 
 } else {
 
-    echo '<p>NULL</p>';
+    dynamic_sidebar( 'sidebar-main' );
 }
 
 echo '</div>';
