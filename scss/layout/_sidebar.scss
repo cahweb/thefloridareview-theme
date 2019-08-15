@@ -12,33 +12,105 @@
 
 @include media(">=desktop"){
 	.sidebar {
-	flex: 1;
-	display: inline-block;
-	padding: 20px;
-	border-left: 2px solid #C4C4C4;
-	//max-height: 400px;
+		flex: 2;
+		display: inline-block;
+		padding: 0px 0px 0px 20px;
+		border-left: 2px solid #C4C4C4;
+		//max-height: 400px;
 
-	h2 {
-		font-family: 'PlayFair Display', serif;
-		font-size: 30px !important;
-		border: none !important;
-		padding-bottom: 0;
+		h2 {
+			font-family: 'PlayFair Display', serif;
+			font-size: 24px !important;
+			border: none !important;
+			padding-bottom: 0;
+		}
+
+		ul {
+			padding: 20px 0;
+			list-style-type: none;
+
+			li {
+				padding: 5px 0;
+				/*border-top: 1px solid #C4C4C4;*/
+			}
+		}
+
+		.menu {
+			display: block;
+			margin: 0;
+			padding: 0;
+			list-style: circle inside !important;
+
+			li {
+				/*display: list-item;*/
+				border: none;
+				margin: 0;
+				padding: 0px 0px 0px 10px;
+				text-transform: none;
+				text-align: left;
+				list-style: inherit;
+				font-size: 16px;
+				width: 100%;
+
+				&:not(:first-child) {
+
+					border-top: 1px solid rgb(200, 200, 200);
+				}
+
+
+				a {
+					color: #27b6df;
+				}
+			}
+		}
+
+		>a {
+			font-style: italic;
+			color: #61A3B7;
+		}
+
 	}
 
-	ul {
-		padding: 20px 0;
-		list-style-type: none;
+	.sidebar-menu {
+		padding: 0 !important;
 
-		li {
-			padding: 5px 0;
-			border-top: 1px solid #C4C4C4;
+		> li {
+
+			&:not(:first-child) {
+				margin-top: 10px;
+			}
+
+			.widgettitle {
+				margin-bottom: 5px;
+			}
+		}
+
+		.widget {
+			padding: 0;
+		}
+
+		ul {
+			padding: 0px 0px 0px 5px;
+
+			li {
+
+				padding: 0;
+
+				&:not(:first-child) {
+
+					border-top: 1px solid rgb(200, 200, 200);
+				}
+
+				.post-date {
+
+					font-style: italic;
+
+					&::before {
+						content: '|';
+						padding: 3px;
+					}
+				}
+			}
 		}
 	}
-
-	>a {
-		font-style: italic;
-		color: #61A3B7;
-	}
-
-}
 }
