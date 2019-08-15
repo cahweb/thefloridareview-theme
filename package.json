@@ -10,8 +10,15 @@
     "watch-css": "./bin/watch-css"
   },
   "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "node-sass": "^4.3.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "postcss-assets": "^5.0.0"
   },
   "repository": {
     "type": "git",
