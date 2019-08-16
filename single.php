@@ -6,6 +6,7 @@
  *
  * @package cah-starter
  */
+ 
 global $post;
 the_post();
 $id = get_the_ID();
@@ -42,14 +43,86 @@ $authors = '';
 $authors .= ( !empty( $author_first ) ) ? $author_first . ' ' : '';
 $authors .= $author_last . $other_auth_string;
 
+$genres = array(
+	'fiction',
+	'nonfiction',
+	'poetry',
+	'graphic-narrative',
+	'digital-stories',
+	'interview',
+	'book-review',
+	'visual-art'
+);
+
+$categories = get_the_category( $id );
+$pub_cat = '';
+foreach ( $categories as $cat ) :
+
+	if ( in_array( $cat->slug, $genres ) ) :
+		$pub_cat = $cat->name;
+	endif;
+endforeach;
+
 get_header();
 ?>
 
 	<div id="primary" class="content-area border-top">
 		<main id="main" class="site-main" role="main">
 
+			<?php if ( !empty( $pub_cat ) ) : ?>
+				<p style="margin: 0; font-size: 14px;"><em>» <?= $pub_cat ?></em></p>
+			<?php endif; ?>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' );?>
+			<?php if ( in_category( 'florida-review' ) ) :?>
+				<?
+					$issue = get_post_meta( $id, 'issue', true );
+					$issue_split = explode( '.', $issue );
+					$issue_arr = array(
+						'vol' => $issue_split[0],
+						'iss' => str_replace( ' &amp; ', ' & ', $issue_split[1] )
+					);
+
+					$args = array(
+						'post_type' => 'issue',
+						'post_status' => 'publish',
+						'posts_per_page' => 1,
+						'meta_query' => array(
+							'relation' => 'AND',
+							array(
+								'key' => 'vol-num',
+								'value' => $issue_arr['vol'],
+								'compare' => '='
+							),
+							array(
+								'key' => 'issue-num',
+								'value' => $issue_arr['iss'],
+								'compare' => '='
+							)
+						),
+						'fields' => 'ids'
+					);
+
+					$query = new WP_Query( $args );
+
+					$a_begin = '';
+					$a_end = '';
+
+					if ( $query->have_posts() ) :
+
+						$issue_link = get_the_permalink( $query->posts[0] );
+						$a_begin = "<a href=\"$issue_link\">";
+						$a_end = '</a>';
+
+					endif;
+
+				?>
+				
+			<?php endif; ?>
 			<?php the_content();?>
+            
+            <?php if ( in_category( 'florida-review' ) ) :?>
+            <br><p style="margin: -20px 0 20px 0;">This work originally appeared in <em>The Florida Review,</em> <?= $a_begin ?>Vol. <?= $issue ?><?= $a_end ?>.</p>
+            <?php endif; ?>
 
 			<?php if(!empty($authors)) : ?>
 				<div class="author">

@@ -14,7 +14,7 @@
 
 get_header(); ?>
 	<?php
-		the_post();
+		the_post(); 
 	?>
 
 	<div id="primary" class="content-area">

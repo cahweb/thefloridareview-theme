@@ -4,7 +4,7 @@
 
 <?
     global $post;
-    
+
     if ( is_page() ) {
 
         $id = $post->ID;
@@ -22,6 +22,10 @@
 
             dynamic_sidebar( 'sidebar-main' );
         }
+
+    } elseif ( in_category( 'aquifer' ) ) {
+
+        dynamic_sidebar( 'sidebar-aquifer' );
 
     } else {
         dynamic_sidebar( 'sidebar-main' );

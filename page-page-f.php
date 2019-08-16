@@ -1,6 +1,8 @@
 <?php
 
     get_header();
+	
+	echo "asdf";
 
     $args = array(
         'post_type' => 'article',

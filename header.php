@@ -74,6 +74,8 @@
 
 			if(is_front_page())
 				display_logo(get_stylesheet_directory_uri() . '/public/images/logo.png');
+			else if(is_page_template('page-rupture.php'))
+				echo "<img class=\"site-logo aquifer-logo\" src=\"".get_stylesheet_directory_uri().'/public/images/aquifer-compact-2-white.png'."\">";
 			else if(in_category("aquifer") || is_page("aquifer"))
 				echo "<img class=\"site-logo aquifer-logo\" src=\"".get_stylesheet_directory_uri().'/public/images/aquifer-compact-2.png'."\">";
 			else

@@ -141,6 +141,10 @@ div .content-area a {
 div .sidebar li > a {
   color: black; }
 
+hr {
+  color: #333333;
+  border-top: 1px solid #333; }
+
 .border-top {
   border-top: 10px solid #61A3B7; }
 
@@ -162,7 +166,8 @@ div .sidebar li > a {
 
 .aligncenter {
   display: block;
-  margin: auto; }
+  margin: auto;
+  text-align: center; }
   .aligncenter .wp-caption-text {
     text-align: center; }
 
@@ -209,12 +214,30 @@ div .sidebar li > a {
     padding: 0 45px 0 20px; }
   .content-area {
     display: flex;
-    padding: 30px 60px 0px 60px; }
+    padding: 30px 40px 0px 40px; }
   .entry-title {
     font-size: 50px;
     text-align: left;
     padding: 15px 0;
     margin: 0 0 20px 0; } }
+
+.easy-footnotes-wrapper::before {
+  content: "\00000ANotes";
+  white-space: pre;
+  font-size: 1.8em;
+  font-family: "PlayFair Display",serif; }
+
+.easy-footnotes-wrapper {
+  border-top: 1px solid #999999;
+  margin-top: 20px;
+  list-style-type: decimal; }
+  .easy-footnotes-wrapper li {
+    margin-top: 10px;
+    font-size: 88%;
+    margin-left: 1em; }
+
+.easy-footnote-single {
+  line-height: 22px; }
 
 /*--------------------------------------------------------------
 # components
@@ -556,6 +579,8 @@ footer {
   display: none; }
   .sidebar ul li {
     line-height: 1.5; }
+  .sidebar .post-data {
+    padding-bottom: 5px; }
 
 .feed-link {
   margin-top: 10px; }
@@ -608,9 +633,10 @@ footer {
     .sidebar-menu .widget {
       padding: 0; }
     .sidebar-menu ul {
-      padding: 0px 0px 0px 5px; }
+      padding: 0px 0px 3px 5px; }
       .sidebar-menu ul li {
-        padding: 0; }
+        padding: 0;
+        line-height: 1.8; }
         .sidebar-menu ul li:not(:first-child) {
           border-top: 1px solid #c8c8c8; }
         .sidebar-menu ul li .post-date {
@@ -795,6 +821,61 @@ div .read-more-body {
   font-family: 'Open Sans', sans-serif;
   line-height: 2; }
 
+.search-form {
+  margin-top: 8px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  position: relative;
+  text-align: right; }
+  .search-form .screen-reader-text {
+    display: none; }
+  .search-form ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: transparent; }
+  .search-form :-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: transparent; }
+  .search-form ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: transparent; }
+  .search-form :-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: transparent; }
+  .search-form textarea::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: transparent; }
+  .search-form textarea:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: transparent; }
+  .search-form textarea::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: transparent; }
+  .search-form textarea:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: transparent; }
+  .search-form .search-submit {
+    background-color: #337ab7;
+    /* Green */
+    border-color: #2e6da4;
+    color: white;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 7px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap; }
+  .search-form .search-submit:hover, .search-form .flex-container .flex-item .search-submit:active, .flex-container .flex-item .search-form .search-submit:active, .search-form #nav-button-row .search-submit.flex-item-nav:active, #nav-button-row .search-form .search-submit.flex-item-nav:active {
+    background-color: #286090; }
+  .search-form .search-field {
+    padding: 4px; }
+
 .site-main > p {
   font-size: 14px; }
 
@@ -848,7 +929,7 @@ p.justify-all {
     padding: 40px 0 0 0;
     border-top: 1px solid black; }
     .author .author-image {
-      flex: 1; }
+      /* flex: 1; */ }
       .author .author-image div {
         height: 300px;
         width: 225px; }
@@ -1018,6 +1099,13 @@ p.justify-all {
 
 div .article-row a, div .flex-item a, div .flex-item-nav a {
   color: inherit; }
+
+/*for graphic narrative pop up images*/
+.mfp-img {
+  padding-top: 70px !important; }
+
+#main pre {
+  background-color: transparent; }
 
 .issue-title {
   margin-bottom: 0px; }

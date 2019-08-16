@@ -96,6 +96,7 @@ div {
 .aligncenter {
 	display: block;
 	margin: auto;
+	text-align: center;
 
 	.wp-caption-text {
 		text-align: center;
@@ -164,7 +165,7 @@ div {
 
 	.content-area {
 		display: flex;
-		padding: 30px 60px 0px 60px;
+		padding: 30px 40px 0px 40px;
 	}
 
 	.entry-title {

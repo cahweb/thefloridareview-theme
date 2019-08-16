@@ -11,7 +11,9 @@
 			the_content();
 
 		?>
-			<div id="cah-ajax-query-container"></div>
+			<? get_search_form();?>
+            
+            <div id="cah-ajax-query-container"></div>
 
 	</main>
 	<?php //get_sidebar();?>

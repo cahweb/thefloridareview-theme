@@ -70,20 +70,25 @@ get_header();
 	<main id="main" class="site-main" role="main">
 		<?php
 
-			$article_displays = array("Literary Features", "Interviews", "Book Reviews", "Digital Stories");
+			$article_displays = array("Literary Features", "Multimedia Features", "Visual Art", "Interviews", "Book Reviews");
 
 			$slugs = array(
-				"Literary Features" => "literary-features",
-				"Interviews" => "interview",
-				"Book Reviews" => "book-review",
-				"Digital Stories" => "digital-stories"
+				"Literary Features" => "literary-features+aquifer",
+				"Multimedia Features" => "multimedia features+aquifer",
+				"Visual Art" => "visual-art+aquifer",
+				"Interviews" => "interview+aquifer",
+				"Book Reviews" => "book-review+aquifer"				
 			);
 
 			$category_types = array(
 				"fiction" => "Fiction",
-				"non-fiction" => "Non-Fiction",
+				"nonfiction" => "Nonfiction",
 				"poetry" => "Poetry",
-				"graphic-narrative" => "Graphic Narrative"
+				"graphic-narrative" => "Graphic Narrative",
+				"film" => "Film",
+				"digital-story" => "Digital Story",
+				"poetry" => "Poetry",
+				"electronic-interactive-lit" => "Electronic/Interactive Lit."
 			);
 
 			foreach ($article_displays as $article_cat) {
@@ -99,7 +104,7 @@ get_header();
 					    'post_type' => 'article',
 					    'post_status' => 'publish',
 					    'posts_per_page' => 3,
-					    'category_name' => $slugs[$article_cat]
+						'category_name' => $slugs[$article_cat]
 					));
 
 					while ($query->have_posts()) {
@@ -148,23 +153,26 @@ get_header();
 					    else
 					    	$thumbnail = get_stylesheet_directory_uri() . "/public/images/empty.png";
 
-						if ($article_cat == "Literary Features") {
+				if ($article_cat == "Literary Features" || $article_cat == "Multimedia Features") {
 
 							$post_category = [];
 							foreach ($categories as $item) {
-
+								
 								if (in_array($item->name, $category_types))
 									array_push($post_category, $item->name);
 							}
 
 							$post_cat_out = "";
 							foreach ($post_category as $item) {
+								
 								$post_cat_out .= $item;
 
 								if (next($post_category) !== false)
 									$post_cat_out .= ", ";
 							}
 						}
+						
+
 
 
 
@@ -174,7 +182,7 @@ get_header();
 								<div style="background-image: url(<?=$thumbnail?>);"></div>
 								<h4><?=$post_title?></h4>
 								<h5><?="By ".$authors?></h5>
-								<p><? if ($article_cat == "Literary Features") { ?>
+								<p><? if ($article_cat == "Literary Features" || $article_cat == "Multimedia Features") { ?>
 									<em><?=$post_cat_out?></em><br />
 								<? } ?>
 							</div>
@@ -210,5 +218,8 @@ get_header();
 
 <?php
 get_footer();
-
 ?>
+
+<script>
+	jQuery(".read-more-body").last().css("padding-bottom", "15px");
+</script>

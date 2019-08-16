@@ -4,6 +4,9 @@
 	ul li {
 		line-height: 1.5;
 	}
+	
+	.post-data{padding-bottom:5px;}
+	
 }
 
 .feed-link {
@@ -90,11 +93,12 @@
 		}
 
 		ul {
-			padding: 0px 0px 0px 5px;
+			padding: 0px 0px 3px 5px;
 
 			li {
 
 				padding: 0;
+				line-height: 1.8;
 
 				&:not(:first-child) {
 

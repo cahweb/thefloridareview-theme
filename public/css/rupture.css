@@ -1,0 +1,118 @@
+body{
+    background: #171E20;
+}
+p {
+margin-top: 4em;
+opacity: 0.53;
+font-family: Alegreya;
+font-size: 16px;
+color: #E6E6E6;
+letter-spacing: -0.22px;
+line-height: 27px;
+}
+
+.menu-toggle{
+    background-image: url(https://floridareview.cah.ucf.edu/wp-content/themes/thefloridareview-theme/public/images/menu-white.png)!important;
+}
+
+.credits{
+    margin-bottom: .5rem;
+    font-weight: 500;
+    margin-top: 0.2em;
+    opacity: 0.53;
+    font-family: Alegreya;
+    font-size: 16px;
+    color: #E6E6E6;
+    letter-spacing: -0.22px;
+    line-height: 27px;
+}
+
+#play{
+    position:fixed;
+    height: 38px;
+    right: 46px;
+    bottom: 26px;
+    width: 38px;
+    height: 38px;
+    z-index: 1;
+    background: url(https://floridareview.cah.ucf.edu/wp-content/themes/thefloridareview-theme/public/images/play.png) no-repeat;
+    background-size: contain;
+    border:none;
+
+}
+
+#pause{
+    display: none;
+    position:fixed;
+    height: 38px;
+    right: 46px;
+    bottom: 26px;
+    width: 38px;
+    height: 38px;
+    z-index: 1;
+    background: url(https://floridareview.cah.ucf.edu/wp-content/themes/thefloridareview-theme/public/images/pause.png) no-repeat;
+    background-size: contain;
+    border:none;
+}
+
+#stop{
+    position:fixed;
+    height: 38px;
+    right: 96px;
+    bottom: 26px;
+    width: 38px;
+    height: 38px;
+    z-index: 1;
+    background: url(https://floridareview.cah.ucf.edu/wp-content/themes/thefloridareview-theme/public/images/stop.png) no-repeat;
+    background-size: contain;
+    border:none;
+}
+
+.main p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+}
+
+.content {
+    max-width: 1400px;
+    padding: 5% 15%;
+    margin: 0 auto;
+}
+
+.menu-link {
+    font-family: Alegreya;
+    font-size: 38px;
+    color: #FF5E3B !important;
+    letter-spacing: -0.55px;
+    display: block;
+    padding-bottom: 18px;
+    border-bottom: none;
+    margin-bottom:22px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.open>.dropdown-menu {
+    display: block;
+    background-color: #0e1315;
+}
+
+@media (max-width: 1200px){
+    #primary-menu .dropdown-menu{
+        position: relative;
+        float: none;
+        border-radius: 0;
+        border: 1px solid #e1e1e1;
+        margin: 5px 0px 0px 0px;
+        background: #0e1315;
+        box-shadow: none;
+    }
+    .content{
+        padding: 5%;
+    }
+
+}

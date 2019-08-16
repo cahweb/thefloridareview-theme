@@ -14,6 +14,11 @@
  * section of this file
  */
 
+
+//provide editor rights to access menu and widgets
+$role_object = get_role('editor');
+$role_object->add_cap('edit_theme_options');
+
 // Register Custom Nav Walker
 require_once( 'wp-bootstrap-navwalker.php' );
 
@@ -36,7 +41,7 @@ function cah_starter_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
+	
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -85,6 +90,12 @@ function cah_starter_setup() {
 		'name' => esc_html__( 'Submit Sidebar', 'cah-starter' ),
 		'id' => 'sidebar-submit',
 		'description' => 'The sidebar for the Submit pages.'
+	) );
+
+	register_sidebar( array(
+		'name' => esc_html__( 'Aquifer Sidebar', 'cah-starter' ),
+		'id'	=> 'sidebar-aquifer',
+		'description' => 'The sidebar for Aquifer pages.'
 	) );
 
 	/*
@@ -145,7 +156,7 @@ add_action( 'widgets_init', 'cah_starter_widgets_init' );
  * Enqueue scripts and styles.
  */
 function cah_starter_scripts() {
-
+	wp_register_style( 'rupture-style', get_template_directory_uri() . '/public/css/rupture.css', array( 'cah-starter-style' ) );
 	// Bootstrap
 	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 
@@ -157,18 +168,6 @@ function cah_starter_scripts() {
 	wp_enqueue_script( 'cah-starter-navigation', get_template_directory_uri() . '/public/js/navigation.js', array('jquery'), '20151215', true );
 
 	wp_enqueue_script( 'cah-starter-skip-link-focus-fix', get_template_directory_uri() . '/public/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if (is_page('aquifer'))
-		wp_enqueue_script( 'aquifer_sort', get_template_directory_uri() . '/public/js/aquifer-sort.js', array('jquery'), '20170316', true );
-
-	if (is_page('query-testing')) {
-
-		wp_enqueue_script( 'aquifer_paged_query', get_template_directory_uri() . '/public/js/aquifer-paged-query.js', array('jquery'), '20170605', true);
-		wp_localize_script( 'aquifer_paged_query', 'js_ajax', array(
-			'ajax_url' => admin_url( 'admin-ajax.php' ),
-			'action' => 'aquifer_archive_query_retrieve'
-		));
-	}
 
 	// UCF Header bar
 	wp_enqueue_script( 'cahweb-starter-ucfhb-script', '//universityheader.ucf.edu/bar/js/university-header.js', array(), '20151215', true );
@@ -341,3 +340,15 @@ function add_open_graph_tags() {
 }
 
 add_action( 'wp_head', 'add_open_graph_tags' );
+
+add_action('wp_enqueue_scripts','Rupture');
+function Rupture(){
+    if ( is_page_template('page-rupture.php') ) {
+		//wp_enqueue_script('my-script', '/test.js');
+		wp_enqueue_script( 'howler', get_template_directory_uri() . '/public/js/howler.js/src/howler.core.js');
+		wp_enqueue_script( 'rupture', get_template_directory_uri() . '/public/js/rupture.js', array( 'jquery' ), '3.3.7', true );
+		wp_enqueue_style( 'rupture-style' );
+		
+    } 
+}
+

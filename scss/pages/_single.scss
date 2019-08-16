@@ -6,6 +6,74 @@
 	}
 }
 
+
+.search-form{
+	margin-top: 8px;
+	margin-bottom: 15px;
+    padding: 0 15px;
+    position: relative;
+	text-align:right;
+
+	.screen-reader-text {
+		display:none;
+	}
+	
+	::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color: transparent;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color: transparent;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+       color: transparent;
+    }
+
+    textarea::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color: transparent;
+    }
+    textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color: transparent;
+    }
+    textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+       color: transparent;
+    }
+	
+	.search-submit {
+    background-color: #337ab7; /* Green */
+    border-color: #2e6da4;
+    color: white;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 7px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+	}
+	
+	.search-submit:hover {
+    background-color: #286090;
+	}
+	
+	.search-field{padding:4px; }
+
+}
+
+
+
+
 .site-main > p {
 	font-size: 14px;
 
@@ -83,7 +151,7 @@ p.justify-all{
 		border-top: 1px solid black;
 
 		.author-image {
-			flex: 1;
+			 /* flex: 1; */
 
 			div {
 				height: 300px;
