@@ -34,12 +34,17 @@
 	.feature-header {
 		display: block;
 		text-align: center;
+
+		h3, h5 {
+			color: white;
+		}
 	}
 
 	img {
 		display: none;
 	}
 	p {
+		color: white;
 		display: none;
 	}
 
