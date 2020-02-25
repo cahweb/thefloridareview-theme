@@ -1,0 +1,28 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .gallery-item {
+        margin-right: .5em !important;
+        margin-left: .5em !important;
+    }
+}
+
+
+.easy-footnote-title {
+    margin-top: 4em;
+    margin-bottom: 3em;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+
+.easy-footnotes-wrapper {
+    list-style-type: decimal;
+
+    li {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+}
