@@ -180,7 +180,7 @@ function cah_starter_scripts() {
 add_action( 'wp_enqueue_scripts', 'cah_starter_scripts' );
 
 add_action( 'wp_enqueue_scripts', function() {
-	wp_enqueue_style( 'cah-starter-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'cah-starter-style', get_stylesheet_uri(), array(), '20200225', 'all' );
 }, 99);
 
 
