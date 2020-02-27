@@ -88,7 +88,8 @@ get_header();
 				"film" => "Film",
 				"digital-story" => "Digital Story",
 				"poetry" => "Poetry",
-				"electronic-interactive-lit" => "Electronic/Interactive Lit."
+				"electronic-interactive-lit" => "Electronic/Interactive Lit.",
+				"hybrid" => "Hybrid"
 			);
 
 			foreach ($article_displays as $article_cat) {
