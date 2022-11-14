@@ -51,7 +51,8 @@ $genres = array(
 	'digital-stories',
 	'interview',
 	'book-review',
-	'visual-art'
+	'review-essay',
+	'visual-art',
 );
 
 $categories = get_the_category( $id );
