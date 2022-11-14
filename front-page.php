@@ -40,7 +40,9 @@ get_header();
 		?>
 
 		<div class="feature-issue-image">
-			<div style="background-image: url(<?=get_the_post_thumbnail_url();?>);"></div>
+			<a href="<?= $issue_url ?>">
+				<div style="background-image: url(<?=get_the_post_thumbnail_url();?>);"></div>
+			</a>
 		</div>
 		<div class="feature-issue-content">
 			<img src="<?=get_stylesheet_directory_uri() . "/public/images/bird.png"?>">
@@ -49,7 +51,7 @@ get_header();
 				<h5><?=$issue_vol.".".$issue_num." | ".$issue_cover_date?></h5>
 			</div>
 			<p><?=(strlen($issue_excerpt) > 250) ? substr($issue_excerpt,0,250)."..." : $issue_excerpt?></p>
-			<!-- <a href="<?=$issue_url?>" class="read-more">Read More</a> -->
+			<a href="<?=$issue_url?>" class="read-more" style="text-decoration: none;">Read More</a>
 		</div>
 	</div>
 </div>
@@ -70,14 +72,14 @@ get_header();
 	<main id="main" class="site-main" role="main">
 		<?php
 
-			$article_displays = array("Literary Features", "Multimedia Features", "Visual Art", "Interviews", "Book Reviews");
+			$article_displays = array("Literary Features", "Multimedia Features", "Visual Art", "Interviews", "Reviews");
 
 			$slugs = array(
 				"Literary Features" => "literary-features+aquifer",
 				"Multimedia Features" => "multimedia features+aquifer",
 				"Visual Art" => "visual-art+aquifer",
 				"Interviews" => "interview+aquifer",
-				"Book Reviews" => "book-review+aquifer"				
+				"Reviews" => "reviews+aquifer"
 			);
 
 			$category_types = array(
@@ -89,7 +91,9 @@ get_header();
 				"digital-story" => "Digital Story",
 				"poetry" => "Poetry",
 				"electronic-interactive-lit" => "Electronic/Interactive Lit.",
-				"hybrid" => "Hybrid"
+				"hybrid" => "Hybrid",
+				"book-review" => "Book Review",
+				"review-essay" => "Review Essay",
 			);
 
 			foreach ($article_displays as $article_cat) {
@@ -154,7 +158,7 @@ get_header();
 					    else
 					    	$thumbnail = get_stylesheet_directory_uri() . "/public/images/empty.png";
 
-				if ($article_cat == "Literary Features" || $article_cat == "Multimedia Features") {
+				if ($article_cat == "Literary Features" || $article_cat == "Multimedia Features" || $article_cat == "Reviews") {
 
 							$post_category = [];
 							foreach ($categories as $item) {
@@ -183,7 +187,7 @@ get_header();
 								<div style="background-image: url(<?=$thumbnail?>);"></div>
 								<h4><?=$post_title?></h4>
 								<h5><?="By ".$authors?></h5>
-								<p><? if ($article_cat == "Literary Features" || $article_cat == "Multimedia Features") { ?>
+								<p><? if ($article_cat == "Literary Features" || $article_cat == "Multimedia Features" || $article_cat == "Reviews") { ?>
 									<em><?=$post_cat_out?></em><br />
 								<? } ?>
 							</div>

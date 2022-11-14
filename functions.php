@@ -165,7 +165,15 @@ function cah_starter_scripts() {
 	// Theme style
 	//wp_enqueue_style( 'cah-starter-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'cah-starter-navigation', get_template_directory_uri() . '/public/js/navigation.js', array('jquery'), '20191016', true );
+	/*
+	wp_enqueue_script(
+		'cah-starter-navigation',
+		get_template_directory_uri() . '/public/js/navigation.js',
+		array('jquery'),
+		filemtime( get_stylesheet_directory() . '/public/js/navigation.js' ),
+		true
+	);
+	*/
 
 	wp_enqueue_script( 'cah-starter-skip-link-focus-fix', get_template_directory_uri() . '/public/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -356,3 +364,7 @@ function Rupture(){
     } 
 }
 
+// Changing Public Post Preview nonce expiration time
+add_filter( 'ppp_nonce_life', function() {
+	return 60 * 60 * 72; // 72 hours
+});

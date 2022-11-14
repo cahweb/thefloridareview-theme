@@ -36,7 +36,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<!-- UCF Assets -->
-	<link rel="icon" href="http://www.ucf.edu/img/pegasus-icon.png" type="image/png">
+	<link rel="icon" href="https://www.ucf.edu/img/pegasus-icon.png" type="image/png">
 	<?php // UCF header bar is loaded in functions.php with the other scripts ?>
 
 	<!-- Google fonts -->
@@ -83,7 +83,9 @@
 
 			?></a>
 
-			<div class="menu-toggle" style="background-image: url(<?=get_stylesheet_directory_uri().'/public/images/menu.png'?>);"></div>
+			<a class="menu-toggle" href="#primary-menu" data-toggle="collapse">
+				<div class="menu-toggle" style="background-image: url(<?=get_stylesheet_directory_uri().'/public/images/menu.png'?>);"></div>
+			</a>
 			<?php /*wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id' => 'primary-menu',

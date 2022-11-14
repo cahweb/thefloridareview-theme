@@ -47,7 +47,7 @@
 			<a href="<?=get_site_url()?>/feed"><img class="img-responsive" src="<?=$uploads_folder['baseurl']?>/2017/03/feed-icon-28x28.png" alt="Subscribe!" title="Subscribe!" /></a>
 		</div> <!-- /.feed-link -->
 
-		<p>Copyright &copy; 2016 The Florida Review, University of Central Florida</p>
+		<p>Copyright &copy; <?php echo date('Y'); ?> The Florida Review, University of Central Florida</p>
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
