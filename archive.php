@@ -13,14 +13,18 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
+			$category = get_category(get_query_var('cat'));
+			if ($category->slug != 'announcement') :
+		?>
 
 			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+			<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+			?>
 			</header><!-- .page-header -->
+			<?php endif; ?>
 
 			<?php
 			/* Start the Loop */
