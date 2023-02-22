@@ -19,7 +19,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-terser": "^1.2.0",
     "node-sass": "^4.13.1",
-    "nodemon": "^1.11.0",
+    "nodemon": "^2.0.20",
     "postcss-assets": "^6.0.0"
   },
   "repository": {
