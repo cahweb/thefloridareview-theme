@@ -20,7 +20,7 @@
     "gulp-terser": "^1.2.0",
     "node-sass": "^4.13.1",
     "nodemon": "^1.11.0",
-    "postcss-assets": "^5.0.0"
+    "postcss-assets": "^6.0.0"
   },
   "repository": {
     "type": "git",
