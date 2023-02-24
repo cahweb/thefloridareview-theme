@@ -1,0 +1,26 @@
+.page-header
+{
+    margin-top: 0;
+    padding: 0px 20px;
+}
+
+.page-title
+{
+    font-size: 3rem;
+}
+
+.entry-title
+{
+    font-size: 2rem;
+}
+
+.content-area
+{
+    flex-direction: column;
+}
+
+.entry-header
+{
+    padding: 20px 0px;
+    border-bottom: 1px solid grey;
+}

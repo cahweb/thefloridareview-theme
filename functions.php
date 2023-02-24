@@ -368,3 +368,17 @@ function Rupture(){
 add_filter( 'ppp_nonce_life', function() {
 	return 60 * 60 * 72; // 72 hours
 });
+
+// Adding CSS tweaks to the news archive page.
+function cah_flreview_add_news_css() {
+	if (is_archive() && is_category('announcement')) {
+		wp_enqueue_style(
+			'news-archive-tweak',
+			get_stylesheet_directory_uri() . "/public/css/news-archive-tweaks.css",
+			['cah-starter-style'],
+			filemtime(get_stylesheet_directory() . "/public/css/news-archive-tweaks.css"),
+			'all'
+		);
+	}
+}
+add_action('wp_enqueue_scripts', 'cah_flreview_add_news_css', 10);
